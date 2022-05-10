@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+}
+html {
+  font-size: 20px;
+  /*!Aksi belirtilmediği sürece default font-size genelde 16px'e eşittir */
+  /* 1em = 16px */
+}
+body {
+  height: 100vh;
+}
+.abs {
+  background-color: aqua;
+  width: 10mm;
+  width: 10cm;
+  width: 100px;
+}
+
+.div2 {
+  background-color: tomato;
+  width: 50%;
+  height: 50%;
+}
+
+.div3 {
+  background-color: violet;
+  width: 50%;
+  height: 50%;
+}
+
+/*! viewport ölçü birimleri parent'ın büyüklüğü ile ilgili değildir. Sadece tarayıcının görülebilir alanına göre oranlama yapar.  */
+.div4 {
+  background-color: yellowgreen;
+  width: 40vw;
+  height: 20vh;
+}
+
+.div5 {
+  font-size: 1em; /* 20px */
+}
+
+.div6 {
+  font-size: 2em; /* 40px */
+}
+
+.div7 {
+  font-size: 0.5em; /* 20px */
+}
+
+.div8 {
+  font-size: 2rem; /* 40px */ 
+}
+
+.div9 {
+  font-size: 3rem; /* 60px */
+}
