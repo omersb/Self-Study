@@ -1,4 +1,4 @@
-console.log("****** LOOPS ******")
+console.log('****** LOOPS *******');
 
 // * =======================================================
 // *                     DÖNGÜLER
@@ -10,25 +10,24 @@ console.log("****** LOOPS ******")
 // Math.round() => değerine göre yuvarlar.
 // Math.trunc() => kesirli sayının tam kısmı alır.
 
-// for(let i=1;i<=10;i++) {
-//     const randomSayı = Math.floor(Math.random() * 100 + 1);
-//     console.log(randomSayı)
+// for (let i = 1; i <= 10; i++) {
+//   const randomSayi = Math.floor(Math.random() * 100 + 1);
+//   console.log(randomSayi);
 // }
 
-// console.log("Program bitti")
+// console.log('Program bitti');
 
+//? Ornek: 1 den n kadar sayıları toplayan kodu yazınız.
 
-//? Örnek: 1 den n kadar sayıları toplayan kodu yazınız.
-
-// const n = prompt("n sayisini girin")
+// const n = prompt('n sayisini girinz:');
 // let toplam = 0;
-// for (let i = 1; i <= n; i++) {5
-//     toplam += i;
+// for (let i = 1; i <= n; i++) {
+//   toplam += i;
 // }
 
-// console.log("Toplam", toplam);
+// console.log('Toplam:', toplam);
 
-// Örnek: Dışarıdan girilen sayının Asal olup olmadığını tespit ederek sonucu yazdıran programı yazınız.
+//? ÖRNEK: Dışarıdan girilen sayının Asal olup olmadığını tespit ederek sonucu yazdıran programı yazınız.
 
 //******************** WHILE ******************
 
@@ -40,8 +39,6 @@ console.log("****** LOOPS ******")
 
 // console.log('Bitti');
 
-//* Örnek not girişi while ile
-
 // let not = prompt('Lütfen notunuzu giriniz (0-100):');
 
 // while (not < 0 || not > 100) {
@@ -50,23 +47,25 @@ console.log("****** LOOPS ******")
 // }
 // console.log('Girdiğiniz not', not);
 
-//* Örnek not girişi do-while ile
-
-let not = prompt("Lütfen notunuzu giriniz (0-100):");
-
-do {
-    not = prompt("Lütfen notunuzu giriniz (0-100):");  
-    if (not<0 || not>100) {
-        alert('Girdiğiniz not 0-100 arasında olmalıdır');
-    }
-}while(not<0 || not>100);
-
-console.log("Girdiğiniz not:", not)
+//* Ornek
 
 //******************** DO-WHILE ******************
-// let i = 1 ;
+// let i = 1;
 
 // do {
-//     console.log("Merhaba-", i);
-//     i++;
+//   console.log('Merhaba-', i);
+//   i++;
 // } while (i <= 5);
+
+let not;
+
+do {
+  not = prompt('Lütfen notunuzu giriniz (0-100):');
+  if (not < 0 || not > 100) {
+    alert('Girdiğiniz not 0-100 arasında olmalıdır');
+  }
+} while (not < 0 || not > 100);
+
+console.log('Girdiğiniz not', not);
+
+//? ODEV1: klavyeden Q karakteri girilene kadar not girişi yapan bir programı döngü kullanarak yazınız.
