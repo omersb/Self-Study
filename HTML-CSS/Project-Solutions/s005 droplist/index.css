@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+}
+
+ul{
+    list-style-type: none;
+}
+
+div {
+    margin: 0 20px;
+}
+
+.ul1 {
+    display: flex;
+    margin: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.ul1 li a:hover .none {
+    display: block;
+}
+
+.none {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown:hover .none {
+    display: block;
+}
+  
