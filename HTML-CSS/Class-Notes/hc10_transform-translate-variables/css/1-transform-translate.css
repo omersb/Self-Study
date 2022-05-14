@@ -38,3 +38,25 @@
 .yazi5:hover {
     transform: scale(1.05);
 }
+
+/************TRANSLATE************/
+
+.translate {
+    background-color: lightcoral;
+    width: 100px;
+    height: 50px;
+    margin: 10px;
+    color: white;
+}
+
+.x:hover {
+    transform: translateX(50px);
+}
+
+.y:hover {
+    transform: translateY(50px);
+}
+
+.xy:hover {
+    transform: translate(50%, -50%);
+}
