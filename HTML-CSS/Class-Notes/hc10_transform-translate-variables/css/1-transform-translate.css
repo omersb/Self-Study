@@ -18,5 +18,23 @@
 
 .yazi3 {
     background-color: tomato;
-    transform: rotate(-90deg);
+    transform: rotate(-45deg);
+}
+
+/************SCALE************/
+
+.yazi4 {
+    background-color: violet;
+}
+
+.yazi4:hover {
+    transform: scaleX(2) scaleY(3);
+}
+
+.yazi5{
+    background-color: greenyellow;
+}
+
+.yazi5:hover {
+    transform: scale(1.05);
 }
