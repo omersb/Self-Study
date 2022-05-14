@@ -61,3 +61,24 @@
 .xy:hover {
     transform: translate(50%, -50%);
 }
+
+.transition-div {
+    text-align: center;
+}
+
+.transition-btn {
+    width: 5rem;
+    padding: 1rem;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    /* transition: background-color 1s, color 0.5s; */
+    transition: all 0.5s;
+    /*!Tüm property'leri izlemek için all kelimlesi kullanulaiblir*/
+}
+  
+.transition-btn:hover {
+    background-color: darkgreen;
+    color: white;
+}
