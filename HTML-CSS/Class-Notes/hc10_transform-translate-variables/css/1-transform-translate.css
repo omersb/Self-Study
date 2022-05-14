@@ -47,6 +47,7 @@
     height: 50px;
     margin: 10px;
     color: white;
+    transition: transform 1s;
 }
 
 .x:hover {
