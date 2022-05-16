@@ -90,11 +90,41 @@ console.log(oku.replace(/AKILLI/i, 'Zeki'));
 //*  substring(beginIndex[, endIndex])
 //*  substr (depreceated)
 //* ----------------------------------------------------------
+const veysel = 'Uzun ince bir yoldayım yürüyorum gündüz gece..';
+const sliced = veysel.slice(33);
+console.log(sliced, typeof sliced); //gündüz gece string
+
+console.log(veysel.slice(17, 30)); // dayım yürüyor
+console.log(veysel.slice(-10)); // düz gece..
+console.log(veysel.slice(-23, -19)); // yürü
+//! negatif indeks substring ile kullanılamaz.
+console.log(veysel.substring(17, 30)); // dayım yürüyor.
 
 //* ----------------------------------------------------------
 //* split([sep [, limit] ])
 //* ----------------------------------------------------------
+const tarkan = 'Gel gündüzle gece olalım';
+const splited = tarkan.split(' '); //! Boşluklara göre ayırdı Array' çevirdi
+console.log(splited, typeof splited);
+const gece = splited[2]; //* indisleme ile değer okunabilir.
+console.log(gece);
+
+const chars = tarkan.split('');
+console.log(chars); //* null karakterine göre harfleri ayırarark bir char dizisi oluşturdu.
+
+const copyTarkan = tarkan.split();
+console.log(copyTarkan); //* String'i array haline getirdi. (Tek elemanlı)
+
+//* ÖDEV
+//* ----------------------------------------------------------
+// https://www.youtube.com/watch?v=b7vfp5G4brE
+// https://youtu.be/b7vfp5G4brE
 
 //* ----------------------------------------------------------
 //* trim();
 //* ----------------------------------------------------------
+const ramazan = '    Hoş geldin ya şehri Ramazan     ';
+console.log(ramazan);
+console.log(ramazan.length); // 36
+console.log(ramazan.trim());
+console.log(ramazan.trim().length); //27
