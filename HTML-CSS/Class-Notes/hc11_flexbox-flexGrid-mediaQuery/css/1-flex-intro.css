@@ -1,5 +1,6 @@
 * {
   font-size: 1.5rem;
+  margin: 0;
 }
 
 .container {
@@ -56,7 +57,75 @@ ul {
   height: 20rem;
   background-color: rgb(255, 225, 0);
   list-style-type: none;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  overflow: auto;
+
+  /* align-items: flex-end; */
+  /*!Çok satırlı verilerin dikeyde hizalama için kullanılır.*/
+  align-content: flex-start;
 }
 ul li {
   background-color: mediumorchid;
+  width: 4rem;
+  height: 4rem;
+}
+.container3 {
+  background-color: mediumspringgreen;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.container3 div {
+  background-color: mediumvioletred;
+  width: 5rem;
+  margin: 1rem;
+  flex-grow: 1; /*? tüm div'lerin büyüme oranına 1 verdik.*/
+  flex-basis: auto;
+}
+
+div.grow2 {
+  /*? grow2 classindakiler diğerlerine göre 2 kat daha fazla büyüyebilir.*/
+  flex-grow: 2;
+}
+
+div.grow3 {
+  /*? grow3 classindakiler diğerlerine göre 3 kat daha fazla büyüyebilir.*/
+  flex-grow: 3;
+}
+
+div.nogrow {
+  /*? nogrow classindakiler diğerlerine göre hiç büyümezler*/
+  flex-grow: 0;
+}
+
+.container4 {
+  background-color: indianred;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.container4 div {
+  background-color: yellowgreen;
+  margin: 1rem;
+}
+div.div1 {
+  width: 10%;
+}
+
+div.div2 {
+  width: 20%;
+}
+
+div.div3 {
+  width: 30%;
+}
+
+div.div4 {
+  width: 40%;
 }
