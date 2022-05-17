@@ -1,15 +1,23 @@
+* {
+  font-size: 1.5rem;
+}
+
 .container {
   background-color: yellowgreen;
   display: flex;
   /*! Elemanların diziliş yönü : column, row, row-reverse, column-reverse*/
-  flex-direction: row;
+  flex-direction: row; /*! default => row*/
 
   /*? sıkıştırma veya alt satıra geçebilme:flex-wrap: wrap, nowrap, wrap-reverse*/
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 
   /*! Yatay Hizalama: Justify-center
   /** flex-start, flex-end,center, space-around,space-evenly, space-between*/
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
+
+  /*?gap, flex içerisindeki elemanların dikey ve yatay boşluklarını belirlemek için kullanılabilir. ilk yazılan yatay (satırlar arası) boşluk, 2. yazılan ise dikey (sutunlar arası) boşluktur */
+  gap: 20px 10px;
 }
 
 .container div {
@@ -17,4 +25,38 @@
   height: 5rem;
   background-color: violet;
   margin: 1rem;
+}
+
+.container1 {
+  height: 20rem;
+  background-color: lightcoral;
+  display: flex;
+  justify-content: center;
+  flex-direction: row-reverse;
+
+  /*! Dikey Hizalama => align-items
+  /**  flex-start, flex-end,center, stretch,baseline */
+  align-items: stretch;
+  gap: 10px 20px;
+}
+
+/** bir child element stretch ile container'ın sınırlarına dayandığında child'in içerisindeki içeriği (Örn yazı) yine dikey olarak ortaya hizalamak için nested flex yapısı kullanılabilir*/
+
+.container1 div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  /* height: 5rem; */
+  margin: 1rem 0;
+  background-color: lightskyblue;
+}
+
+ul {
+  height: 20rem;
+  background-color: rgb(255, 225, 0);
+  list-style-type: none;
+}
+ul li {
+  background-color: mediumorchid;
 }
