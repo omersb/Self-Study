@@ -1,0 +1,79 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  color: red;
+}
+
+nav.menu {
+  background-color: grey;
+  width: 150px;
+}
+
+nav.menu .list {
+  list-style-type: '🎗️';
+  padding: 0;
+  list-style-position: inside;
+}
+
+nav.menu ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+/* nav.menu .list .aktif {
+  background-color: black;
+} */
+
+nav.menu .list li:first-child,
+li:last-child {
+  background-color: black;
+}
+
+/* nav.menu .list li:nth-child(even) {
+  background-color: purple;
+} */
+
+nav.menu ul li:hover a {
+  color: yellow;
+}
+
+nav.menu ul li:hover {
+  background-color: red;
+}
+
+nav.menu .list .aktif:hover {
+  background-color: red;
+}
+
+nav.menu .list li:last-child::after {
+  content: '❤️';
+}
+
+nav.menu .list li:first-child::before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: green;
+  content: '\f0c7';
+}
+
+/*! kutu class'ı içindeki tüm p elementlerini seçer */
+.kutu p {
+  color: green;
+}
+
+/*! parent'ı kutu olan tüm p elementlerini seçer */
+.kutu > p {
+  color: purple;
+}
+
+/*! h2 elementi kapatıldıktan sonraki ilk p elementini seçer */
+/* h2 + p {
+  background-color: pink;
+} */
+
+/*! h2 elementi kapandıktan sonraki tüm p elementlerini seçer  */
+h2 ~ p {
+  background-color: yellowgreen;
+}

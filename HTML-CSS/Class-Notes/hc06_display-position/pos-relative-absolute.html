@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POSITION</title>
+    <style>
+      /* *{margin:0;} */
+      .box {
+        background-color: brown;
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        position: static;
+      }
+
+      .box1 {
+        background-color: darkcyan;
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+
+        position: relative;
+        top: 20px;
+        left: 50px;
+        /* diğer elemanları kıpırdatmadan,olması gereken yerden body ye göre kıpırdar */
+      }
+
+      .box2 {
+        background-color: chocolate;
+        width: 200px;
+        height: 200px;
+        border: 2px solid black;
+        position: absolute;
+        /* 0-0 noktasına göre */
+        top: 20px;
+        left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">box</div>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+  </body>
+</html>

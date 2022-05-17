@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DISPLAY</title>
+    <style>
+      a {
+        display: block;
+        padding: 10px;
+      }
+      span {
+        background-color: orange;
+        display: block;
+        margin: 10px 0;
+        /* display:none; */
+        /*  hiç yokmuş gibi yapar */
+        /* visibility: hidden; */
+        /* gözükmez ama yer kaplar */
+      }
+
+      .box {
+        text-align: center;
+        background-color: crimson;
+        display: inline-block;
+        /* yanyana gelsinler diye inline, padding verince şaşırmasın ve margin gözüksün diye  block */
+        height: 100px;
+        width: 100px;
+        border: 1px solid black;
+        margin-top: 2rem;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- -----Inline elements--- -->
+    <a href="">Clarusway</a>
+    <button>CLarusway</button> <span>merhaba ben span</span>
+
+    <!-- ------block----------- -->
+    <!-- div.box{box$}*3 -->
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+    <div class="box">box3</div>
+  </body>
+</html>
