@@ -90,3 +90,10 @@ main {
     }
   }
 }
+
+//*******  CARDS *********/
+
+@mixin myBox ($bgColor, $fontColor) {
+  background-color: $bgColor;
+  
+}
