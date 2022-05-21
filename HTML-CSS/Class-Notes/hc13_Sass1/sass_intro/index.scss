@@ -24,8 +24,13 @@ header {
   background-color: $navBgColor;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
   img {
-    width: 100px;
+    width: 80px;
+    border: $myBorder;
+    border-radius: 10px;
+    padding: 0.1rem;
   }
   nav {
     ul {
@@ -35,8 +40,9 @@ header {
       display: inline-block;
     }
     a {
-      color: black;
+      color: $fontColor;
       text-decoration: none;
+      padding: 0.5rem;
     }
   }
 }
