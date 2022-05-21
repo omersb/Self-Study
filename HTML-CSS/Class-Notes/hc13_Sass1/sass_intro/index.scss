@@ -2,6 +2,9 @@
   margin: 0;
 }
 
+//********************************************
+//! Variable Declaration
+//********************************************
 
 $bgColor: pink;
 $fontColor: white;
@@ -12,6 +15,9 @@ $myBorder: 2px solid rgb(175, 29, 29);
 $myLinkSize: 1.1rem;
 $bannerBgColor: #cc6699;
 
+//********************************************
+//! Variable Usage
+//********************************************
 
 body {
   font-family: $fontFamily;
@@ -19,6 +25,8 @@ body {
   color: $fontColor;
   font-size: $fontSize;
 }
+
+//*******  HEADER *********/
 
 header {
   background-color: $navBgColor;
@@ -52,6 +60,7 @@ header {
   }
 }
 
+//*******  HEADER *********/
 
 main {
   .banner {
@@ -60,6 +69,12 @@ main {
     justify-content: space-between;
     padding: 1rem;
     line-height: 2rem;
+    align-items: center;
+  }
+  img {
+    width: 30%;
+    min-width: 300px;
+    max-width: 400px;
   }
   button {
     padding: 0.5rem;
@@ -68,6 +83,10 @@ main {
     border-radius: 10px;
     font-size: $myLinkSize;
     width: 9rem;
-    margin: 0.5rem;
+    margin: 1.5rem 0.5rem 0 0;
+    &:hover {
+      background-color: $bgColor;
+      cursor: pointer;
+    }
   }
 }

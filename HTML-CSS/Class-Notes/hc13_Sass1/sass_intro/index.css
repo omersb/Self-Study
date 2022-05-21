@@ -44,6 +44,12 @@ main .banner {
   justify-content: space-between;
   padding: 1rem;
   line-height: 2rem;
+  align-items: center;
+}
+main img {
+  width: 30%;
+  min-width: 300px;
+  max-width: 400px;
 }
 main button {
   padding: 0.5rem;
@@ -52,7 +58,11 @@ main button {
   border-radius: 10px;
   font-size: 1.1rem;
   width: 9rem;
-  margin: 0.5rem;
+  margin: 1.5rem 0.5rem 0 0;
+}
+main button:hover {
+  background-color: pink;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=index.css.map */
