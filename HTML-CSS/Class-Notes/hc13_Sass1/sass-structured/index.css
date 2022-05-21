@@ -1,0 +1,175 @@
+.articles {
+  display: flex;
+  padding: 1rem;
+}
+.articles .article1, .articles .article2 {
+  width: 50%;
+  height: 10rem;
+  background-color: gray;
+  border: 2px solid black;
+  border-radius: 10%;
+  margin: 2px;
+  padding: 1rem;
+}
+.articles .article2 {
+  background: #cc6699;
+}
+
+.banner {
+  background: #cc6699;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 2rem;
+  padding: 1rem;
+}
+.banner button {
+  padding: 10px;
+  border-radius: 10px;
+  margin: 0.5rem;
+  width: 10rem;
+  background-color: #30a7c3;
+  font-size: 19px;
+  border: none;
+}
+.banner button:hover {
+  background: pink;
+  cursor: pointer;
+}
+.banner img {
+  width: 30%;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.cards {
+  display: flex;
+  padding: 1rem;
+}
+.cards .card1 {
+  background-color: brown;
+  color: white;
+  width: 25%;
+  height: 200px;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.cards .card2 {
+  background-color: rgb(199, 255, 192);
+  color: blue;
+  width: 25%;
+  height: 200px;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.cards .card3 {
+  background-color: blue;
+  color: rgb(26, 26, 26);
+  width: 25%;
+  height: 200px;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+.cards .card4 {
+  background-color: green;
+  color: black;
+  width: 25%;
+  height: 200px;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+header {
+  background-color: #30a7c3;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header div {
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 30%;
+}
+header div img {
+  width: 75px;
+}
+header nav ul {
+  list-style-type: none;
+}
+header nav ul li {
+  display: inline-block;
+}
+header nav ul li:hover {
+  text-decoration: underline;
+}
+header nav ul li a {
+  text-decoration: none;
+  font-size: 19px;
+  padding: 0.5rem;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: pink;
+  font-family: "tahoma";
+  font-size: 1.2rem;
+  color: white;
+}
+
+.footer .socialBoxes {
+  display: flex;
+}
+.footer .socialBoxes .social1 {
+  width: 20%;
+  height: 100px;
+  background-color: rgba(43, 41, 41, 0.548);
+  font-size: 1rem;
+  color: #990000;
+}
+.footer .socialBoxes .social2 {
+  width: 20%;
+  height: 100px;
+  background-color: rgba(70, 65, 65, 0.548);
+  font-size: 2rem;
+  color: #55004e;
+}
+.footer .socialBoxes .social3 {
+  width: 20%;
+  height: 100px;
+  background-color: rgba(96, 90, 90, 0.548);
+  font-size: 3rem;
+  color: #0fa8a1;
+}
+.footer .socialBoxes .social4 {
+  width: 20%;
+  height: 100px;
+  background-color: rgba(122, 115, 115, 0.548);
+  font-size: 4rem;
+  color: #121456;
+}
+.footer .socialBoxes .social5 {
+  width: 20%;
+  height: 100px;
+  background-color: rgba(147, 141, 141, 0.548);
+  font-size: 5rem;
+  color: #64c217;
+}
+
+.footer {
+  background-color: green;
+}
+
+/*# sourceMappingURL=index.css.map */

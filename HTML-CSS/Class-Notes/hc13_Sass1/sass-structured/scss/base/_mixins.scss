@@ -1,0 +1,14 @@
+//*****************
+//! @MIXIN
+//*****************
+
+@mixin myBox($bgColor, $fontColor) {
+  background-color: $bgColor;
+  color: $fontColor;
+  width: 25%;
+  height: 200px;
+  border: $myBorder;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.5rem;
+}

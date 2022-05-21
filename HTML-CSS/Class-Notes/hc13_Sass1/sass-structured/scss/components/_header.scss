@@ -1,0 +1,33 @@
+//******* HEADER ***********
+header {
+  background-color: $navBgColor;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    border: $myBorder;
+    border-radius: 30%;
+    img {
+      width: 75px;
+    }
+  }
+
+  nav {
+    ul {
+      list-style-type: none;
+      li {
+        display: inline-block;
+        &:hover {
+          text-decoration: underline;
+        }
+        a {
+          text-decoration: none;
+          font-size: $myLinkSize;
+          padding: 0.5rem;
+          color: white;
+        }
+      }
+    }
+  }
+}

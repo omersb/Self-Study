@@ -1,0 +1,19 @@
+
+//****** ARTICLES *********
+.articles {
+  display: flex;
+  padding: 1rem;
+  .article1 {
+    width: 50%;
+    height: 10rem;
+    background-color: gray;
+    border: 2px solid black;
+    border-radius: 10%;
+    margin: 2px;
+    padding: 1rem;
+  }
+  .article2 {
+    background: $bannerBgColor;
+    @extend .article1;
+  }
+}

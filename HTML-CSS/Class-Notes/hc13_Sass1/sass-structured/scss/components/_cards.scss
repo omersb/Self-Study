@@ -1,0 +1,17 @@
+//******* CARDS ***********
+.cards {
+  display: flex;
+  padding: 1rem;
+  .card1 {
+    @include myBox(brown, white);
+  }
+  .card2 {
+    @include myBox(rgb(199, 255, 192), blue);
+  }
+  .card3 {
+    @include myBox(blue, rgb(26, 26, 26));
+  }
+  .card4 {
+    @include myBox(green, black);
+  }
+}

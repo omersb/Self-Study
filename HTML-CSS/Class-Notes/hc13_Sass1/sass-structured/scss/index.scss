@@ -1,0 +1,54 @@
+@import "./base/variables", "./base/mixins";
+@import "./components/articles", "./components/banner", "./components/cards",
+  "./components/header";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+//**********************************
+//! Variable Usage
+//**********************************
+body {
+  background-color: $bgColor;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+//*************************
+//! FOR LOOP
+//*************************
+
+//****** FOOTER *********
+$textColor: #990000, #55004e, #0fa8a1, #121456, #64c217;
+.footer {
+  .socialBoxes {
+    display: flex;
+    @for $i from 1 through 5 {
+      .social#{$i} {
+        width: 20%;
+        height: 100px;
+        background-color: lighten(rgba(17, 16, 16, 0.548), ($i * 10));
+        font-size: ($i) * 1rem;
+        color: nth($textColor, $i);
+      }
+    }
+  }
+}
+
+//***********************************************
+//! IF-ELSE
+//************************************************
+$dark: 1;
+.footer {
+  @if $dark==3 {
+    background-color: white;
+    color: black;
+  } @else if $dark==2 {
+    background-color: gray;
+  } @else {
+    background-color: green;
+  }
+}
