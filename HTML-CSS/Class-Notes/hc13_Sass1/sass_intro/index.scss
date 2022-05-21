@@ -9,7 +9,7 @@ $fontSize: 1.2rem;
 $fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $navBgColor: #30a7c3;
 $myBorder: 2px solid rgb(175, 29, 29);
-$myLinkSize: 19px;
+$myLinkSize: 1.1rem;
 $bannerBgColor: #cc6699;
 
 
@@ -37,12 +37,37 @@ header {
       list-style-type: none;
     }
     li {
+      font-size: $myLinkSize;
       display: inline-block;
+      //! içinde bulunduğumuz elementi refere etmek için & işareti kullanılır.
+      &:hover{
+        text-decoration: underline;
+      }
     }
     a {
       color: $fontColor;
       text-decoration: none;
       padding: 0.5rem;
     }
+  }
+}
+
+
+main {
+  .banner {
+    background-color: $bannerBgColor;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    line-height: 2rem;
+  }
+  button {
+    padding: 0.5rem;
+    background-color: $navBgColor;
+    border: none;
+    border-radius: 10px;
+    font-size: $myLinkSize;
+    width: 9rem;
+    margin: 0.5rem;
   }
 }
