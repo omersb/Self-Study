@@ -4,6 +4,28 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: pink;
+  color: white;
+  font-size: 1.2rem;
+}
+
+header {
+  background-color: #30a7c3;
+  display: flex;
+  justify-content: space-between;
+}
+header img {
+  width: 100px;
+}
+header nav ul {
+  list-style-type: none;
+}
+header nav li {
+  display: inline-block;
+}
+header nav a {
+  color: black;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=index.css.map */
