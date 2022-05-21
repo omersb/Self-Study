@@ -65,4 +65,62 @@ main button:hover {
   cursor: pointer;
 }
 
+.cards {
+  display: flex;
+  padding: 1rem;
+}
+.cards .card1 {
+  background-color: brown;
+  color: white;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+.cards .card2 {
+  background-color: rgb(42, 165, 63);
+  color: white;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+.cards .card3 {
+  background-color: rgb(165, 157, 42);
+  color: black;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+.cards .card4 {
+  background-color: rgb(42, 46, 165);
+  color: white;
+  width: 25%;
+  height: 15rem;
+  border: 2px solid rgb(175, 29, 29);
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+.articles {
+  display: flex;
+  padding: 1rem;
+}
+.articles .article1, .articles .article2 {
+  width: 50%;
+  background-color: grey;
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 10rem;
+  margin: 1rem;
+  padding: 0.5rem;
+}
+.articles .article2 {
+  background-color: hotpink;
+}
+
 /*# sourceMappingURL=index.css.map */

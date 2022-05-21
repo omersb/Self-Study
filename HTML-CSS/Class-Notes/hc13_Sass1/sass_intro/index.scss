@@ -15,9 +15,9 @@ $myBorder: 2px solid rgb(175, 29, 29);
 $myLinkSize: 1.1rem;
 $bannerBgColor: #cc6699;
 
-//********************************************
+//**************************************
 //! Variable Usage
-//********************************************
+//**************************************
 
 body {
   font-family: $fontFamily;
@@ -95,5 +95,52 @@ main {
 
 @mixin myBox ($bgColor, $fontColor) {
   background-color: $bgColor;
-  
+  color: $fontColor;
+  width: 25%;
+  height: 15rem;
+  border: $myBorder;
+  border-radius: 5px;
+  margin: 0.5rem;
+}
+
+.cards {
+  display: flex;
+  padding: 1rem;
+  .card1 {
+    @include myBox(brown,white )
+  }
+  .card2 {
+    @include myBox(rgb(42, 165, 63),white )
+  }
+  .card3 {
+    @include myBox(rgb(165, 157, 42),black )
+  }
+  .card4 {
+    @include myBox(rgb(42, 46, 165),white )
+  }
+}
+
+//*******  ARTİCLES *********/
+
+//**************************************
+//! @EXTEND
+//**************************************
+
+.articles {
+  display: flex;
+  padding: 1rem;
+  .article1 {
+    width: 50%;
+    background-color: grey;
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 10rem;
+    margin: 1rem;
+    padding: 0.5rem;
+  }
+
+  .article2 {
+    @extend .article1;
+    background-color: hotpink;
+  }
 }
