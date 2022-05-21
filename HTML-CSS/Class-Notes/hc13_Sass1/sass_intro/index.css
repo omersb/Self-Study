@@ -1,126 +1,17 @@
-* {
-  margin: 0;
-}
+/* Error: Positional arguments must come before keyword arguments.
+ *     ,
+ * 160 |         background-color: lighten($color: #35343400, $i * 10);
+ *     |                                                      ^^^^^^^
+ *     '
+ *   index.scss 160:54  root stylesheet */
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: pink;
-  color: white;
-  font-size: 1.2rem;
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Positional arguments must come before keyword arguments.\a     \2577 \a 160 \2502          background-color: lighten($color: #35343400, $i * 10);\d\a     \2502                                                       ^^^^^^^\a     \2575 \a   index.scss 160:54  root stylesheet";
 }
-
-header {
-  background-color: #30a7c3;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-}
-header img {
-  width: 80px;
-  border: 2px solid rgb(175, 29, 29);
-  border-radius: 10px;
-  padding: 0.1rem;
-}
-header nav ul {
-  list-style-type: none;
-}
-header nav li {
-  font-size: 1.1rem;
-  display: inline-block;
-}
-header nav li:hover {
-  text-decoration: underline;
-}
-header nav a {
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem;
-}
-
-main .banner {
-  background-color: #cc6699;
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-  line-height: 2rem;
-  align-items: center;
-}
-main img {
-  width: 30%;
-  min-width: 300px;
-  max-width: 400px;
-}
-main button {
-  padding: 0.5rem;
-  background-color: #30a7c3;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  width: 9rem;
-  margin: 1.5rem 0.5rem 0 0;
-}
-main button:hover {
-  background-color: pink;
-  cursor: pointer;
-}
-
-.cards {
-  display: flex;
-  padding: 1rem;
-}
-.cards .card1 {
-  background-color: brown;
-  color: white;
-  width: 25%;
-  height: 15rem;
-  border: 2px solid rgb(175, 29, 29);
-  border-radius: 5px;
-  margin: 0.5rem;
-}
-.cards .card2 {
-  background-color: rgb(42, 165, 63);
-  color: white;
-  width: 25%;
-  height: 15rem;
-  border: 2px solid rgb(175, 29, 29);
-  border-radius: 5px;
-  margin: 0.5rem;
-}
-.cards .card3 {
-  background-color: rgb(165, 157, 42);
-  color: black;
-  width: 25%;
-  height: 15rem;
-  border: 2px solid rgb(175, 29, 29);
-  border-radius: 5px;
-  margin: 0.5rem;
-}
-.cards .card4 {
-  background-color: rgb(42, 46, 165);
-  color: white;
-  width: 25%;
-  height: 15rem;
-  border: 2px solid rgb(175, 29, 29);
-  border-radius: 5px;
-  margin: 0.5rem;
-}
-
-.articles {
-  display: flex;
-  padding: 1rem;
-}
-.articles .article1, .articles .article2 {
-  width: 50%;
-  background-color: grey;
-  border: 1px solid black;
-  border-radius: 10px;
-  height: 10rem;
-  margin: 1rem;
-  padding: 0.5rem;
-}
-.articles .article2 {
-  background-color: hotpink;
-}
-
-/*# sourceMappingURL=index.css.map */

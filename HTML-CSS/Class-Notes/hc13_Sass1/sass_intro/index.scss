@@ -1,24 +1,23 @@
+@import 'variables';
 * {
   margin: 0;
 }
 
-//********************************************
-//! Variable Declaration
-//********************************************
+// //********************************************
+// //! Variable Declaration
+// //********************************************
+// $bgColor: pink;
+// $fontColor: white;
+// $fontSize: 1.2rem;
+// $fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+// $navBgColor: #30a7c3;
+// $myBorder: 2px solid rgb(175, 29, 29);
+// $myLinkSize: 1.1rem;
+// $bannerBgColor: #cc6699;
 
-$bgColor: pink;
-$fontColor: white;
-$fontSize: 1.2rem;
-$fontFamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-$navBgColor: #30a7c3;
-$myBorder: 2px solid rgb(175, 29, 29);
-$myLinkSize: 1.1rem;
-$bannerBgColor: #cc6699;
-
-//**************************************
+//********************************************
 //! Variable Usage
-//**************************************
-
+//********************************************
 body {
   font-family: $fontFamily;
   background-color: $bgColor;
@@ -38,17 +37,15 @@ header {
     width: 80px;
     border: $myBorder;
     border-radius: 10px;
-    padding: 0.1rem;
   }
   nav {
     ul {
       list-style-type: none;
     }
     li {
-      font-size: $myLinkSize;
+      //! içinde bulundğumuz elementi refere etmek için & işareti kullanılır.
       display: inline-block;
-      //! içinde bulunduğumuz elementi refere etmek için & işareti kullanılır.
-      &:hover{
+      &:hover {
         text-decoration: underline;
       }
     }
@@ -61,20 +58,14 @@ header {
 }
 
 //*******  HEADER *********/
-
 main {
   .banner {
-    background-color: $bannerBgColor;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: $bannerBgColor;
     padding: 1rem;
     line-height: 2rem;
-    align-items: center;
-  }
-  img {
-    width: 30%;
-    min-width: 300px;
-    max-width: 400px;
   }
   button {
     padding: 0.5rem;
@@ -83,17 +74,27 @@ main {
     border-radius: 10px;
     font-size: $myLinkSize;
     width: 9rem;
-    margin: 1.5rem 0.5rem 0 0;
+    margin-right: 0.5rem;
+    margin-top: 1.5rem;
     &:hover {
       background-color: $bgColor;
       cursor: pointer;
     }
   }
+  img {
+    width: 30%;
+    min-width: 300px;
+    max-width: 400px;
+  }
 }
 
 //*******  CARDS *********/
 
-@mixin myBox ($bgColor, $fontColor) {
+//*****************
+//! @MIXIN
+//*****************
+
+@mixin myBox($bgColor, $fontColor) {
   background-color: $bgColor;
   color: $fontColor;
   width: 25%;
@@ -107,24 +108,24 @@ main {
   display: flex;
   padding: 1rem;
   .card1 {
-    @include myBox(brown,white )
+    @include myBox(brown, white);
   }
   .card2 {
-    @include myBox(rgb(42, 165, 63),white )
+    @include myBox(rgb(42, 165, 63), white);
   }
   .card3 {
-    @include myBox(rgb(165, 157, 42),black )
+    @include myBox(rgb(165, 157, 42), black);
   }
   .card4 {
-    @include myBox(rgb(42, 46, 165),white )
+    @include myBox(rgb(42, 46, 165), white);
   }
 }
 
-//*******  ARTİCLES *********/
+//*******  ARTICLES *********/
 
-//**************************************
+//*****************
 //! @EXTEND
-//**************************************
+//*****************
 
 .articles {
   display: flex;
@@ -138,15 +139,49 @@ main {
     margin: 1rem;
     padding: 0.5rem;
   }
-
   .article2 {
     @extend .article1;
     background-color: hotpink;
   }
 }
 
-//*******  FOOTER *********/
+//****** FOOTER *********
 
-//**************************************
-//! FOR LOOp
-//**************************************
+//*************************
+//! FOR LOOP
+//*************************
+$textColor: #990000, #55004e, #0fa8a1, #121456, #64c217;
+
+.footer {
+  .socialIcons {
+    display: flex;
+    height: 8rem;
+
+    @for $i from 1 through 5 {
+      .social#{$i} {
+        width: 20%;
+        height: 100%;
+        background-color: lighten(rgba(205, 58, 58, 0.951), $i * 10);
+        color: nth($textColor, $i);
+        font-size: $i * 1rem;
+      }
+    }
+  }
+}
+
+//***********************************************
+//! IF-ELSE
+//************************************************
+
+$dark: 2;
+
+.footer {
+  @if $dark==3 {
+    background-color: white;
+    color: black;
+  } @else if $dark==2 {
+    background-color: gray;
+  } @else {
+    background-color: green;
+  }
+}
