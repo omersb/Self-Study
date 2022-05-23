@@ -75,17 +75,17 @@ console.log(ogrenciBul(ogrIsim));
 const ogrenciBulForOf = function (isim) {
   let sayac = 0;
   for (let ogrenci of ogrenciler) {
-    if (ogrenci === isim) {
-      sayac++;
-    }
+    ogrenci === isim ? sayac++ : null; //! Ternary
+    //! Short-circuit yöntemi: && => koşul doğru ise ifadeyi çalıştır.
+    // ogrenci === isim && sayac++;
+
+    //! Short-circuit yöntemi: || => koşul yanlış ise ifadeyi çalıştır.
+    // ogrenci === isim || sayac--; //! Short-circuit yöntemi
   }
 
-  if (sayac === 0) {
-    return `${isim} bulunamadi`;
-  } else {
-    return `${isim}, ${sayac} adet bulundu`;
-  }
+  return !sayac ? `${isim} bulunamadi` : `${isim}, ${sayac} adet bulundu`;
+  // return sayac ? `${isim}, ${sayac} adet bulundu` : `${isim} bulunamadi`;
 };
 
-let name = prompt('Ogrenci adini giriniz:').toLocaleLowerCase();
-console.log(ogrenciBulForOf(name));
+let ogrName = prompt('Ogrenci adini giriniz:').toLocaleLowerCase();
+console.log(ogrenciBulForOf(ogrName));
