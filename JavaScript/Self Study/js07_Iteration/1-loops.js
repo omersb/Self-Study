@@ -63,3 +63,29 @@ const ogrenciBul = function (isim) {
 
 let ogrIsim = prompt('Ogrenci adini giriniz:').toLocaleLowerCase();
 console.log(ogrenciBul(ogrIsim));
+
+//* ======================================================
+//*                   FOR-OF LOOP
+//* ======================================================
+
+//* for of dongusu, for in dongusunun bir cok veri yapisini
+//* kapsayacak sekilde guncellenmis halidir. Bu dongude dizi
+//* icersindeki veriye erisirken indisleme kullanmaya gerek yoktur.
+
+const ogrenciBulForOf = function (isim) {
+  let sayac = 0;
+  for (let ogrenci of ogrenciler) {
+    if (ogrenci === isim) {
+      sayac++;
+    }
+  }
+
+  if (sayac === 0) {
+    return `${isim} bulunamadi`;
+  } else {
+    return `${isim}, ${sayac} adet bulundu`;
+  }
+};
+
+let name = prompt('Ogrenci adini giriniz:').toLocaleLowerCase();
+console.log(ogrenciBulForOf(name));
