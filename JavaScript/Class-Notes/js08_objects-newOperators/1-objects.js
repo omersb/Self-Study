@@ -93,7 +93,8 @@ const kisi = {
   //   return `${this.ad}, ${this.yasHesapla()} yasindadir`;
   // },
   ozet: () => {
-    return `${this.ad}, ${this.yasHesapla()} yasindadir`;
+      console.log(this);
+      return `${this.ad}, ${this.yasHesapla()} yasindadir`;
   },
 };
 console.log(this);
