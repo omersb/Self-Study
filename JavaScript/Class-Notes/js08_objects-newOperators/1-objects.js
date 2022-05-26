@@ -138,6 +138,8 @@ const kisilerObject = {
 console.log(kisilerObject);
 console.log(kisilerObject.ahmet.is);
 
+//? JSON => Javascript Object Notation
+
 const kisiler = [
   {
     name: 'Ahmet',
@@ -174,3 +176,10 @@ const kisiler = [
 
 console.log(kisiler);
 console.log(kisiler[4]);
+
+//* Örnek1: kişiler dizisindeki job'ları tek tek yazdırınız.
+kisiler.forEach((kisi) => console.log(kisi.job,));
+
+//* Örnek2: yasları bir artırarak yeni bir diziye saklayınız.
+const yaslar = kisiler.map((kisi) => kisi.age + 1);
+console.log(yaslar);
