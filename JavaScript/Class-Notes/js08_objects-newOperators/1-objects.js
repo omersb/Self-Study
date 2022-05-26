@@ -89,13 +89,13 @@ const kisi = {
   yasHesapla: function () {
     return new Date().getFullYear() - this.dogum;
   },
-  // ozet: function () {
-  //   return `${this.ad}, ${this.yasHesapla()} yasindadir`;
-  // },
-  ozet: () => {
-      console.log(this);
-      return `${this.ad}, ${this.yasHesapla()} yasindadir`;
+  ozet: function () {
+    return `${this.ad}, ${this.yasHesapla()} yasindadir`;
   },
+//   ozet: () => {
+//       console.log(this);
+//       return `${this.ad}, ${this.yasHesapla()} yasindadir`;
+//   },
 };
 console.log(this);
 
