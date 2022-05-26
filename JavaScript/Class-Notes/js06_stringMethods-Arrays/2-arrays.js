@@ -134,7 +134,7 @@ if (!bulunduMu) {
 
 // const sayilar1 = [3, 5, 2, "2", "üc", 2, "bes", 5];
 
-const stringSayilar1 = sayilar1.join(' ');
+const stringSayilar1 = sayilar1.join(',');
 console.log(stringSayilar1);
 
 //* toString()

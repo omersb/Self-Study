@@ -39,6 +39,7 @@ selamla('jason');
 //***************************************************************/
 
 function yasHesapla(year, name) {
+  // const mesaj = `${name} in yaşı ${2022 - year} dir `;
   const mesaj = `${name} in yaşı ${new Date().getFullYear() - year} dir `;
   return mesaj;
 }
@@ -47,13 +48,10 @@ const mesaj1 = yasHesapla(2001, 'Elif');
 console.log(mesaj1);
 
 //* Örnek4: Parametreli, Dönüş değerli
-//***************************************************************/
-
+//**********************************************************/
 console.log(tekCift(5));
 console.log(tekCift(2));
 
- function tekCift(number) {
-    return number % 2 === 0 ? `${number} çiftir` : `${number} tektir`    
- }
-
- 
+function tekCift(number) {
+  return number % 2 === 0 ? `${number} çifttir` : `${number} tekdir`;
+}
