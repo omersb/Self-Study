@@ -80,6 +80,7 @@ console.log(isci, calisan);
 
 //! Objelere, classlara ait olan fonksiyonlara metot denir.
 
+
 const kisi = {
   ad: 'Can',
   soyad: 'Canan',
@@ -92,10 +93,10 @@ const kisi = {
   ozet: function () {
     return `${this.ad}, ${this.yasHesapla()} yasindadir`;
   },
-//   ozet: () => {
-//       console.log(this);
-//       return `${this.ad}, ${this.yasHesapla()} yasindadir`;
-//   },
+  // ozet: () => {
+  //   console.log(this);
+  //   return `${this.ad}, ${this.yasHesapla()} yasindadir`;
+  // },
 };
 console.log(this);
 
@@ -108,4 +109,68 @@ console.log('BILGI:', kisi.ozet());
 //! ve lexical context'e sahiptirler. Dolayısıyla, bir arrow fonk. içerisinde
 //! this kelimesi kullanılrsak beklenmeyen sonuclar alabiliriz.
 //! Çünkü, arrow içerisindeki this kelimesi global scope'u gösterir. (window nesnesini) gösterir.
-//! Bunu engellemek için object fonskyionlarını tanımlamak için normal fonksiyon  yöntemlerini kullanmak gerekir.
+//! Bunu engellemek için object fonskyionlarını tanımlamak için normal fonksiyon yöntemlerini kullanmak gerekir.
+
+// * ======================================================
+// *                  OBJECT ITERATION
+// * ======================================================
+
+//? Nested objects
+const kisilerObject = {
+  ahmet: {
+    ad: 'Ahmet',
+    soyad: 'Yilmaz',
+    yas: 30,
+    is: 'developer',
+    diller: ['C', 'C++', 'Pyhton', 'JS'],
+    maas: 120000,
+  },
+  mehmet: {
+    ad: 'Mehmet',
+    soyad: 'Yilmaz',
+    yas: 24,
+    is: 'developer',
+    diller: ['C', 'C++', 'Pyhton', 'JS'],
+    maas: 200000,
+  },
+};
+
+console.log(kisilerObject);
+console.log(kisilerObject.ahmet.is);
+
+const kisiler = [
+  {
+    name: 'Ahmet',
+    surname: 'Can',
+    job: 'developer',
+    age: 30,
+  },
+  {
+    name: 'Mehmet',
+    surname: 'Baki',
+    job: 'tester',
+    age: 35,
+  },
+  {
+    name: 'Nur',
+    surname: 'Ersan',
+    job: 'team lead',
+    age: 40,
+  },
+  {
+    name: 'Merve',
+    surname: 'Veli',
+    job: 'developer',
+    age: 26,
+  },
+
+  {
+    name: 'Ruzgar',
+    surname: 'Kuzey',
+    job: 'tester',
+    age: 24,
+  },
+];
+
+console.log(kisiler);
+console.log(kisiler[4]);
