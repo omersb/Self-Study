@@ -131,3 +131,6 @@ const toplamMaas = maaslar.reduce((t, m) => t + m, 0);
 console.log('TOPLAM MAAS:', toplamMaas);
 
 //* maasi ortalamanin altinda olanlara %20 zam yapalim.
+// let maaslar = [3000,5000,4000,6000,6500];
+// let ortalama = maaslar.reduce((t,v) => t+v) / maaslar.length
+// console.log(maaslar.filter((x) => x > ortalama));
