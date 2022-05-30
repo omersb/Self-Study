@@ -27,8 +27,44 @@ console.log(buttons);
 ekleBtn.onclick = function () {
   if (!dilInput.value) {
     alert('Lütfen bir dil giriniz');
-  }else{
-    ul.innerHTML =
+  } else {
+    ul.innerHTML += ` <li>${dilInput.value}</li>`;
+    dilInput.value = '';
+    javascriptKontrol();
   }
-  <li></li>
+};
+
+const javascriptKontrol = () => {
+  document.querySelectorAll('ul li').forEach((dil) => {
+    const kucukHarf = dil.textContent.toLowerCase();
+    if (kucukHarf === 'javascript') {
+      // dil.className = 'red';
+      //?Alternatif yöntem
+      dil.setAttribute('class', 'red');
+    }
+  });
+};
+
+silBtn.onclick = function () {
+  ul.childElementCount > 0
+    ? ul.removeChild(ul.lastElementChild)
+    : alert('Silinecek dil kalmadi');
+};
+
+dilInput.addEventListener('keydown', (e) => {
+  // console.log(e);
+  if (e.keyCode === 13) {
+    ekleBtn.onclick();
+  }
+  // if (e.code === 'Enter') {
+  //   ekleBtn.onclick();
+  // }
+  if (e.code === 'Delete') {
+    silBtn.onclick();
+  }
+});
+
+window.onload = () => {
+  javascriptKontrol();
+  dilInput.focus();
 };
