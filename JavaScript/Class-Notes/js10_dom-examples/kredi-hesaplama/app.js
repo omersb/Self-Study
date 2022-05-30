@@ -31,6 +31,30 @@ hesaplaBtn.addEventListener('click', (e) => {
 });
 
 const sonuclariGoster = () => {
-    const sonuclar = document.
+    const sonuclar = document.querySelector(".sonuclar");
+
+    sonuclar.innerHTML =`<table class="table table-bordered border-warning mt-4">
+<tbody>
+    <tr>
+        <th>Kredi Miktarı</th>
+        <td>${tutar.value}</td>
+        <th>Kredi Tipi</th>
+        <td>${select.value}</td>
+    </tr>
+    <tr>
+        <th>Vade</th>
+        <td>${vade.value}</td>
+        <th>Faiz Oranı</th>
+        <td>${oran}</td>
+    </tr>
+    <tr>
+        <th>Toplam Tutar</th>
+        <td>${taksit * vade.value}</td>
+        <th>Taksit Tutarı</th>
+        <td>${taksit}</td>
+    </tr>
+  </tbody>
+</table>` ;
+
 }
 
