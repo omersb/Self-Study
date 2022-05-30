@@ -16,12 +16,43 @@
     <main class="container mt-4">
       <h1 class="text-warning">Kredi Hesaplama Aracı</h1>
       <section>
-        <select class="form-select" aria-label="Default select example">
+        <label for="select">Kredi:</label>
+        <select
+          id="select"
+          class="form-select"
+          aria-label="Default select example"
+        >
           <option selected>Seciniz</option>
           <option value="Konut Kredisi">Konut Kredisi</option>
           <option value="Ihtiyac Kredi">Ihtiyac Kredisi</option>
           <option value="Arac Kredisi">Arac Kredisi</option>
         </select>
+
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Vade</label
+            >
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label"
+              >Password</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
       </section>
       <section class="sonuclar"></section>
     </main>
