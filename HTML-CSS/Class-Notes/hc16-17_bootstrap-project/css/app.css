@@ -3,20 +3,25 @@
 }
 
 /*! ---------------------- 1- NAVBAR ----------------------------- */
-
-.navbar-light{
+.navbar-light {
   font-size: 1.2rem;
-  font-size: 600;
+  font-weight: 600;
   text-transform: uppercase;
   color: rgb(59, 59, 59);
   transition: color 1s;
 }
 
-.navbar-light .nav-link:hover{
+.navbar-light .nav-link:hover {
   color: var(--red);
 }
-
 /*! ---------------------- 2- CAROUSEL ----------------------------- */
+.carousel-item {
+  height: calc(100vh - 88px);
+}
+.carousel-item h1 {
+  color: var(--red);
+  text-shadow: 2px 2px 2px black;
+}
 
 /*! ------------------- 3- ABOUT SECTION ------------------------ */
 
