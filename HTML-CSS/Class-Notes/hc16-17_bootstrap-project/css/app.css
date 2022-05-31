@@ -16,11 +16,27 @@
 }
 /*! ---------------------- 2- CAROUSEL ----------------------------- */
 .carousel-item {
-  height: calc(100vh - 88px);
+  max-height: calc(100vh - 88px);
 }
+
 .carousel-item h1 {
   color: var(--red);
   text-shadow: 2px 2px 2px black;
+}
+
+.carousel-item p {
+  color: white;
+  font-weight: 500;
+}
+
+.carousel-item .buttons .btn{
+  width: 7rem;  
+  margin-bottom: 1rem;
+}
+
+.carousel-indicators button{  
+  background-color: var(--red);
+
 }
 
 /*! ------------------- 3- ABOUT SECTION ------------------------ */
