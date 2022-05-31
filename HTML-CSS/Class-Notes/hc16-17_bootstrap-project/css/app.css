@@ -14,7 +14,6 @@
 .navbar-light .nav-link:hover {
   color: var(--red);
 }
-
 /*! ---------------------- 2- CAROUSEL ----------------------------- */
 .carousel-item {
   max-height: calc(100vh - 88px);
@@ -49,6 +48,20 @@
 /*! ------------------- 3- ABOUT SECTION ------------------------ */
 
 /*! ------------------- 4- INSTRUCTORS ------------------------ */
+section#instructors .socials i {
+  transition: opacity 1s;
+}
+
+section#instructors .socials i:hover {
+  opacity: 0.5;
+}
+section#instructors .card {
+  transition: transform 1s;
+}
+
+section#instructors .card:hover {
+  transform: scale(1.05);
+}
 
 /*! ------------------- 4- STUDENTS SECTION ------------------------ */
 
