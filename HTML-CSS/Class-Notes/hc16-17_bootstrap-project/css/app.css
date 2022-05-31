@@ -14,6 +14,7 @@
 .navbar-light .nav-link:hover {
   color: var(--red);
 }
+
 /*! ---------------------- 2- CAROUSEL ----------------------------- */
 .carousel-item {
   max-height: calc(100vh - 88px);
@@ -29,14 +30,19 @@
   font-weight: 500;
 }
 
-.carousel-item .buttons .btn{
-  width: 7rem;  
+.carousel-item .buttons .btn {
+  width: 7rem;
   margin-bottom: 1rem;
 }
 
-.carousel-indicators button{  
-  background-color: var(--red);
-
+.carousel-indicators button {
+  background-color: var(--red) !important ;
+  height: 0.4rem !important;
+  width: 3rem !important ;
+  margin-right: 0.7rem !important;
+}
+.carousel-caption {
+  bottom: 5rem; /*20vh */
 }
 
 /*! ------------------- 3- ABOUT SECTION ------------------------ */
