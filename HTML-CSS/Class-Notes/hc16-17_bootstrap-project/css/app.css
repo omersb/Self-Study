@@ -68,17 +68,33 @@ section#courses .nav-link {
   color: white;
 }
 
-section#courses .nav-link.active {
+section#courses .nav-item .nav-link.active {
   background-color: var(--red);
 }
 
 /*! ------------------- 6- CONTACT SECTION ------------------------ */
-section#contact i{
+section#contact i {
   color: var(--red);
   font-size: 2rem;
 }
 
 /** ------------------- UP-BUTTON --------------------- */
+.up-btn {
+  color: white;
+  position: fixed;
+  background-color: var(--red);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  bottom: 1rem;
+  right: 1rem;
+  text-align: center;
+  padding: 0.6rem;
+  font-size: 1.2rem;
+}
+.up-btn:hover {
+  color: black;
+}
 
 /*! -------------------- 7- FOOTER ------------------------ */
 
