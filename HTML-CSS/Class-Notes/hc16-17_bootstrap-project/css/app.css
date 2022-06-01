@@ -23,7 +23,6 @@
   color: var(--red);
   text-shadow: 2px 2px 2px black;
 }
-
 .carousel-item p {
   color: white;
   font-weight: 500;
@@ -40,7 +39,6 @@
   width: 3rem !important ;
   margin-right: 0.7rem !important;
 }
-
 .carousel-caption {
   bottom: 5rem; /*20vh */
 }
