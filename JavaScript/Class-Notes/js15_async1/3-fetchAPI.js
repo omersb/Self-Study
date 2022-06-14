@@ -10,7 +10,5 @@
 //? fetch() fonksiyonu veri getirmek istediginiz kaynagin yolunu gosteren zorunlu
 //? bir parametre almaktadir ve bu istegin cevabini gosteren bir Promise dondurmektedir.
 
-fetch('https://www.clarusway.com')
-.then()
-.then()
-.catch();
+fetch('https://api.github.com/users')
+.then((res) => console.log(res));
