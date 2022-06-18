@@ -68,6 +68,7 @@ console.log(book1.__proto__);
 //? INHERITANCE (Kalitim - ES5)
 //?-------------------------------------------------------------------
 
+//? Sub-Class
 function Magazine(title, author, year, month) {
   //* parent'in object constructorinin cagrilmasi
   Book.call(this, title, author, year);
