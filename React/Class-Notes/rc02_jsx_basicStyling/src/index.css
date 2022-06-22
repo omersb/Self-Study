@@ -7,3 +7,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+header {
+  color: blueviolet;
+  text-align: center;
+  background-color: antiquewhite;
+  padding: 2rem;
+}
+footer {
+  color: white;
+  text-align: center;
+  background-color: black;
+  padding: 2rem;
+}
