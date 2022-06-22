@@ -1,6 +1,7 @@
 //? React,JSX kullanmaktadir.
 //? JSX'de, HTMl elementleri dogrudan JS icerisinde kullanilabilir
 
+import Footer from "./Footer";
 import Header from "./Header";
 
 //! Componentler, HTML,CSS ve JS kodlarindan meydana gelmiş
@@ -21,7 +22,7 @@ function App() {
   return (
     <>
       <Header />
-      <h1>APP</h1>
+      <Footer />
     </>
   );
 }
