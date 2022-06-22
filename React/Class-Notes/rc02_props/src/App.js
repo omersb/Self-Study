@@ -1,8 +1,11 @@
+import Msg from "./Msg";
 
 function App() {
   return (
     <>
-      <h1>APP</h1>
+      <Msg mesaj="Ahmet" />
+      <Msg mesaj="Mehmet" />
+      <Msg mesaj="Ismet" />
     </>
   );
 }
