@@ -1,4 +1,5 @@
-import Person from "./Person";
+import Person from './Person';
+import data from "./data"
 
 function App() {
   return (
