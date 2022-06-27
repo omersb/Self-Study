@@ -44,7 +44,6 @@ class Counter extends Component {
         <button onClick={this.handleInc} className="btn btn-success">
           INC
         </button>
-        <button className="btn btn-danger">CLR</button>
         <button onClick={this.handleDec} className="btn btn-warning">
           DEC
         </button>
