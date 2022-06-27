@@ -18,8 +18,17 @@
 //?    https://reactjs.org/docs/hooks-rules.html
 //* =====================================================================
 
+import { useState } from "react";
+
 const UseStateExample = () => {
-  return <div>UseStateExample</div>;
+  return (
+    <div className="container text-center mt-4">
+      <h1 className="display-4 text-danger m-4">USESTATE COUNT:</h1>
+      <button className="btn btn-success">INC</button>
+      <button className="btn btn-dark">CLR</button>
+      <button className="btn btn-warning">DEC</button>
+    </div>
+  );
 };
 
 export default UseStateExample;
