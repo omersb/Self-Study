@@ -1,7 +1,9 @@
+import Events from "../src/components/1-event-intro/Events.jsx";
+
 function App() {
   return (
     <div>
-      <h1>APP</h1>
+      <Events />
     </div>
   );
 }
