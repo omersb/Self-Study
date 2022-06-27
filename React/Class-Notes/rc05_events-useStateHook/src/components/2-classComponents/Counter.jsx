@@ -16,7 +16,7 @@ class Counter extends Component {
     super(props);
 
     this.state = {
-      count: 0,
+      count: props.count || 0,
     };
     //* handleInc metodunun Counter class'ina baglanmasi
     this.handleInc = this.handleInc.bind(this);
@@ -27,14 +27,15 @@ class Counter extends Component {
       count: this.state.count + 1,
     });
   }
-
   handleDec = () => {
     this.setState({
       count: this.state.count - 1,
     });
   };
 
-  //! Yazmis oldugumuz metotlar default olarak classa baglanmaz.Ancak, React built-in fonksiyonlari baglidir.
+  //! Yazmis oldugumuz metotlar default olarak classa baglanmaz.
+  //! Ancak, React built-in fonksiyonlari baglidir.
+
   //* Bunun icin metotlarimizi ya constructor icerisinde baglamaliyiz yada otomatik baglamayi saglayan arrow fonksiyonlarini kullanmaliyiz.
 
   render() {
@@ -44,6 +45,7 @@ class Counter extends Component {
         <button onClick={this.handleInc} className="btn btn-success">
           INC
         </button>
+
         <button onClick={this.handleDec} className="btn btn-warning">
           DEC
         </button>
