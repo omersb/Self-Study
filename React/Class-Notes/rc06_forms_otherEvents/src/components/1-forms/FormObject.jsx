@@ -1,50 +1,53 @@
 import { useState } from 'react';
 
-const Form = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const FormObject = () => {
+  const [formValues, setFormValues] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
 
-  const handleUsername = (e) => {
-    console.log(e.target.value);
-    setUsername(e.target.value);
+  const handleFormValues = (e) => {
+    // console.log(e.target.name);
+    // console.log(e.target.id);
+    // console.log(e.target.value);
+    setFormValues({ ...formValues, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     // e.preventDefault();
+    const { username, password, email } = formValues;
     alert(`username:${username}
     email:${email}
     password:${password}
     `);
-    // setEmail('');
-    // setPassword('');
-    // setUsername('');
   };
   return (
     <div>
       <form style={{ margin: '5rem' }} onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
-            Username <span className="text-danger">:{username}</span>
+            Username <span className="text-danger">:{formValues.username}</span>
           </label>
           <input
             type="text"
             className="form-control"
             id="username"
-            value={username}
-            onChange={handleUsername}
+            value={formValues.username}
+            onChange={handleFormValues}
           />
         </div>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
-            Email address <span className="text-danger">{email}</span>
+            Email address
+            <span className="text-danger">{formValues.email}</span>
           </label>
           <input
             type="email"
             className="form-control"
             id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={formValues.email}
+            onChange={handleFormValues}
           />
         </div>
         <div className="mb-3">
@@ -55,8 +58,8 @@ const Form = () => {
             type="password"
             className="form-control"
             id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={formValues.password}
+            onChange={handleFormValues}
           />
         </div>
 
@@ -68,4 +71,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default FormObject;
