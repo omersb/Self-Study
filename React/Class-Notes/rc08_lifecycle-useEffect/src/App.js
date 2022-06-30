@@ -1,16 +1,20 @@
-import LifeCycleMethods from "./components/LifeCycleMethods";
-import { useState } from "react";
+import LifeCycleMethods from './components/LifeCycleMethods';
+import { useState } from 'react';
+import UseEffectHook from './components/UseEffectHook';
 
 function App() {
   const [show, setShow] = useState(true);
-  console.log(show);
+
   return (
-    <div className="container text-center mt-4">
+    <div className="container text-center" style={{ marginTop: '10rem' }}>
       <button className="btn btn-dark" onClick={() => setShow(!show)}>
-        Show
+        {show ? 'Hide' : 'Show'}
       </button>
 
-      {show && <LifeCycleMethods />}
+      {/* Conditional Rendering (Short-Circuit) */}
+      {/* {show && <LifeCycleMethods />} */}
+      {/* {show ? <LifeCycleMethods /> : null} */}
+      {show && <UseEffectHook/>}
     </div>
   );
 }
