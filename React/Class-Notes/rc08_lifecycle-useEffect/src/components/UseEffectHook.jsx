@@ -6,7 +6,7 @@
 //! componentDidMount,componentDidUpdate,ve componentWillUnmount
 //! metotlarinin bir birlesimi gibi dusunulebilir.
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 //! useEffect(() => {
 //*   /* ComponentDidMount code */
@@ -51,19 +51,21 @@ const UseEffectHook = () => {
 
   //! ComponentDidMount + componentWillUnmount
   const fetchData = () => {
-    console.log("Data Fetched");
+    console.log('Data Fetched');
   };
 
   useEffect(() => {
+    //! ComponentDidMount
     const timerId = setInterval(fetchData, 1000);
-    console.log("Mounted");
+    console.log('Mounted');
     return () => {
+      //! componentWillUnmount
       clearInterval(timerId);
-      console.log("Unmounted");
+      console.log('Unmounted');
     };
   }, []);
 
-  console.log("rendered");
+  console.log('rendered');
   return (
     <div className="container text-center mt-4">
       <h1 className="text-danger">USEEFFECT</h1>
