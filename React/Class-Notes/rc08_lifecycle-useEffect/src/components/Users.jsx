@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 const Users = () => {
-  const [users, setUsers] = useState("");
+  const [users, setUsers] = useState([]);
 
   const getUsers = () => {
     fetch('https://jsonplaceholder.typicode.com/users')
@@ -22,10 +22,15 @@ const Users = () => {
         Get users
       </button> */}
       <div className="row">
-        <div className="col">
-          <img src="" alt="" />
-          <h6>Name</h6>
-        </div>
+        {users.map((user) => {
+          const { id, name } = user;
+          return (
+            <div className="col" key={id}>
+              <img src={`https://i.pravatar.cc/300?img=${id}`} alt="" />
+              <h6>{name}</h6>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
