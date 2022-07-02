@@ -1,20 +1,7 @@
-import { FaEdit } from 'react-icons/fa';
-import { AiFillDelete } from 'react-icons/ai';
+import { FaEdit } from "react-icons/fa";
+import { AiFillDelete } from "react-icons/ai";
 
-const TutorialList = () => {
-  //? Test data
-  let tutorials = [
-    {
-      id: 1,
-      title: 'ReactJS',
-      description: 'React is a JS-library for UI Design',
-    },
-    {
-      id: 2,
-      title: 'HTML',
-      description: 'HTML is a markup language',
-    },
-  ];
+const TutorialList = ({ tutorials }) => {
   return (
     <div className="container mt-4">
       <table className="table table-striped">

@@ -9,8 +9,12 @@ const Home = () => {
   const url = " https://cw-axios-example.herokuapp.com/api/tutorials";
 
   const getTutorials = async () => {
-    const { data } = await axios.get(url);
-    setTutorials(data);
+    try {
+      const { data } = await axios.get(url);
+      setTutorials(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   //! Sadece Component mount oldugunda istek yapar
@@ -23,7 +27,7 @@ const Home = () => {
   return (
     <>
       <AddTutorial />
-      <TutorialList />
+      <TutorialList tutorials={tutorials} />
     </>
   );
 };
