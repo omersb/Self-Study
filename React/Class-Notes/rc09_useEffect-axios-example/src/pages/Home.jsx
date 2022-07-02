@@ -35,6 +35,15 @@ const Home = () => {
     getTutorials();
   };
 
+  const deleteTutorial = async (id) => {
+    try {
+      await axios.delete(`${url}/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials();
+  };
+
   return (
     <>
       <AddTutorial addTutorial={addTutorial} />
