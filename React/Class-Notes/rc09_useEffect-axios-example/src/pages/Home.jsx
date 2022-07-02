@@ -50,7 +50,7 @@ const Home = () => {
       .map(() => ({ title: title, description: desc })); // return yerine paranteze aldık
     console.log(filtered);
     try {
-      await axios.put(`${url}/${id}`);
+      await axios.put(`${url}/${id}`, filtered[0]);
     } catch (error) {
       console.log(error);
     }
