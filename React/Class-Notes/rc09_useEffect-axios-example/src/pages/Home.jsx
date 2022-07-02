@@ -8,6 +8,7 @@ const Home = () => {
 
   const url = " https://cw-axios-example.herokuapp.com/api/tutorials";
 
+  //! GET (Read)
   const getTutorials = async () => {
     try {
       const { data } = await axios.get(url);
@@ -17,16 +18,21 @@ const Home = () => {
     }
   };
 
-  //! Sadece Component mount oldugunda istek yapar
+  //? Sadece Component mount oldugunda istek yapar
   useEffect(() => {
     getTutorials();
   }, []);
 
   console.log(tutorials);
 
+  //! POST (Create)
+  const addTutorial = (tutorial) => {
+    console.log("add");
+  };
+
   return (
     <>
-      <AddTutorial />
+      <AddTutorial addTutorial={addTutorial} />
       <TutorialList tutorials={tutorials} />
     </>
   );
