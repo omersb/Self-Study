@@ -3,12 +3,12 @@ import TutorialList from "../components/TutorialList";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
+// aşağıyı ilgilendiren herşeyi bu parent ta yapabiliriz
 const Home = () => {
   const [tutorials, setTutorials] = useState();
 
-  const url = "https://cw-axios-example.herokuapp.com/api/tutorials";
+  const url = `https://cw-axios-example.herokuapp.com/api/tutorials`;
 
-  //! GET (Read)
   const getTutorials = async () => {
     try {
       const { data } = await axios.get(url);
@@ -18,21 +18,21 @@ const Home = () => {
     }
   };
 
-  //? Sadece Component mount oldugunda istek yapar
   useEffect(() => {
     getTutorials();
   }, []);
-
   console.log(tutorials);
 
-  //! POST (Create)
+  //POST
   const addTutorial = async (tutorial) => {
     try {
       await axios.post(url, tutorial);
+
+      console.log("add");
     } catch (error) {
       console.log(error);
     }
-    getTutorials();
+    getTutorials(); // post tan sonra yeniden çekiyoruz güncel veriyi alıyoruz böyle state ya da props değiştirerek altta tutorials props unu değiştirmiş ve yeniden tetiklemiş oluyoruz
   };
 
   const deleteTutorial = async (id) => {
@@ -44,10 +44,26 @@ const Home = () => {
     getTutorials();
   };
 
+  const editTutorial = async (id, title, desc) => {
+    const filtered = tutorials
+      .filter((tutor) => tutor.id === id)
+      .map(() => ({ title: title, description: desc })); // return yerine paranteze aldık
+    console.log(filtered);
+    try {
+      await axios.put(`${url}/${id}`);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
       <AddTutorial addTutorial={addTutorial} />
-      <TutorialList tutorials={tutorials} />
+      <TutorialList
+        tutorials={tutorials}
+        deleteTutorial={deleteTutorial}
+        editTutorial={editTutorial}
+      />
     </>
   );
 };
