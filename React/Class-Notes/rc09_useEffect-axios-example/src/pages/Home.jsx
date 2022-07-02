@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const Home = () => {
   const [tutorials, setTutorials] = useState();
 
-  const url = " https://cw-axios-example.herokuapp.com/api/tutorials";
+  const url = "https://cw-axios-example.herokuapp.com/api/tutorials";
 
   //! GET (Read)
   const getTutorials = async () => {
@@ -26,8 +26,13 @@ const Home = () => {
   console.log(tutorials);
 
   //! POST (Create)
-  const addTutorial = (tutorial) => {
-    console.log("add");
+  const addTutorial = async (tutorial) => {
+    try {
+      await axios.post(url, tutorial);
+    } catch (error) {
+      console.log(error);
+    }
+    getTutorials();
   };
 
   return (
