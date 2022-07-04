@@ -1,6 +1,6 @@
-import { FaEdit } from "react-icons/fa";
-import { AiFillDelete } from "react-icons/ai";
-import EditTutorial from "./EditTutorial";
+import { FaEdit } from 'react-icons/fa';
+import { AiFillDelete } from 'react-icons/ai';
+import EditTutorial from './EditTutorial';
 
 const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
   return (
@@ -24,13 +24,13 @@ const TutorialList = ({ tutorials, deleteTutorial, editTutorial }) => {
                 <th>{id}</th>
                 <td>{title}</td>
                 <td>{description}</td>
-                <td className="text-center">
+                <td className="text-center text-nowrap">
                   <FaEdit
                     data-bs-toggle="modal"
                     data-bs-target="#edit-modal"
                     size={20}
-                    className="me-3 text-warning cursor-pointer"
-                    onClick={() => editTutorial(id, "CSS", "Styleheet")}
+                    className="me-2 text-warning cursor-pointer"
+                    onClick={() => editTutorial(id, 'CSS', 'Styleheet')}
                   />
                   <AiFillDelete
                     size={22}
