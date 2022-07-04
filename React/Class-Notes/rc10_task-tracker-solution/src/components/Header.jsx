@@ -1,12 +1,11 @@
-import AddTaskForm from "./AddTaskForm";
-import { useState } from "react";
+import AddTaskForm from './AddTaskForm';
+import { useState } from 'react';
 
-const Header = () => {
+const Header = ({ tasks, setTasks }) => {
   const [show, setShow] = useState(false);
-
   const [btnStyle, setBtnStyle] = useState({
-    name: "SHOW ADD TASK BAR",
-    bgColor: "purple",
+    name: 'SHOW ADD TASK BAR',
+    bgColor: 'purple',
   });
 
   //! React, default olarak state'leri hemen degistirmeyebilir.
@@ -16,17 +15,17 @@ const Header = () => {
   //! Ayni event icerisinde birbirine bagli state'leri kullanirken buna dikkat etmek gerkir.
 
   //? https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates
-  //? 📢 React doesn't update states instantly, it updates them in bulk. States are updated with async logic to avoid over-rendering
+
   const handleShow = () => {
     if (show) {
       setBtnStyle({
-        name: "SHOW ADD TASK BAR",
-        bgColor: "purple",
+        name: 'SHOW ADD TASK BAR',
+        bgColor: 'purple',
       });
     } else {
       setBtnStyle({
-        name: "CLOSE ADD TASK BAR",
-        bgColor: "red",
+        name: 'CLOSE ADD TASK BAR',
+        bgColor: 'red',
       });
     }
     setShow(!show);
@@ -43,7 +42,7 @@ const Header = () => {
       >
         {btnStyle.name}
       </button>
-      {show && <AddTaskForm />}
+      {show && <AddTaskForm tasks={tasks} setTasks={setTasks} />}
     </header>
   );
 };
