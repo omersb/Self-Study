@@ -47,13 +47,16 @@ const Home = () => {
 
   //! Update (PUT:Whole Update,PATCH :Partially Update)
   const editTutorial = async (id, title, desc) => {
-    const filtered = tutorials
-      .filter((tutor) => tutor.id === id)
-      .map((item) => ({ title: title, description: desc }));
+    //! Bu kisma gerek yok aslinda degistirmek istedigimiz
+    //! veriler alt componentten geliyor. Dolayısiyla
+    //! dogurdan axios istegini gonderebiliriz
+    // const filtered = tutorials
+    //   .filter((tutor) => tutor.id === id)
+    //   .map((item) => ({ title: title, description: desc }));
 
-    console.log(filtered);
+    // console.log(filtered);
     try {
-      await axios.put(`${url}/${id}`, filtered[0]);
+      await axios.put(`${url}/${id}`, { title, description: desc });
     } catch (error) {
       console.log(error);
     }
