@@ -10,7 +10,7 @@ const Header = () => {
           <Logo src="./images/logo.png"></Logo>
           <div>
             <Button color="#A62440">Apply Courses</Button>
-            <Button bg="#A62440">Talk to Advisor</Button>
+            <Button bg="#A62440">Talk to Adviser</Button>
           </div>
         </Nav>
       </Container>
