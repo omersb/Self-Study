@@ -9,6 +9,7 @@ const Button = styled.button`
   padding: 1rem 1.2rem;
   font-size: 1.1rem;
   margin-right: 0.5rem;
+  margin: 2rem 0.5rem;
   cursor: pointer;
   &:hover {
     opacity: 0.9;
