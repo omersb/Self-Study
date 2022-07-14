@@ -12,7 +12,7 @@ import defaultImage from "../../assets/default-image.jpg";
 
 const Detail = () => {
   const { state } = useLocation();
-  console.log(state);
+
   return (
     <DetailContainer>
       <HeaderContainer>
@@ -57,7 +57,7 @@ const Detail = () => {
 
         <IngContainer>
           {state.ingredientLines.map((line, index) => (
-            <div>
+            <div key={index}>
               <p>
                 {index + 1} - {line}
               </p>
