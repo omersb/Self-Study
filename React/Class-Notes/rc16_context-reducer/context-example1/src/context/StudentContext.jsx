@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext } from 'react';
 
-//? Context oluşturuldu
+//? Context olusturuldu
 export const StudentContext = createContext();
