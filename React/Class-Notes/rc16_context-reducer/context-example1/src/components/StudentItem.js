@@ -4,15 +4,16 @@ import { StudentContext } from '../context/StudentContext';
 const StudentItem = ({ student }) => {
   const { id, name, age, color, email } = student;
 
-  const { students, setStudents } = useContext(StudentContext);
+  // const { students, setStudents } = useContext(StudentContext);
+  const { changeColor } = useContext(StudentContext);
 
-  const changeColor = (id, color) => {
-    setStudents(
-      students.map((student) =>
-        student.id === id ? { ...student, color: color } : student
-      )
-    );
-  };
+  // const changeColor = (id, color) => {
+  //   setStudents(
+  //     students.map((student) =>
+  //       student.id === id ? { ...student, color: color } : student
+  //     )
+  //   );
+  // };
   return (
     <div
       style={{
