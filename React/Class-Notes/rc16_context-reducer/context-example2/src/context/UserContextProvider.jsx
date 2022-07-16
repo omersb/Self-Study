@@ -1,5 +1,5 @@
-import { reateContext } from "react";
-import { useState } from "react";
+import { createContext } from 'react';
+import { useState } from 'react';
 
 //? 1- Defining
 export const UserContext = createContext();
@@ -9,7 +9,7 @@ const UserContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/users")
+    fetch('https://api.github.com/users')
       .then((res) => res.json())
       .then((data) => setUsers(data));
   }, []);
