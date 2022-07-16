@@ -1,4 +1,4 @@
 import { createContext } from "react";
 
-//! We create a context for student object and export for future usage
+//? Context oluşturuldu
 export const StudentContext = createContext();
