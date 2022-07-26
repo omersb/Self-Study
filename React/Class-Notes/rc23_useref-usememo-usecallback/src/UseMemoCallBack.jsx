@@ -1,17 +1,17 @@
-import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import Users from "./components/Users";
+import axios from 'axios';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import Users from './components/Users';
 
 const UseMemoCallBack = () => {
   const [users, setUsers] = useState([]);
-  const [text, setText] = useState("");
-  const [search, setSearch] = useState("");
-  console.log("text", text, "search", search);
+  const [text, setText] = useState('');
+  const [search, setSearch] = useState('');
+  console.log('text', text, 'search', search);
   //   const inputRef = useRef();
 
   useEffect(() => {
     axios
-      .get("https://jsonplaceholder.typicode.com/users")
+      .get('https://jsonplaceholder.typicode.com/users')
       .then((res) => setUsers(res.data));
   }, []);
   //   console.log(users);
@@ -21,15 +21,29 @@ const UseMemoCallBack = () => {
     // setSearch(inputRef.current.value);
   };
 
-  const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(search.toLowerCase())
+  const filteredUsers = useMemo(
+    () =>
+      users.filter((user) =>
+        user.name.toLowerCase().includes(search.toLowerCase())
+      ),
+    [users, search]
   );
 
+  const addUser = () => {
+    setUsers([
+      ...users,
+      { id: users.length + 1, name: `Clarusway-${users.length - 9}` },
+    ]);
+  };
+
+  console.log(filteredUsers);
   return (
     <div>
       <input type="search" onChange={(e) => setText(e.target.value)} />
-      <button onClick={{ handleSearch }}>Search User</button>
-      <Users users={users} />
+      {/* <input type="search" ref={inputRef} /> */}
+      <button onClick={handleSearch}>Search User</button>
+      <Users users={filteredUsers} addUser={addUser} />
+      {/* <Users users={users} /> */}
     </div>
   );
 };
