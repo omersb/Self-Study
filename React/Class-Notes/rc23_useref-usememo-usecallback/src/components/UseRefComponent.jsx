@@ -1,6 +1,7 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const UseRefComponent = () => {
+  const [value, setValue] = useState(0);
   //* useRef birinci kullanım
   //* DOM elementlerine ulaşmamızı sağlar
   const inputRef = useRef(null);
@@ -9,6 +10,7 @@ const UseRefComponent = () => {
     // document.querySelector("input").focus();
     // inputRef.current.focus();
   }, []);
+
   const ChangeBGColor = () => {
     // divRef.current.style.backgroundColor = "orange";
     // const colors = [
@@ -24,11 +26,14 @@ const UseRefComponent = () => {
     divRef.current.style.backgroundColor = inputRef.current.value;
   };
 
+  const increase = () => {setValue(value + 1)}
+
   return (
     <div ref={divRef} className="useref">
       <h2>UseRef Component</h2>
       <input ref={inputRef} type="color" placeholder="Enter text..." />
       <button onClick={ChangeBGColor}>ChangeBGColor</button>
+      <button onClick={increase}>increase Value</button>
     </div>
   );
 };
