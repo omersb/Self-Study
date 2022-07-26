@@ -1,12 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
+import UserItem from "./UserItem";
 
 const Users = ({ users }) => {
-  console.log('Users Component Rendered');
+  console.log("Users Component Rendered");
 
   return (
-    <div>
-      <button onClick={null}>Add User</button>
-      {users?.map((user) => null)}
+    <div className="users">
+      <button id="add-button" onClick={null}>
+        Add User
+      </button>
+      {users?.map((user) => (
+        <UserItem key={user.id} user={user} />
+      ))}
     </div>
   );
 };
