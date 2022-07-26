@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import Users from './components/Users';
 
 const UseMemoCallBack = () => {
   const [users, setUsers] = useState([]);
@@ -9,7 +10,11 @@ const UseMemoCallBack = () => {
       .then((res) => setUsers(res.data));
   }, []);
   console.log(users);
-  return <div>UseMemoCallBack</div>;
+  return (
+    <div>
+      <Users users={users} />
+    </div>
+  );
 };
 
 export default UseMemoCallBack;

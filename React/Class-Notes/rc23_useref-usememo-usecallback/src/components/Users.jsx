@@ -6,7 +6,7 @@ const Users = ({ users }) => {
   return (
     <div>
       <button onClick={null}>Add User</button>
-      user
+      {users?.map((user) => null)}
     </div>
   );
 };
