@@ -1,5 +1,11 @@
 import axios from 'axios';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import Users from './components/Users';
 
 const UseMemoCallBack = () => {
@@ -21,6 +27,7 @@ const UseMemoCallBack = () => {
     // setSearch(inputRef.current.value);
   };
 
+  //* useMemo Memoize edilmiş bir değer döndürür.
   const filteredUsers = useMemo(
     () =>
       users.filter((user) =>
@@ -29,12 +36,13 @@ const UseMemoCallBack = () => {
     [users, search]
   );
 
-  const addUser = () => {
+  //* useCallBack Memoize edilmiş bir callback fonksiyonu döndürür.
+  const addUser = useCallback(() => {
     setUsers([
       ...users,
       { id: users.length + 1, name: `Clarusway-${users.length - 9}` },
     ]);
-  };
+  }, [users]);
 
   console.log(filteredUsers);
   return (
