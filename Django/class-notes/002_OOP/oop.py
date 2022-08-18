@@ -98,32 +98,112 @@ print("-----------------------------------")
 #* inheritance
 
 
+#? encapsulation and abstraction
+# class Person:
+#     company = "clarusway"
+    
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         self._id = 5000
+#         self.__id = 3000
+        
+
+#     def __str__(self):
+#         return f"{self.name} - {self.age}"
+
+#     def get_details(self):
+#         print(self.name, self.age)
+        
+
+# person1 = Person("henry", 18)
+# person1._id = 4000
+# print(person1._id)
+# print(person1.__id)
+# print(person1._Person__id)
+
+# liste = [2,5,3,4,4]
+# liste.sort()
+# print(liste)
+
+#? inheritance and polymorphism (and multiple inheritance)
 class Person:
     company = "clarusway"
     
     def __init__(self, name, age):
         self.name = name
         self.age = age
-        self._id = 5000
-        self.__id = 3000
-        
 
     def __str__(self):
         return f"{self.name} - {self.age}"
 
     def get_details(self):
         print(self.name, self.age)
-        
 
-person1 = Person("henry", 18)
-person1._id = 4000
-# print(person1._id)
-# print(person1.__id)
-# print(person1._Person__id)
+class Lang:
+    def __init__(self, langs):
+        self.langs = langs
+    
+    def display_langs(self):
+        print(self.langs)
 
-liste = [2,5,3,4,4]
-liste.sort()
-print(liste)
+
+class Employee(Person, Lang):
+    def __init__(self, name, age, path, langs):
+        # self.name = name
+        # self.age = age
+        super().__init__(name, age)
+        # self.langs = langs
+        self.path = path
+        Lang.__init__(self, langs)
+
+    def get_details(self):
+        # print(self.name, self.age, self.path)
+        super().get_details()
+        print(self.path)
+
+emp1 = Employee("vic", 32, "FS", ["pyhton", "JS"])
+# emp1.get_details()
+# emp1.display_langs()
+
+
+#! inner class
+
+# from django.db import models
+
+# class Article(models.Model):
+#     name = models.CharField(max_length=50)
+#     author = models.CharField(max_length=50)
+
+#     class Meta:    # standart isim değişmez class Meta:
+#         ordering = ["name"]
+
+# print(Employee.mro())
+# print(help(Employee))
+
+#!Topics to be Covered:
+
+#* Everything in Python is class
+#? Defining class
+#* Defining class attributes
+#? Difference between class attributes and instance attributes
+#* SELF keyword
+#? Static methods
+#* Special methods (init, str)
+#? 4 pillars of OOP:
+#     Encapsulation
+#     Abstraction
+#     Inheritance
+#        Multiple inheritance
+#     Polymorphism
+#        Overriding methods
+#* Inner class
+
+
+
+
+
+
 
 
 print("-----------------------------------")
