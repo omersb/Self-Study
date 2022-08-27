@@ -1,4 +1,3 @@
-from random import choices
 from django.db import models
 
 # Create your models here.
@@ -11,7 +10,7 @@ class Student(models.Model):
     email = models.EmailField(max_length=254)
 
     GENDER = (
-        ('female', 'female'),
+        ('Female', 'Female'),
         ('Male', 'Male'),
         ('Other', 'Other'),
         ('Prefer', 'Prefer not to say')
