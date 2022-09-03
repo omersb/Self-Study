@@ -1,0 +1,83 @@
+{% extends 'todo/base.html' %}
+{% block title %}
+        Todos
+{% endblock title %}
+
+{% block content %}
+        
+    
+<div class="col">
+    <div class="border">
+        {% if todos|length == 0 %}
+        <div class="p-4">
+            <br>
+            <br>
+            <div class="alert alert-danger text-center">
+                <p class="" style="font-size: 30px;">ToDo Lists</p>
+            </div>
+            <br>
+            <br>
+        </div>
+        {%else%}
+        <div class="p-2">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Title</th>
+                        <th>Is Done?</th>
+                        <th>Priority</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for todo in todos%}
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td>{{todo.title}}</td>
+                        {% if todo.is_done == True%}
+                        <td>
+                            ✅
+                        </td>
+                        {% elif todo.is_done == 'I'%}
+                        <td>
+                            🚧
+                        </td>
+                        {% elif todo.is_done == False %}
+                        <td>
+                            💤
+                        </td>
+                        {%endif%}
+
+                        <td>
+                            {% if todo.priority == '1'%}
+                                1️⃣
+                            {%elif todo.priority == '2'%}
+                                2️⃣
+                            {%elif todo.priority == '3'%}
+                                3️⃣
+                            {%elif todo.priority == '4'%}
+                                4️⃣
+                            {%elif todo.priority == '5'%}
+                                5️⃣
+                            {%endif%}
+                        </td>
+
+                        <td>
+                            <a href="delete/{{todo.id}}" title="Delete" class="">🗑️</a> 
+                        </td>
+                        <td>
+                                <a href="/update/{{todo.id}}"  class="">⚙️</a> 
+
+                        </td>
+                    </tr>
+                    
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {%endif%}
+    </div>
+</div>
+{% endblock content %}
