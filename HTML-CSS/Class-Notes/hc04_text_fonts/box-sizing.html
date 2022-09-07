@@ -1,51 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bax Sizing</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOX_SIZING</title>
     <style>
-        #content-box{
-            background-color: darkorange;
-            border: 5px solid red;
-            height: 50px;
-            padding: 20px;        
-        }
-        #border-box{
-            background-color: crimson;
-            border: 5px solid blue;
-            height: 50px;
-            padding: 20px;
-            box-sizing: border-box;
-            margin-bottom: 60px;
-        }
-        span{
-            background-color: red;
-            padding: 50px;
-        }
-        h2{
-            margin-top: -40px;
-        }
+      h2 {
+        margin-top: -40px;
+      }
+      #content {
+        /* box-sizing:content-box;
+            default olarak bu var zaten, yazmaya gerek yok */
+        background-color: crimson;
+        /* width:750px; */
+        padding: 20px;
+        border: 5px solid blue;
+        height: 50px;
 
+        /* verilen width height, padding lerden çok fazlaysa, son verilen padding boşa olur, örneğin height çok, padding bottom belli olmuyor */
+        /* padding:40px 20px 10px 20px ; */
+        /* height: 10px; */
+        /* yukardaki gibi bir height toplam 60 px yapar, yazı da old için son padding gözükmez, görünmesi için son padding i yada height arttırmak lazım */
+        /* height=bottom+top+height */
+        /* width=right+left+width */
+      }
+
+      #borderBox {
+        box-sizing: border-box;
+        background-color: darkorange;
+        padding: 20px;
+        border: 5px solid red;
+        height: 50px;
+        margin-bottom: 60px;
+      }
+      span {
+        background-color: red;
+        /* padding:50px */
+      }
+
+      /* inline elemanlara yatayda padding verilebilir.     alt üst diğer elemanların üstüne taştı */
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>CONTENT BOX</h1>
-    
-    <img src="./images/planets-solar-system-infographic_1308-51879.jpg" alt="">
-  
-    <p id="content-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugiat odit deserunt blanditiis possimus aspernatur provident enim laborum! Fugiat omnis beatae vitae repudiandae modi eum odit non cumque exercitationem. Dolore, esse.</p>
+    <img
+      src="./images/planets-solar-system-infographic_1308-51879.jpg"
+      alt=""
+    />
+    <p id="content">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, minus
+      blanditiis fugit fuga ipsum accusamus corrupti, non possimus commodi
+      totam, facere adipisci sint quibusdam? Iure officiis neque totam eligendi
+      velit.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam,
+      minus blanditiis fugit fuga ipsum accusamus corrupti, non possimus commodi
+      totam, facere adipisci sint quibusdam? Iure officiis neque totam eligendi
+      velit
+    </p>
 
-    <span>Merhaba naber cohort-11</span>
+    <span>Lorem, ipsum dolor.</span>
 
     <h1>BORDER-BOX</h1>
 
-    <img src="./images/Put-the-Planets-in-Order-Classroom-Activity-Featured-Image-768x274.jpg" alt="">
-
-    <h2>Resmin üstinde</h2>
-
-    <p id="border-box">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis iure ducimus qui illum recusandae sed laborum eos adipisci commodi suscipit ad fugiat voluptas nemo libero ea fugit aliquam, magnam exercitationem?</p>
-
-</body>
+    <img
+      src="./images/Put-the-Planets-in-Order-Classroom-Activity-Featured-Image-768x274.jpg"
+      alt=""
+    />
+    <h2>resmin üstünde</h2>
+    <p id="borderBox">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eveniet
+      omnis facilis aut possimus nobis, praesentium consectetur reprehenderit
+      corrupti distinctio quam, incidunt quidem sequi sint itaque voluptate?
+      Doloremque, in quod!
+    </p>
+  </body>
 </html>

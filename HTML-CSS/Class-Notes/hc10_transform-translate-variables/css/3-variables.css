@@ -1,18 +1,18 @@
-@import "./theme.css";
+@import 'theme.css';
 
 body {
-    font-family: var(--ff-monteserrat);
+  font-family: var(--ff-monteserrat);
 }
 
 h1 {
-    font-family: var(--ff-lato);
+  font-family: var(--ff-lato);
 }
 
 div {
-    box-shadow: var(--koyu-gölge);
+  box-shadow: var(--koyu-gölge);
 }
 
 p {
-    color: var(--turuncu);
-    background-color: var(--gri-8);
+  color: var(--acik-sari);
+  background-color: var(--gri-8);
 }

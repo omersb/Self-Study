@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  font-family: Roboto;
+  box-sizing: border-box;
+  color: aliceblue;
+  text-align: center;
+}
+
+header.banner .bg {
+  background-image: url('./img/tree.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-position: center center;
+  padding: 1rem;
+}
+
+header.banner .bg h1 {
+  font-size: 3rem;
+}
+header.banner .bg p {
+  font-size: 1.5rem;
+}
+header.banner .butonlar span {
+  display: inline-block;
+  background-color: grey;
+  width: 5rem;
+  height: 0.5rem;
+  margin-right: 0.7rem;
+}
+
+header.banner .butonlar {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 0;
+  right: 0;
+}
+
+header.banner .butonlar .aktif {
+  background-color: tomato;
+}

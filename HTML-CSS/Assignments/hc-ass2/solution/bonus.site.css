@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+nav.navbar-top {
+  background-color: #8865a7;
+  color: white;
+  font-weight: 500;
+}
+
+nav.navbar-top a {
+  color: white;
+  text-decoration: none;
+}
+
+nav.navbar-top .menu-top {
+  float: right;
+  margin: 1.4rem 1rem;
+}
+
+nav.navbar-top .menu-top a:hover {
+  color: black;
+}
+
+.clearfix {
+  clear: both;
+}
+nav.navbar-main {
+  background-color: #ffaa53;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
+}
+nav.navbar-main .menu-main {
+  text-align: center;
+}
+
+nav.navbar-main .menu-main a {
+  color: black;
+  text-decoration: none;
+  font-weight: 800;
+  margin-right: 3rem;
+}
+
+nav.navbar-main .menu-main a:hover {
+  color: white;
+}
+
+main {
+  text-align: justify;
+  margin: 2rem;
+}
+.slack {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  background-color: red;
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.6rem;
+  border-radius: 50%;
+  padding: 0.2rem;
+  text-align: center;
+}
+.slack i:hover {
+  color: yellow;
+  font-weight: 900;
+}

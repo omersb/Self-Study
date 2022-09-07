@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+header {
+  background-color: red;
+  color: white;
+  padding: 2rem;
+}
+
+nav {
+  background-color: blue;
+  padding: 0.2rem;
+}
+
+aside {
+  background-color: yellow;
+  padding: 1rem;
+  float: left;
+  width: 20%;
+
+  /*! Header, nav ve footer'ın yüksekliği yaklaşık olarak 200px civarı (CSS Viewer ile bakılabilir) */
+  /*? calc() fonksiyonu CSS içerisinde matematiksel işlemler yapmaya olanak sağlar */
+  height: calc(100vh - 200px);
+}
+
+main {
+  float: right;
+  width: 80%;
+  padding: 2rem;
+  height: calc(100vh - 200px);
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  padding: 2rem;
+}
+
+.clearfix {
+  clear: both;
+}

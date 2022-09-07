@@ -1,22 +1,29 @@
 .box {
-    border: 2px solid red;
-    width: 20rem;
-    height: 5rem;
-    margin-bottom: 10rem;
+  border: 2px solid red;
+  width: 20rem;
+  height: 5rem;
+  margin-bottom: 10rem;
 }
-
 .first {
-    overflow: visible; /*default değeri */
+  overflow: visible; /* default visible*/
 }
 
-.second{
-    overflow: hidden;
+.second {
+  overflow: hidden;
 }
 
-.third{
-    overflow: scroll;
+.third {
+  overflow: scroll;
 }
 
 .fourth {
-    overflow: auto;
+  overflow: auto;
+}
+
+.fifth {
+  overflow: auto;
+}
+
+.par {
+  width: 80rem;
 }
