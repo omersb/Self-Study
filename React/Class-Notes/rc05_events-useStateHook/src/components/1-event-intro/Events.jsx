@@ -11,17 +11,17 @@
 //? Ayrinti icin : https://reactjs.org/docs/events.html
 
 const Events = () => {
-  let info = "EVENTS";
+  let info = 'EVENTS';
 
   const handleClick = () => {
-    alert("Btn Clicked");
+    alert('Btn Clicked');
   };
 
   const handleClear = (text) => {
     alert(text);
   };
   const handleChange = (e) => {
-    info = "HOOKS";
+    info = 'HOOKS';
     console.log(info);
     console.log(e.target);
   };
@@ -37,7 +37,7 @@ const Events = () => {
       bu fonksiyon bir arrow fonks. tarafindan  cagrilmalidir. Aksi
       takdirde event fonksiyonu event gerceklesmeden cagirilir */}
       <button
-        onClick={() => handleClear("Clear Btn pressed")}
+        onClick={() => handleClear('Clear Btn pressed')}
         className="btn btn-dark"
       >
         Clear

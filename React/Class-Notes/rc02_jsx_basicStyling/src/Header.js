@@ -12,3 +12,4 @@ export default Header;
 //* export default ile proje icerisinde herhangi bir yerde
 //* kullanima kullanima acimiş olur. Kullanmak icin hedef
 //* dosyada import .... from "./..." ile import yapmak yeterlidir.
+

@@ -18,7 +18,7 @@
 //?    https://reactjs.org/docs/hooks-rules.html
 //* =====================================================================
 
-import { useState } from "react";
+import { useState } from 'react';
 
 const UseStateExample = () => {
   //* useState en cok kullanilan Hook'tur.
@@ -30,8 +30,8 @@ const UseStateExample = () => {
   const [count, setCount] = useState(0); //! array destruc.
 
   const [info, setInfo] = useState({
-    name: "Ahmet Yilmaz",
-    email: "ay@gmail.com",
+    name: 'Ahmet Yilmaz',
+    email: 'ay@gmail.com',
     age: 32,
   });
 
@@ -44,13 +44,14 @@ const UseStateExample = () => {
   };
 
   const incAge = () => {
-    // setInfo(info.age + 1)
+    // setInfo(info.age + 1);
     // console.log(info.age);
-    setInfo({...info, age: info.age + 1}); //! sepretle (...) önce açıyoruz key:value değiştiriyoruz
+    // setInfo({ name: 'mehmet yilmaz', email: 'my@gmail.com', age: 44 });
+    //? key:Value
+    setInfo({ ...info, age: info.age + 1 });
   };
 
-    console.log(info);
-
+  console.log(info);
   return (
     <div className="container text-center mt-4">
       <section>

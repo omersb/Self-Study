@@ -9,7 +9,7 @@
 //* constructor'in disinda state, setState() metodu ile degistilebilir.
 //* ====================================================================================
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 class Counter extends Component {
   constructor(props) {
