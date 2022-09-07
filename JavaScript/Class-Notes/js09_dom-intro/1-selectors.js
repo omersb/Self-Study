@@ -51,7 +51,7 @@ par[0].innerHTML += ' <a href="https://www.clarusway.com">Clarusway</a>';
 //* ========================================
 //*              QUERYSELECTOR()
 //* ========================================
-document.querySelector('title').textContent = 'JS09-DOM ❤️';
+document.querySelector('title').textContent = 'JS09-DOM ❤️ ';
 
 const myPars = document.querySelectorAll('p');
 console.log(myPars); //? NodeList

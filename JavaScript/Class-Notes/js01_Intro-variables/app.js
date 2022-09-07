@@ -12,7 +12,7 @@
 // ----------------------
 
 var myNumber1 = 5;
-console.log(myNumber1);
+console.log(myNumber1)
 /*
 
 

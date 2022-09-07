@@ -78,9 +78,6 @@ console.log(isci, calisan);
 //*              Object Metotları
 //* ======================================================
 
-//! Objelere, classlara ait olan fonksiyonlara metot denir.
-
-
 const kisi = {
   ad: 'Can',
   soyad: 'Canan',
@@ -138,8 +135,7 @@ const kisilerObject = {
 console.log(kisilerObject);
 console.log(kisilerObject.ahmet.is);
 
-//? JSON => Javascript Object Notation
-
+//? JSON => javascript Object Notation
 const kisiler = [
   {
     name: 'Ahmet',
@@ -176,11 +172,12 @@ const kisiler = [
 
 console.log(kisiler);
 console.log(kisiler[4]);
+//?{name: 'Ruzgar', surname: 'Kuzey', job: 'tester', age: 24}
 
-//* Örnek1: kişiler dizisindeki job'ları tek tek yazdırınız.
-kisiler.forEach((kisi) => console.log(kisi.job,));
+//* Ornek1: kisiler dizisindeki job'lari tek tek yazdiriniz.
+kisiler.forEach((kisi) => console.log(kisi.job));
 
-//* Örnek2: yasları bir artırarak yeni bir diziye saklayınız.
+//* Ornek2: yaslari bir artirarak yeni bir diziye saklayiniz.
 const yaslar = kisiler.map((kisi) => kisi.age + 1);
 console.log(yaslar);
 
@@ -188,11 +185,21 @@ console.log(yaslar);
 //* bunu name key'i olarak saklayan, aynı zamanda age degerlerini 5
 //* arttırarak age key'ine saklayan ve oluşan diziyi döndüren kodu yazınız.
 
-const kisilerFullİsim = kisiler.map((kisi) =>({
-        fullname : kisi.name.toUpperCase() + " " + kisi.surname.toUpperCase(),
-        age : kisi.age + 5,
-    }));
-console.log(kisilerFullİsim);
+const kisilerFullIsim = kisiler.map((kisi) => ({
+  fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+  age: kisi.age + 5,
+}));
+
+//? Alternatif syntax
+const kisilerFullIsim1 = kisiler.map((kisi) => {
+  return {
+    fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+    age: kisi.age + 5,
+  };
+});
+
+console.log(kisilerFullIsim);
+console.log(kisilerFullIsim1);
 
 //* Ornek4: Yasi(age) 33 den kücük olan kisilerin adlarini (name) listeyiniz.
 
@@ -201,9 +208,6 @@ console.log(kisilerFullİsim);
 //* Ornek6: Meslegi developer olanlarin isim ve yaslarini yeni bir Obje olarak
 //* yeni diziye saklayiniz.
 
-
 //* Ornek7: kisilerin ortalama yasini hesaplayiniz.
-
-const ortYas = kisiler.reduce((t, kisi ) => t + kisi.age, 0) / kisiler.length;
-
-console.log("ORT YAS: ", ortYas);
+const ortYas = kisiler.reduce((t, kisi) => t + kisi.age, 0) / kisiler.length;
+console.log('ORT YAS:', ortYas);
