@@ -1,24 +1,24 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const KeyboardClipboard = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
 
   const handleKeyDown = (e) => {
     // console.log(e.keyCode);
     e.target.value = e.target.value.toUpperCase();
-    e.keyCode === 13 && alert('Entera basildi');
+    e.keyCode === 13 && alert("Entera basildi");
   };
 
   const handleAreaPaste = (e) => {
-    e.target.value += e.clipboardData.getData('text').toLowerCase();
-    e.target.style.border = '3px solid red';
-    e.target.style.backgroundColor = 'lightgreen';
+    e.target.value += e.clipboardData.getData("text").toLowerCase();
+    e.target.style.border = "3px solid red";
+    e.target.style.backgroundColor = "lightgreen";
     e.preventDefault();
   };
   const handleAreaChange = (e) => {
     if (!e.target.value) {
-      e.target.style.border = '1px solid black';
-      e.target.style.backgroundColor = 'transparent';
+      e.target.style.border = "1px solid black";
+      e.target.style.backgroundColor = "transparent";
     }
   };
 
@@ -31,7 +31,7 @@ const KeyboardClipboard = () => {
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={handleKeyDown}
       />
-      <p onCopy={() => alert('Dikkat Kopyalandi')} className="text-start m-4">
+      <p onCopy={() => alert("Dikkat Kopyalandi")} className="text-start m-4">
         {inputValue}
       </p>
 
