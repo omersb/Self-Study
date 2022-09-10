@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import { FaReact } from 'react-icons/fa';
-import { FaEvernote } from 'react-icons/fa';
+import { useState } from "react";
+import { FaReact } from "react-icons/fa";
+import { FaEvernote } from "react-icons/fa";
 
 const MouseEvent = () => {
   const [visible, setVisible] = useState(false);
@@ -13,8 +13,8 @@ const MouseEvent = () => {
   const handleDoubleClick = (e) => {
     setToggleBG(!toggleBG);
     toggleBG
-      ? (e.target.className = 'bg-danger text-light w-50 p-4 mt-4')
-      : (e.target.className = 'bg-success text-light w-50 p-4 mt-4');
+      ? (e.target.className = "bg-danger text-light w-50 p-4 mt-4")
+      : (e.target.className = "bg-success text-light w-50 p-4 mt-4");
   };
 
   //? mouseMove event
