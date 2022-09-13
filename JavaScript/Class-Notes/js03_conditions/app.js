@@ -41,3 +41,15 @@ console.log("**********\nSession 3 - Conditionals\n**********");
 // ! example 2 three number comparison
 
 //? Write a JavaScript program that accept three integers and display the greatest.
+
+// n1 is the greatest among n2 and n3
+// 8 is the g     among 3 and 5
+const n1 = prompt("Enter a number:");
+const n2 = prompt("Enter a number:");
+const n3 = prompt("Enter a number:");
+
+if (n1 > n2 && n1 > n3) {
+  console.log(`${n1} is the greatest among ${n2} and ${n3}`);
+} else if (n2 > n1 && n2 > n3) {
+  console.log(`${n2} is the greatest among ${n1} and ${n3}`);
+} else console.log(`${n3} is the greatest among ${n2} and ${n1}`);
