@@ -1,4 +1,4 @@
-console.log("**********\nSession 3 - Conditionals\n**********");
+// console.log("**********\nSession 3 - Conditionals\n**********");
 // ! if statement example
 //? check if the is positive
 
@@ -44,12 +44,49 @@ console.log("**********\nSession 3 - Conditionals\n**********");
 
 // n1 is the greatest among n2 and n3
 // 8 is the g     among 3 and 5
-const n1 = prompt("Enter a number:");
-const n2 = prompt("Enter a number:");
-const n3 = prompt("Enter a number:");
+// const n1 = prompt("Enter a number:");
+// const n2 = prompt("Enter a number:");
+// const n3 = prompt("Enter a number:");
 
-if (n1 > n2 && n1 > n3) {
-  console.log(`${n1} is the greatest among ${n2} and ${n3}`);
-} else if (n2 > n1 && n2 > n3) {
-  console.log(`${n2} is the greatest among ${n1} and ${n3}`);
-} else console.log(`${n3} is the greatest among ${n2} and ${n1}`);
+// if (n1 > n2 && n1 > n3) {
+//   console.log(`${n1} is the greatest among ${n2} and ${n3}`);
+// } else if (n2 > n1 && n2 > n3) {
+//   console.log(`${n2} is the greatest among ${n1} and ${n3}`);
+// } else console.log(`${n3} is the greatest among ${n2} and ${n1}`);
+
+// ! ternary examples
+console.log("----------\nternary if statements\n----------");
+
+//* program to check pass or fail
+// let grade = prompt("Enter your score :");
+//* check the condition
+// let result = grade >= 50 ? "pass" : "fail";
+// console.log(`You ${result} the exam.`);
+
+//*example-1
+// const age = 18;
+
+// if (age >= 18) {
+//   result = "You are eligible to vote.";
+// } else {
+//   result = "You are not eligible to vote yet.";
+// }
+
+// result =
+//   age >= 18 ? "You are eligible to vote." : "You are not eligible to vote yet";
+// console.log(result);
+
+//*example-2
+// if (n1 > 0) {
+//   console.log(`${n1} is positive`);
+// } else if (n1 < 0) {
+//   console.log(`${n1} is negative`);
+// } else {
+//   console.log(`the number is  0`);
+// }
+
+// ! evde denemeyiniz !! okunaklı kod olmadığından yapmıyoruz
+const n1 = -3;
+const result = n1 >= 0 ? (n1 == 0 ? "zero" : `${n1} is positive`) : "negative";
+console.log(result);
+
