@@ -94,20 +94,73 @@ console.log("----------\nternary if statements\n----------");
 
 //? evaluate if a human can drive a car or not
 
-let canDrive = false;
-const hasDriversLicense = true; //* Sürücü belgesi
-const hasGoodVision = true; //* Görüşü iyi
-const isHandicapped = true; //* Engelli
-const usingRegularCar = true; //* Normal araç kullanabilir
-// //const usingDisabledCar = true;
+// let canDrive = false;
+// const hasDriversLicense = true; //* Sürücü belgesi
+// const hasGoodVision = true; //* Görüşü iyi
+// const isHandicapped = true; //* Engelli
+// const usingRegularCar = true; //* Normal araç kullanabilir
+// // //const usingDisabledCar = true;
 
-result =
-  hasDriversLicense && hasGoodVision
-    ? !isHandicapped
-      ? "can drive"
-      : !usingRegularCar
-      ? "cannot driver"
-      : "can drive"
-    : "cannot drive";
+// result =
+//   hasDriversLicense && hasGoodVision
+//     ? !isHandicapped
+//       ? "can drive"
+//       : !usingRegularCar
+//       ? "cannot driver"
+//       : "can drive"
+//     : "cannot drive";
 
-console.log(result);
+// console.log(result);
+
+console.log("----------\nswitch case statements\n----------");
+
+let text;
+let fruit = prompt('type your favorite fruit');
+// banana, lime, limon, orange, apple, default
+
+switch (fruit.toLowerCase()) {
+  case 'banana':
+    text = 'I like Banana!🍌';
+    break;
+  case 'lime':
+  case 'lemon':
+  case 'orange':
+    text = `I am not a fan of ${fruit}`;
+    break;
+  case 'apple':
+    text = `I like 🍎🍏`;
+    break;
+
+  default:
+    text = "I don't know that fruit";
+}
+console.log(text);
+
+// ! example-5  cw weekly program ❗your turn 🧑‍💻
+// pazartesi salı çarşamba perşembe in class
+// cuma team work
+// cumartesi inclass + workshop
+// pazar self study
+// default yanlış gün girildi.
+
+// const day = prompt('enter a day: ').toLowerCase();
+
+// switch (day) {
+//   case 'monday':
+//   case 'tuesday':
+//   case 'wednesday':
+//   case 'thursday':
+//     console.log(`Inclass`);
+//     break;
+//   case 'friday':
+//     console.log(`Teamwork`);
+//     break;
+//   case 'saturday':
+//     console.log(`Inclass and workshop`);
+//     break;
+//   case 'sunday':
+//     console.log(`Self study.`);
+//     break;
+//   default:
+//     console.log(`${day} is not a day.`);
+// }
