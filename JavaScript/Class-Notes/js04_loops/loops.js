@@ -31,34 +31,33 @@ console.log("****** LOOPS *******");
 // console.log("Toplam:", toplam);
 
 // //? ÖRNEK-2: Dışarıdan girilen sayının Asal olup olmadığını tespit ederek sonucu yazdıran programı yazınız.
-const sayı = prompt("Pozitif bir sayı girin");
-const asalMı = (sayı) => {
-  let asal = true;
-  for (let i = 2; i < sayı; i++) {
-    if (sayı % i == 0) {
-      asal = false;
-      break;
-    }
-  }
-  return asal ? "Asal" : "Asal değil";
-};
-console.log(`${sayı} ${asalMı(sayı)}`);
+// const sayı = prompt("Pozitif bir sayı girin");
+// const asalMı = (sayı) => {
+//   let asal = true;
+//   for (let i = 2; i < sayı; i++) {
+//     if (sayı % i == 0) {
+//       asal = false;
+//       break;
+//     }
+//   }
+//   return asal ? "Asal" : "Asal değil";
+// };
+// console.log(`${sayı} ${asalMı(sayı)}`);
 
 // //******************** WHILE ******************
 
 // let j = 1;
 // while (j <= 5) {
-//   console.log('Merhaba-', j);
+//   console.log("Merhaba-", j);
 //   j++;
 // }
-
-// console.log('Bitti');
+// console.log("Bitti");
 
 // let i = 1;
 // do {
 //   console.log('Merhaba', i);
 //   i++;
-//   // console.log(i);
+//   console.log(i);
 // } while (i <= 5);
 
 // let not1 = prompt('Lütfen notunuzu giriniz (0-100):');
@@ -72,15 +71,14 @@ console.log(`${sayı} ${asalMı(sayı)}`);
 // //* Ornek
 
 // //******************** DO-WHILE ******************
-// let sayac = 1;
 
+// let sayac = 1;
 // do {
-//   console.log('Merhaba-', sayac);
+//   console.log("Merhaba-", sayac);
 //   sayac++;
 // } while (sayac <= 5);
 
 // let not2;
-
 // do {
 //   not2 = prompt('Lütfen notunuzu giriniz (0-100):');
 //   if (not2 < 0 || not2 > 100) {
