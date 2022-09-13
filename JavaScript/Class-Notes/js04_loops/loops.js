@@ -21,16 +21,28 @@ console.log("****** LOOPS *******");
 // }
 // console.log("Program bitti");
 
-//? Ornek: 1 den n kadar sayıları toplayan kodu yazınız.
-const n = prompt("n sayisini giriniz:");
-let toplam = 0;
-for (let i = 1; i <= n; i++) {
-  console.log(i);
-  toplam += i; //* toplam = toplam + i
-}
-console.log("Toplam:", toplam);
+// //? Ornek-1: 1 den n kadar sayıları toplayan kodu yazınız.
+// const n = prompt("n sayisini giriniz:");
+// let toplam = 0;
+// for (let i = 1; i <= n; i++) {
+//   console.log(i);
+//   toplam += i;  // toplam = toplam + i
+// }
+// console.log("Toplam:", toplam);
 
-// //? ÖRNEK: Dışarıdan girilen sayının Asal olup olmadığını tespit ederek sonucu yazdıran programı yazınız.
+// //? ÖRNEK-2: Dışarıdan girilen sayının Asal olup olmadığını tespit ederek sonucu yazdıran programı yazınız.
+const sayı = prompt("Pozitif bir sayı girin");
+const asalMı = (sayı) => {
+  let asal = true;
+  for (let i = 2; i < sayı; i++) {
+    if (sayı % i == 0) {
+      asal = false;
+      break;
+    }
+  }
+  return asal ? "Asal" : "Asal değil";
+};
+console.log(`${sayı} ${asalMı(sayı)}`);
 
 // //******************** WHILE ******************
 
