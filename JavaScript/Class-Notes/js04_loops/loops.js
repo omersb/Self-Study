@@ -15,22 +15,20 @@ console.log("****** LOOPS *******");
 //? Math.round() => değerine göre yuvarlar.
 //? Math.trunc() => kesirli sayının tam kısmı alır.
 
-for (let i = 1; i <= 10; i++) {
-  const randomSayi = Math.floor(Math.random() * 100 + 1);
-  console.log(randomSayi);
-}
-
-console.log("Program bitti");
+// for (let i = 1; i <= 10; i++) {
+//   const randomSayi = Math.floor(Math.random() * 100 + 1);
+//   console.log(randomSayi);
+// }
+// console.log("Program bitti");
 
 //? Ornek: 1 den n kadar sayıları toplayan kodu yazınız.
-// const n = prompt('n sayisini giriniz:');
-// let toplam = 0;
-// for (let i = 1; i <= n; i++) {
-//   console.log(i);
-//   toplam += i; // toplam = toplam + i
-// }
-
-// console.log('Toplam:', toplam);
+const n = prompt("n sayisini giriniz:");
+let toplam = 0;
+for (let i = 1; i <= n; i++) {
+  console.log(i);
+  toplam += i; //* toplam = toplam + i
+}
+console.log("Toplam:", toplam);
 
 // //? ÖRNEK: Dışarıdan girilen sayının Asal olup olmadığını tespit ederek sonucu yazdıran programı yazınız.
 
