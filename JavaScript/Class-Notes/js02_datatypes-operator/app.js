@@ -92,3 +92,10 @@ myCar.age(2022);
 delete myCar.sunRoof;
 
 console.log(myCar);
+
+var x = { firstName: "John", lastName: "Clarusway" };
+console.log(typeof x);
+
+let a = 27;
+a %= 5;
+console.log(a);
