@@ -114,27 +114,27 @@ console.log("----------\nternary if statements\n----------");
 
 console.log("----------\nswitch case statements\n----------");
 
-let text;
-let fruit = prompt('type your favorite fruit');
-// banana, lime, limon, orange, apple, default
+// let text;
+// let fruit = prompt('type your favorite fruit');
+// // banana, lime, limon, orange, apple, default
 
-switch (fruit.toLowerCase()) {
-  case 'banana':
-    text = 'I like Banana!🍌';
-    break;
-  case 'lime':
-  case 'lemon':
-  case 'orange':
-    text = `I am not a fan of ${fruit}`;
-    break;
-  case 'apple':
-    text = `I like 🍎🍏`;
-    break;
+// switch (fruit.toLowerCase()) {
+//   case 'banana':
+//     text = 'I like Banana!🍌';
+//     break;
+//   case 'lime':
+//   case 'lemon':
+//   case 'orange':
+//     text = `I am not a fan of ${fruit}`;
+//     break;
+//   case 'apple':
+//     text = `I like 🍎🍏`;
+//     break;
 
-  default:
-    text = "I don't know that fruit";
-}
-console.log(text);
+//   default:
+//     text = "I don't know that fruit";
+// }
+// console.log(text);
 
 // ! example-5  cw weekly program ❗your turn 🧑‍💻
 // pazartesi salı çarşamba perşembe in class
@@ -164,3 +164,38 @@ console.log(text);
 //   default:
 //     console.log(`${day} is not a day.`);
 // }
+
+// ! example 6
+
+//*  output day count of a month of given year 2020 02 => 29
+// 2022 02 => 28
+
+//*leap year
+let year = 2020;
+let month = 2;
+let dayCount;
+switch (month) {
+  case 1:
+  case 3:
+  case 5:
+  case 7:
+  case 8:
+  case 10:
+  case 12:
+    dayCount = 31;
+    break;
+  case 4:
+  case 6:
+  case 9:
+  case 11:
+    dayCount = 30;
+    break;
+  case 2:
+    if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) dayCount = 29;
+    else dayCount = 28;
+    break;
+  default:
+    dayCount = -1; //! invalid month
+}
+
+console.log(dayCount);
