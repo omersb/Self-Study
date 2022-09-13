@@ -1,21 +1,26 @@
-console.log('****** LOOPS *******');
+console.log("****** LOOPS *******");
 
 // * =======================================================
 // *                     DÖNGÜLER
 // * =======================================================
 
 //************************ FOR ****************************
-// Math.floor() =>aşağıya yuvarlar
-// Math.ceil() =>sürekli yukarıya yuvarlar
-// Math.round() => değerine göre yuvarlar.
-// Math.trunc() => kesirli sayının tam kısmı alır.
 
-// for (let i = 1; i <= 10; i++) {
-//   const randomSayi = Math.floor(Math.random() * 100 + 1);
-//   console.log(randomSayi);
+// for (let i = 1; i <= 100; i++) {
+//   console.log(`${i}-Merhaba`);
 // }
 
-// console.log('Program bitti');
+//? Math.floor() =>aşağıya yuvarlar
+//? Math.ceil() =>sürekli yukarıya yuvarlar
+//? Math.round() => değerine göre yuvarlar.
+//? Math.trunc() => kesirli sayının tam kısmı alır.
+
+for (let i = 1; i <= 10; i++) {
+  const randomSayi = Math.floor(Math.random() * 100 + 1);
+  console.log(randomSayi);
+}
+
+console.log("Program bitti");
 
 //? Ornek: 1 den n kadar sayıları toplayan kodu yazınız.
 // const n = prompt('n sayisini giriniz:');
