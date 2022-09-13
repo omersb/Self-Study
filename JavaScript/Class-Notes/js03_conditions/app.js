@@ -86,7 +86,28 @@ console.log("----------\nternary if statements\n----------");
 // }
 
 // ! evde denemeyiniz !! okunaklı kod olmadığından yapmıyoruz
-const n1 = -3;
-const result = n1 >= 0 ? (n1 == 0 ? "zero" : `${n1} is positive`) : "negative";
-console.log(result);
+// const n1 = -3;
+// const result = n1 >= 0 ? (n1 == 0 ? "zero" : `${n1} is positive`) : "negative";
+// console.log(result);
 
+// ! example-4 canDrive
+
+//? evaluate if a human can drive a car or not
+
+let canDrive = false;
+const hasDriversLicense = true; //* Sürücü belgesi
+const hasGoodVision = true; //* Görüşü iyi
+const isHandicapped = true; //* Engelli
+const usingRegularCar = true; //* Normal araç kullanabilir
+// //const usingDisabledCar = true;
+
+result =
+  hasDriversLicense && hasGoodVision
+    ? !isHandicapped
+      ? "can drive"
+      : !usingRegularCar
+      ? "cannot driver"
+      : "can drive"
+    : "cannot drive";
+
+console.log(result);
