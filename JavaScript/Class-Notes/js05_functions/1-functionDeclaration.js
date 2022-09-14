@@ -10,48 +10,49 @@ console.log("****** FUNC DECLARATION *********");
 
 //* Örnek1:
 //****************************************************************/
-// yazdir(); //!invoke fonksiyon global olduğu için yukardada çalışır
+
+yazdir(); //!invoke fonksiyon global olduğu için yukardada çalışır
 //! Declaration
 //! Paramatre almamış, bir şey döndürmek (void function)
-// function yazdir() {
-//   console.log('Merhaba');
-// }
+function yazdir() {
+  console.log('Merhaba');
+}
 
-// yazdir(); //!invoke
-// yazdir(); //!invoke
+yazdir(); //!invoke
+yazdir(); //!invoke
 
-// console.log(typeof yazdir); //* function
+console.log(typeof yazdir); //* function
 
 //* Örnek2: Parametreli Fonksiyon
 //***************************************************************/
 //! Bir parametreyi çağırma sırasında kullanmaz isek onun yerine default paramtere atayabiliriz. Örnekteki lastName paramterinin default değerine '' atanmıştır.
 
-// function selamla(name, lastName = "") {
-//   console.log(`Merhaba ${name}  ${lastName}`);
-// }
+function selamla(name, lastName = "") {
+  console.log(`Merhaba ${name}  ${lastName}`);
+}
 
-// selamla("Erhan", "Yılmaz");
-// selamla("Erol");
-// selamla("Jason");
+selamla("Erhan", "Yılmaz");
+selamla("Erol");
+selamla("Jason");
 
 //* Örnek3: Parametreli, Dönüş değerli
 //***************************************************************/
 
-// function yasHesapla(year, name) {
+function yasHesapla(year, name) {
 //   const mesaj = `${name} in yaşı ${2022 - year} dir`;
-//   const mesaj = `${name} in yaşı ${new Date().getFullYear() - year} dir `;
-//   return mesaj;
-// }
+  const mesaj = `${name} in yaşı ${new Date().getFullYear() - year} dir `;
+  return mesaj;
+}
 
-// const mesaj1 = yasHesapla(1989, "ELif");
-// console.log(mesaj1);
+const mesaj1 = yasHesapla(1989, "ELif");
+console.log(mesaj1);
 
 //* Örnek4: Parametreli, Dönüş değerli
 //**********************************************************/
 
-// console.log(tekCift(5));
-// console.log(tekCift(2));
+console.log(tekCift(5));
+console.log(tekCift(2));
 
-// function tekCift(number) {
-//   return number % 2 === 0 ? `${number} çifttir` : `${number} tekdir`;
-// }
+function tekCift(number) {
+  return number % 2 === 0 ? `${number} çifttir` : `${number} tekdir`;
+}
