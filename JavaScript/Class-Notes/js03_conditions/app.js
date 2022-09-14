@@ -97,19 +97,18 @@ console.log("----------\nternary if statements\n----------");
 // let canDrive = false;
 // const hasDriversLicense = true; //* Sürücü belgesi
 // const hasGoodVision = true; //* Görüşü iyi
-// const isHandicapped = true; //* Engelli
+// const isHandicapped = false; //* Engelli
 // const usingRegularCar = true; //* Normal araç kullanabilir
 // // //const usingDisabledCar = true;
 
 // result =
 //   hasDriversLicense && hasGoodVision
 //     ? !isHandicapped
-//       ? "can drive"
-//       : !usingRegularCar
-//       ? "cannot driver"
-//       : "can drive"
-//     : "cannot drive";
-
+//       ? usingRegularCar
+//         ? "can drive"
+//         : "cannot drive3"
+//       : "cannot drive2"
+//     : "cannot drive1";
 // console.log(result);
 
 console.log("----------\nswitch case statements\n----------");
