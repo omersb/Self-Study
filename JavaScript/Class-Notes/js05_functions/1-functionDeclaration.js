@@ -26,28 +26,29 @@ console.log("****** FUNC DECLARATION *********");
 //***************************************************************/
 //! Bir parametreyi çağırma sırasında kullanmaz isek onun yerine default paramtere atayabiliriz. Örnekteki lastName paramterinin default değerine '' atanmıştır.
 
-function selamla(name, lastName = "") {
-  console.log(`Merhaba ${name}  ${lastName}`);
-}
+// function selamla(name, lastName = "") {
+//   console.log(`Merhaba ${name}  ${lastName}`);
+// }
 
-selamla("Erhan", "Yılmaz");
-selamla("Erol");
-selamla("Jason");
+// selamla("Erhan", "Yılmaz");
+// selamla("Erol");
+// selamla("Jason");
 
 //* Örnek3: Parametreli, Dönüş değerli
 //***************************************************************/
 
 // function yasHesapla(year, name) {
-// const mesaj = `${name} in yaşı ${2022 - year} dir `;
+//   const mesaj = `${name} in yaşı ${2022 - year} dir`;
 //   const mesaj = `${name} in yaşı ${new Date().getFullYear() - year} dir `;
 //   return mesaj;
 // }
 
-// const mesaj1 = yasHesapla(2001, 'Elif');
+// const mesaj1 = yasHesapla(1989, "ELif");
 // console.log(mesaj1);
 
 //* Örnek4: Parametreli, Dönüş değerli
 //**********************************************************/
+
 // console.log(tekCift(5));
 // console.log(tekCift(2));
 
