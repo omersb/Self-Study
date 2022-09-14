@@ -6,7 +6,7 @@
 // ! 1.YÖNTEM  : FUNCTION DECLARATION
 // !-----------------------------------------------------------
 
-console.log('****** FUNC DECLARATION *********');
+console.log("****** FUNC DECLARATION *********");
 
 //* Örnek1:
 //****************************************************************/
@@ -24,15 +24,15 @@ console.log('****** FUNC DECLARATION *********');
 
 //* Örnek2: Parametreli Fonksiyon
 //***************************************************************/
-//! Bir parametreyi çağırma sırasında kullanmaz isek onun yerine default paramtere atayabiliriz. Önrketek lastName paramterinin default değerine '' atanmıştır.
+//! Bir parametreyi çağırma sırasında kullanmaz isek onun yerine default paramtere atayabiliriz. Örnekteki lastName paramterinin default değerine '' atanmıştır.
 
-// function selamla(name, lastName = '') {
-//   console.log(`Merhaba ${name}  ${lastName}`);
-// }
+function selamla(name, lastName = "") {
+  console.log(`Merhaba ${name}  ${lastName}`);
+}
 
-// selamla('Erhan', 'Yılmaz');
-// selamla('Erol');
-// selamla('jason');
+selamla("Erhan", "Yılmaz");
+selamla("Erol");
+selamla("Jason");
 
 //* Örnek3: Parametreli, Dönüş değerli
 //***************************************************************/
