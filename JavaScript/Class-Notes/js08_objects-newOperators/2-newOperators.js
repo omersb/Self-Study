@@ -1,7 +1,7 @@
 //* ======================================================
 //*    NEW GENERATION OPERATORS: DESTRUCTURING (OBJECT)
 //* ======================================================
-console.log('****** NEW OPERATORS *******');
+// console.log('****** NEW OPERATORS *******');
 // const car = {
 //   name: 'BMW',
 //   model: 1990,
@@ -19,12 +19,12 @@ console.log('****** NEW OPERATORS *******');
 // //* EXAMPLE: NESTED
 const cars = {
   car1: {
-    name: 'BMW',
+    name: "BMW",
     model: 1990,
     engine: 1.6,
   },
   car2: {
-    name: 'Mercedes',
+    name: "Mercedes",
     model: 2022,
     engine: 2.0,
   },
@@ -41,22 +41,21 @@ console.log(c2Name, c2Model);
 
 const kisiler = [
   {
-    name: 'Ahmet',
-    surname: 'Can',
-    job: 'developer',
+    name: "Ahmet",
+    surname: "Can",
+    job: "developer",
     age: 30,
   },
   {
-    name: 'Mehmet',
-    surname: 'Baki',
-    job: 'tester',
+    name: "Mehmet",
+    surname: "Baki",
+    job: "tester",
     age: 35,
   },
-
   {
-    name: 'Ruzgar',
-    surname: 'Kuzey',
-    job: 'tester',
+    name: "Ruzgar",
+    surname: "Kuzey",
+    job: "tester",
     age: 24,
   },
 ];
@@ -95,7 +94,7 @@ console.log(id, price);
 
 const names = ['Ahmet', 'Mehmet', 'İsmet', 'Saffet'];
 
-/* Classical method*/
+//* Classical method*/
 const name1 = names[0]; //Ahmet
 const name2 = names[1]; //Mehmet
 
