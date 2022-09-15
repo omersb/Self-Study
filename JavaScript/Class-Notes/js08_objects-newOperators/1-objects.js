@@ -10,7 +10,7 @@
 //? Object'lerde Key-value (property-value) yapısı kullanılır.
 //? Herhangi bir veriyi erişmemk için property (key) adı kullanılır.
 
-console.log('******* Objects *********');
+console.log("******* Objects *********");
 
 //! 3 farklı yöntem ile Object oluşturulabilir
 //* ---------------------------------------------------------
@@ -18,14 +18,14 @@ console.log('******* Objects *********');
 //* ---------------------------------------------------------
 
 const araclar = new Object();
-araclar.marka = 'BMW';
+araclar.marka = "BMW";
 araclar.motor = 1.3;
 araclar.model = 2022;
 
 //! Read
 console.log(araclar);
 console.log(araclar.motor); //? . notasyon => 1.3
-console.log(araclar['model']); //? square bracket notasyonu => 2022
+console.log(araclar["model"]); //? square bracket notasyonu => 2022
 
 //* ---------------------------------------------------------
 //* 2- object constructor'ı kullanarak (OOP ile ayrıntılandırılacak)
@@ -39,8 +39,8 @@ function Personel(id, ad, maas) {
   console.log(this); //! Personel objesine bağlanmıştır (binded)
 }
 
-const ahmet = new Personel(101, 'Ahmet', 75000);
-const canan = new Personel(102, 'Canan', 85000);
+const ahmet = new Personel(101, "Ahmet", 75000);
+const canan = new Personel(102, "Canan", 85000);
 console.log(ahmet, canan);
 console.log(canan.perMaas);
 console.log(ahmet.perAdi);
@@ -51,11 +51,11 @@ console.log(this); //! window objesine bağlanmıştır
 //* ---------------------------------------------------------
 
 const calisan = {
-  ad: 'Ahmet',
-  soyad: 'Yilmaz',
+  ad: "Ahmet",
+  soyad: "Yilmaz",
   yas: 30,
-  is: 'developer',
-  diller: ['C', 'C++', 'Pyhton', 'JS'],
+  is: "developer",
+  diller: ["C", "C++", "Pyhton", "JS"],
   maas: 120000,
 };
 
@@ -65,9 +65,9 @@ console.log(calisan.diller); //? ['C', 'C++', 'Pyhton', 'JS']
 console.log(calisan.diller[3]); //? JS
 console.log(calisan[1]); //? undefined
 
-calisan.konum = 'Turkey';
-calisan.email = 'ahmet@gmail.com';
-calisan['dogum'] = 1990;
+calisan.konum = "Turkey";
+calisan.email = "ahmet@gmail.com";
+calisan["dogum"] = 1990;
 console.log(calisan);
 
 const isci = calisan; //* referans aktarımı, sığ kopyalama
@@ -79,10 +79,10 @@ console.log(isci, calisan);
 //* ======================================================
 
 const kisi = {
-  ad: 'Can',
-  soyad: 'Canan',
+  ad: "Can",
+  soyad: "Canan",
   dogum: 1990,
-  meslek: 'developer',
+  meslek: "developer",
   ehliyet: true,
   yasHesapla: function () {
     return new Date().getFullYear() - this.dogum;
@@ -97,8 +97,8 @@ const kisi = {
 };
 console.log(this);
 
-console.log('YAS:', kisi.yasHesapla());
-console.log('BILGI:', kisi.ozet());
+console.log("YAS:", kisi.yasHesapla());
+console.log("BILGI:", kisi.ozet());
 
 // console.log('BILGI:', this.ozet());
 
@@ -115,19 +115,19 @@ console.log('BILGI:', kisi.ozet());
 //? Nested objects
 const kisilerObject = {
   ahmet: {
-    ad: 'Ahmet',
-    soyad: 'Yilmaz',
+    ad: "Ahmet",
+    soyad: "Yilmaz",
     yas: 30,
-    is: 'developer',
-    diller: ['C', 'C++', 'Pyhton', 'JS'],
+    is: "developer",
+    diller: ["C", "C++", "Pyhton", "JS"],
     maas: 120000,
   },
   mehmet: {
-    ad: 'Mehmet',
-    soyad: 'Yilmaz',
+    ad: "Mehmet",
+    soyad: "Yilmaz",
     yas: 24,
-    is: 'developer',
-    diller: ['C', 'C++', 'Pyhton', 'JS'],
+    is: "developer",
+    diller: ["C", "C++", "Pyhton", "JS"],
     maas: 200000,
   },
 };
@@ -138,41 +138,40 @@ console.log(kisilerObject.ahmet.is);
 //? JSON => javascript Object Notation
 const kisiler = [
   {
-    name: 'Ahmet',
-    surname: 'Can',
-    job: 'developer',
+    name: "Ahmet",
+    surname: "Can",
+    job: "developer",
     age: 30,
   },
   {
-    name: 'Mehmet',
-    surname: 'Baki',
-    job: 'tester',
+    name: "Mehmet",
+    surname: "Baki",
+    job: "tester",
     age: 35,
   },
   {
-    name: 'Nur',
-    surname: 'Ersan',
-    job: 'team lead',
+    name: "Nur",
+    surname: "Ersan",
+    job: "team lead",
     age: 40,
   },
   {
-    name: 'Merve',
-    surname: 'Veli',
-    job: 'developer',
+    name: "Merve",
+    surname: "Veli",
+    job: "developer",
     age: 26,
   },
-
   {
-    name: 'Ruzgar',
-    surname: 'Kuzey',
-    job: 'tester',
+    name: "Ruzgar",
+    surname: "Kuzey",
+    job: "tester",
     age: 24,
   },
 ];
 
 console.log(kisiler);
 console.log(kisiler[4]);
-//?{name: 'Ruzgar', surname: 'Kuzey', job: 'tester', age: 24}
+//? {name: 'Ruzgar', surname: 'Kuzey', job: 'tester', age: 24}
 
 //* Ornek1: kisiler dizisindeki job'lari tek tek yazdiriniz.
 kisiler.forEach((kisi) => console.log(kisi.job));
@@ -181,9 +180,7 @@ kisiler.forEach((kisi) => console.log(kisi.job));
 const yaslar = kisiler.map((kisi) => kisi.age + 1);
 console.log(yaslar);
 
-//* Ornek3: name ve surname'leri birlestirip buyuk harfe ceviren ve
-//* bunu name key'i olarak saklayan, aynı zamanda age degerlerini 5
-//* arttırarak age key'ine saklayan ve oluşan diziyi döndüren kodu yazınız.
+//* Ornek3: name ve surname'leri birlestirip buyuk harfe ceviren ve bunu name key'i olarak saklayan, aynı zamanda age degerlerini 5 arttırarak age key'ine saklayan ve oluşan diziyi döndüren kodu yazınız. */
 
 const kisilerFullIsim = kisiler.map((kisi) => ({
   fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
@@ -203,10 +200,13 @@ console.log(kisilerFullIsim1);
 
 //* Ornek4: Yasi(age) 33 den kücük olan kisilerin adlarini (name) listeyiniz.
 
+
 //* Ornek5: 33 yasindan kücüklerin isimlerini diziye saklayiniz.
+
 
 //* Ornek6: Meslegi developer olanlarin isim ve yaslarini yeni bir Obje olarak
 //* yeni diziye saklayiniz.
+
 
 //* Ornek7: kisilerin ortalama yasini hesaplayiniz.
 const ortYas = kisiler.reduce((t, kisi) => t + kisi.age, 0) / kisiler.length;
