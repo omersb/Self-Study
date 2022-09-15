@@ -21,7 +21,7 @@ console.log("****** LOOPS *******");
 // }
 // console.log("Program bitti");
 
-// //? Ornek-1: 1 den n kadar sayıları toplayan kodu yazınız.
+//? Ornek-1: 1 den n kadar sayıları toplayan kodu yazınız.
 // const n = prompt("n sayisini giriniz:");
 // let toplam = 0;
 // for (let i = 1; i <= n; i++) {
@@ -31,7 +31,7 @@ console.log("****** LOOPS *******");
 // console.log("Toplam:", toplam);
 
 // //? ÖRNEK-2: Dışarıdan girilen sayının Asal olup olmadığını tespit ederek sonucu yazdıran programı yazınız.
-// const sayı = prompt("Pozitif bir sayı girin");
+// const sayı = +prompt("Pozitif bir sayı girin");
 // const asalMı = (sayı) => {
 //   let asal = true;
 //   for (let i = 2; i < sayı; i++) {
@@ -98,14 +98,14 @@ console.log("****** LOOPS *******");
 
 // console.log('Q ya basarak çıkış yaptınız !!!');
 
-var sum = 0;
-for (var i = 3; i < 7; i++) {
-  sum += i;
-  if (i === 3 || sum > 10) {
-    continue;
-  }
-  console.log(i);
-}
+// var sum = 0;
+// for (var i = 3; i < 7; i++) {
+//   sum += i;
+//   if (i === 3 || sum > 10) {
+//     continue;
+//   }
+//   console.log(i);
+// }
 
 // var players = ["Messi ", "Ronaldo ", "Hazard ", "Neymar ", "Salah "];
 // var text = "";

@@ -5,12 +5,13 @@ console.log("OYUN BAŞLASIN");
 
 let devam;
 do {
+  let x = +prompt("Lütfen tahmin limitini giriniz?")
   let hak = 5;
-  const rasgeleSayi = Math.floor(Math.random() * 100 + 1);
-  // console.log(rasgeleSayi);
+  const rasgeleSayi = Math.floor(Math.random() * x + 1);
+  console.log(rasgeleSayi);
 
   do {
-    const tahmin = Number(prompt("Lütfen 0-100 arasında bir sayi giriniz:"));
+    const tahmin = Number(prompt(`Lütfen 0-${x} arasında bir sayi giriniz:`));
     hak -= 1;
     if (tahmin === rasgeleSayi) {
       console.log(`Tebrikler ${5 - hak}. denemede bildiniz.🥳`);
