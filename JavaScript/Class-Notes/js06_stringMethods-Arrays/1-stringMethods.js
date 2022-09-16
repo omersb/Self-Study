@@ -120,6 +120,18 @@ console.log(copyTarkan); //* String'i array haline getirdi. (Tek elemanlı)
 // https://www.youtube.com/watch?v=b7vfp5G4brE
 // https://youtu.be/b7vfp5G4brE
 
+const youtube = "https://www.youtube.com/watch?v=b7vfp5G4brE";
+const ilk = youtube.slice(0, 8);
+console.log(ilk);
+const iki = youtube.slice(12, 17);
+console.log(iki);
+const uc = youtube.slice(17, 19);
+console.log(uc);
+const son = youtube.split("=");
+console.log(son[1]);
+const sonuc = ilk.concat(iki, ".", uc, "/", son[1]);
+console.log(sonuc);
+
 //* ----------------------------------------------------------
 //* trim();
 //* ----------------------------------------------------------
