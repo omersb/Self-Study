@@ -88,8 +88,8 @@ const kisi = {
     return new Date().getFullYear() - this.dogum;
   },
   ozet: function () {
-    return `${this.ad}, ${this.yasHesapla()} yasindadir`;
-  },
+    return `${kisi.ad}, ${this.yasHesapla()} yasindadir`;
+  }, //! this nesnenin kendisine işaret eder (this yerine nesnenin ismide kulllanıla bilir.)
   // ozet: () => {
   //   console.log(this);
   //   return `${this.ad}, ${this.yasHesapla()} yasindadir`;
@@ -183,14 +183,14 @@ console.log(yaslar);
 //* Ornek3: name ve surname'leri birlestirip buyuk harfe ceviren ve bunu name key'i olarak saklayan, aynı zamanda age degerlerini 5 arttırarak age key'ine saklayan ve oluşan diziyi döndüren kodu yazınız. */
 
 const kisilerFullIsim = kisiler.map((kisi) => ({
-  fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+  fullname: kisi.name.toUpperCase() + " " + kisi.surname.toUpperCase(),
   age: kisi.age + 5,
 }));
 
 //? Alternatif syntax
 const kisilerFullIsim1 = kisiler.map((kisi) => {
   return {
-    fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+    fullname: kisi.name.toUpperCase() + " " + kisi.surname.toUpperCase(),
     age: kisi.age + 5,
   };
 });
@@ -199,15 +199,21 @@ console.log(kisilerFullIsim);
 console.log(kisilerFullIsim1);
 
 //* Ornek4: Yasi(age) 33 den kücük olan kisilerin adlarini (name) listeyiniz.
-
+console.log(kisiler.filter((kisi) => kisi.age < 33).map((kisi) => kisi.name));
 
 //* Ornek5: 33 yasindan kücüklerin isimlerini diziye saklayiniz.
-
+const liste = kisiler.filter((kisi) => kisi.age < 33).map((kisi) => kisi.name);
+console.log(liste);
 
 //* Ornek6: Meslegi developer olanlarin isim ve yaslarini yeni bir Obje olarak
 //* yeni diziye saklayiniz.
-
+const meslek = kisiler
+  .filter((kisi) => kisi.job == "developer")
+  .map((kisi) => {
+    return { name: kisi.name, yas: kisi.age };
+  });
+console.log(meslek);
 
 //* Ornek7: kisilerin ortalama yasini hesaplayiniz.
 const ortYas = kisiler.reduce((t, kisi) => t + kisi.age, 0) / kisiler.length;
-console.log('ORT YAS:', ortYas);
+console.log("ORT YAS:", ortYas);
