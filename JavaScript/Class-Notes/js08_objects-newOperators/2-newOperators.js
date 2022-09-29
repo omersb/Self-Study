@@ -1,22 +1,34 @@
 //* ======================================================
 //*    NEW GENERATION OPERATORS: DESTRUCTURING (OBJECT)
 //* ======================================================
-// console.log('****** NEW OPERATORS *******');
+console.log("****** NEW OPERATORS *******");
 // const car = {
-//   name: 'BMW',
+//   name: "BMW",
 //   model: 1990,
 //   engine: 1.6,
 // };
+// const list = [1, 2, 3, 4, 5];
 
-// //* 1.YONTEM (Classical)
-// console.log(car.model);
-// console.log(car['name']);
+//* 1.YONTEM (Classical)
+// console.log(car);
 
-// //* 2.YONTEM: DESTRUCTURING
+// console.log(car["name"]);
+
+// console.log(Object.keys(car));
+
+// for (const x of list) {
+//   console.log(x);
+// }
+
+// for (const i of car) {
+//   console.log(i);
+// }
+
+//* 2.YONTEM: DESTRUCTURING
 // const { name, model, engine } = car;
 // console.log(name, model, engine);
 
-// //* EXAMPLE: NESTED
+//* EXAMPLE: NESTED
 const cars = {
   car1: {
     name: "BMW",
@@ -61,30 +73,31 @@ const kisiler = [
 ];
 
 kisiler.forEach((kisi) => {
-  console.log('*********************');
-  console.log('NAME:', kisi.name);
-  console.log('SURNAME:', kisi.surname);
-  console.log('JOB:', kisi.job);
-  console.log('AGE:', kisi['age']);
+  console.log("*********************");
+  console.log("NAME:", kisi.name);
+  console.log("SURNAME:", kisi.surname);
+  console.log("JOB:", kisi.job);
+  console.log("AGE:", kisi["age"]);
 });
 
 kisiler.forEach((kisi) => {
-  console.log('*********************');
+  console.log("*********************");
   const { name, job, surname, age } = kisi; //?DESTRUCTURING
-  console.log('NAME:', name);
-  console.log('SURNAME:', surname);
-  console.log('JOB:', job);
-  console.log('AGE:', age);
+  console.log("NAME:", name);
+  console.log("SURNAME:", surname);
+  console.log("JOB:", job);
+  console.log("AGE:", age);
 });
 
-//* function
+// * function
 function getInfo() {
   return {
     id: 101,
-    name: 'Apple',
+    name: "Apple",
     price: 20000,
   };
 }
+console.log(getInfo());
 const { id, name, price } = getInfo(); //? DESTRUCTURING
 console.log(id, price);
 
@@ -92,7 +105,7 @@ console.log(id, price);
 //*    NEW GENERATION OPERATORS: DESTRUCTURING (ARRAY)
 //* ======================================================
 
-const names = ['Ahmet', 'Mehmet', 'İsmet', 'Saffet'];
+const names = ["Ahmet", "Mehmet", "İsmet", "Saffet"];
 
 //* Classical method*/
 const name1 = names[0]; //Ahmet
@@ -106,7 +119,7 @@ console.log(person1, person2, person4);
 //* ======================================================
 
 //* REST: (Arrays) */
-const vehicles = ['bmw', 'reno', 'mercedes', 'ferrari', 'anadol'];
+const vehicles = ["bmw", "reno", "mercedes", "ferrari", "anadol"];
 
 const [vec1, vec2, ...restVehicles] = vehicles;
 
@@ -115,9 +128,9 @@ console.log(restVehicles);
 
 //* REST (Objects)
 const personel = {
-  pName: 'john',
-  surname: 'smith',
-  job: 'developer',
+  pName: "john",
+  surname: "smith",
+  job: "developer",
   age: 30,
 };
 
@@ -145,23 +158,29 @@ console.log(hespiniTopla(1, 2, 3, 4, 5, 6));
 //?  SPREAD
 //? ------------------------------------------------------
 
-const araclar = ['Ucak', 'Helikopter', 'Bisiklet'];
-const otomobiller = ['Tır', 'Otobus', 'Araba', 'SUV'];
+const araclar = ["Ucak", "Helikopter", "Bisiklet"];
+const otomobiller = ["Tır", "Otobus", "Araba", "SUV"];
 
 const tumAraclar = [...araclar, ...otomobiller];
 console.log(tumAraclar);
 
 //* Example
-const meyveler = ['cherry', 'pear', 'apricot', 'raisin'];
-const turunclar = ['mandarin', ...meyveler, 'lime', 'orange'];
+const meyveler = ["cherry", "pear", "apricot", "raisin"];
+const turunclar = ["mandarin", ...meyveler, "lime", "orange"];
 console.log(turunclar);
 
 //* Ornek (String spread)
-let str = 'Hello FS';
+let str = "Hello FS";
 console.log([...str]);
 console.log(Array.from(str));
+
+const obj = {
+  name: "ali",
+  age: 43,
+};
+console.log({ ...obj, name: "veli" });
 
 //* Ornek (max)
 console.log(Math.max(1, 3, 9, 5));
 const rakamlar = [1, 3, 9, 5];
-console.log('MAX:', Math.max(...rakamlar));
+console.log("MAX:", Math.max(...rakamlar));
