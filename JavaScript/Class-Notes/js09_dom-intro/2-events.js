@@ -50,7 +50,7 @@ myImg.addEventListener("mouseout", () => {
 const button = document.querySelector("#btn");
 
 button.addEventListener("click", function (event) {
-  console.log(event.target);
+  // console.log(event.target);
   document.querySelector("body").style.backgroundImage =
     "linear-gradient(to right,purple, yellow)";
   button.textContent = "Search";

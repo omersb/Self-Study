@@ -44,6 +44,7 @@ img[0].style.transform = 'rotate(-5deg)';
 //* EXAMPLE-4
 //* ---------------
 const par = document.getElementsByClassName('par');
+console.log(par);
 // par[0].textContent = 'DOM Manipülasyonu';
 // par[0].innerText = 'DOM Manipülasyonu';
 par[0].innerHTML += ' <a href="https://www.clarusway.com">Clarusway</a>';
@@ -51,7 +52,7 @@ par[0].innerHTML += ' <a href="https://www.clarusway.com">Clarusway</a>';
 //* ========================================
 //*              QUERYSELECTOR()
 //* ========================================
-document.querySelector('title').textContent = 'JS09-DOM ❤️ ';
+document.querySelector('title').textContent = 'JS09-DOM ❤️';
 
 const myPars = document.querySelectorAll('p');
 console.log(myPars); //? NodeList
