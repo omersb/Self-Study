@@ -10,7 +10,7 @@
 //? fetch() fonksiyonu veri getirmek istediginiz kaynagin yolunu gosteren zorunlu
 //? bir parametre almaktadir ve bu istegin cevabini gosteren bir Promise dondurmektedir.
 
-fetch('https://api.github.com/user')
+fetch("https://api.github.com/users")
   .then((res) => {
     //! error handling
     if (!res.ok) {
@@ -22,14 +22,14 @@ fetch('https://api.github.com/user')
   .catch((err) => console.log(err));
 
 const updateDom = (data) => {
-  const userDiv = document.querySelector('.users');
+  const userDiv = document.querySelector(".users");
 
   data.forEach((user) => {
     //!destr
     const { login, avatar_url, html_url } = user;
     userDiv.innerHTML += `
     <h2 class="text-warning">NAME:${login}</h2>
-    <img src=${avatar_url} width="50%" alt="" />
+    <img src=${avatar_url} width="50%" alt="avatar" />
     <h3>HTML_URL:${html_url}</h3>
   `;
   });

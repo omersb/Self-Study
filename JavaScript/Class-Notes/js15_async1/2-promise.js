@@ -35,9 +35,9 @@ const myPromise = new Promise((resolve, reject) => {
   const data = { a: 1, b: 2 };
   if (success) {
     resolve(data);
-    console.log('Task performed successfly');
+    console.log("Task performed successfly");
   } else {
-    reject(new Error('Task Failed'));
+    reject(new Error("Task Failed"));
   }
 });
 
@@ -63,7 +63,7 @@ const brewTea = () => {
     .then((status2) => {
       console.log(status2);
       wait(1000);
-      return 'Tea is ready. Bon Appetite';
+      return "Tea is ready. Bon Appetite";
     })
     .then((status3) => {
       console.log(status3);
@@ -75,9 +75,9 @@ const boil = () => {
     const boiled = Math.floor(Math.random() * 5);
     if (boiled) {
       wait(1000);
-      resolve('Water Boiled');
+      resolve("Water Boiled");
     } else {
-      reject(new Error('Kettle Failed'));
+      reject(new Error("Kettle Failed"));
     }
   });
 };
@@ -87,9 +87,9 @@ const addTea = () => {
     const teaAvalaible = Math.floor(Math.random() * 3);
     if (teaAvalaible) {
       wait(1000);
-      resolve('Tea was added');
+      resolve("Tea was added");
     } else {
-      reject(new Error('Tea unavailable'));
+      reject(new Error("Tea unavailable"));
     }
   });
 };

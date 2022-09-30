@@ -11,7 +11,6 @@
 //? teknigidir. Bu alt gorev tamamlandiginda (basriyla veya basarisizlikla)
 //? asil thread bu konuda bilgilendirilir. Asenkron programlama, uygulamalarin
 //? performansininin artirilmasina ve daha iyi kullanici deneyimine katki saglamaktadir.
-
 //? Ozellikle bir API'den veya Veritabanindan veri cekme, Giris/Cikis islemleri,
 //? Dosya Okuma/Yazma islemleri gibi zaman tuketen kodlarda Asyn Programlama
 //? kullanilmasi cok onemlidir.
@@ -24,16 +23,16 @@
 //   while (new Date().getTime() < start + ms) {}
 // };
 
-// console.log('hello');
-// // alert('ITF'); //! blocking-code
-// console.time('timer');
+// console.log("hello");
+// // alert("ITF"); //! blocking-code
+// console.time("timer");
 // bekle(3000);
-// console.timeEnd('timer');
-// console.log('FS11');
+// console.timeEnd("timer");
+// console.log("FS11");
 
 //* Asenkron (setTimeout)
 //* ---------------------------------------------------------------
-// //! macro task kuyrugu
+//! macro task kuyrugu
 // setTimeout(() => {
 //   //! non-blocking code
 //   console.log('Selamin Aleyküm');
@@ -51,7 +50,7 @@
 //* Asenkron (setInterval, clearInterval)
 //*----------------------------------------------------------
 
-// console.log('Counter Started');
+// console.log("Counter Started");
 // let counter = 0;
 
 // const sec1 = setInterval(() => {
@@ -59,10 +58,9 @@
 //   console.log(++counter);
 //   if (counter > 9) {
 //     clearInterval(sec1);
+//     console.log("Counter Finished");
 //   }
 // }, 1000);
-
-// console.log('Counter Finished');
 
 //! Callback Hell (nested ve birbirine bagli callback'ler)
 //!-----------------------------------------------------------------
@@ -70,18 +68,18 @@
 //* yapisinin kullanilmasi gerekebilir. Fakta bu iyi bir programlama yaklasimi degildir.
 // !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
 
-setTimeout(() => {
-  console.log('john:Hi');
-  setTimeout(() => {
-    console.log('Sarah: Hello');
-    setTimeout(() => {
-      console.log('John: How Are you?');
-      setTimeout(() => {
-        console.log('Sarah:Fine and you?');
-      }, 1000);
-    }, 1000);
-  }, 1000);
-}, 1000);
+// setTimeout(() => {
+//   console.log("john:Hi");
+//   setTimeout(() => {
+//     console.log("Sarah: Hello");
+//     setTimeout(() => {
+//       console.log("John: How Are you?");
+//       setTimeout(() => {
+//         console.log("Sarah:Fine and you?");
+//       }, 1000);
+//     }, 1000);
+//   }, 1000);
+// }, 1000);
 
 //? COZUMLER:
 //?----------------------------------------------------------------
@@ -90,4 +88,3 @@ setTimeout(() => {
 //* 2- Promise,
 //! 3- Fetch API (Promise'in basitlestirilmis hali),
 //! 4- ASYNC-AWAIT (Fetch API'nin makyajlanmis hali)
-
