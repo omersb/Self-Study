@@ -21,7 +21,7 @@
 let hata = false;
 const getUsers = async function () {
   try {
-    const res = await fetch('https://api.github.com/users');
+    const res = await fetch("https://api.github.com/users");
     if (!res.ok) {
       hata = true;
       // throw new Error(`Something went wrong:${res.status}`);
@@ -38,7 +38,7 @@ const getUsers = async function () {
 getUsers();
 
 const updateDom = (data) => {
-  const userDiv = document.querySelector('.users');
+  const userDiv = document.querySelector(".users");
 
   if (hata) {
     userDiv.innerHTML = `<h1 class="text-danger">Data can not be fetched</h1>
