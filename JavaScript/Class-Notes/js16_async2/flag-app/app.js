@@ -11,6 +11,7 @@ const fetchCountry = async (name) => {
       throw new Error();
     }
     const data = await res.json();
+    getAllCountry(data[0]);
     renderCountry(data[0]);
   } catch (error) {
     console.log(error);
@@ -18,16 +19,28 @@ const fetchCountry = async (name) => {
 };
 
 const renderError = (err) => {
-  const countriesDiv = document.querySelector('.countries');
+  const countriesDiv = document.querySelector(".countries");
   countriesDiv.innerHTML = `
      <h1 class="text-danger">${err}</h1>
      <img src="./img/404.png" alt="" />
     `;
 };
 
+const getAllCountry = (country) => {
+  const countriesSelect = document.querySelector(".input");
+  const {
+    name: { common },
+  } = country;
+  countriesSelect.innerHTML += `
+  <select class="form-select" aria-label="Default select example">
+    <option selected>Open this select menu</option>
+    <option value="1">${common}</option>
+  </select>`;
+};
+
 const renderCountry = (country) => {
   console.log(country);
-  const countriesDiv = document.querySelector('.countries');
+  const countriesDiv = document.querySelector(".countries");
 
   //!destr
   const {
@@ -68,7 +81,7 @@ const renderCountry = (country) => {
   `;
 };
 
-fetchCountry('turkey');
-fetchCountry('usa');
-fetchCountry('belgium');
-fetchCountry('south africa');
+fetchCountry("turkey");
+// fetchCountry("usa");
+// fetchCountry("belgium");
+// fetchCountry("south africa");
