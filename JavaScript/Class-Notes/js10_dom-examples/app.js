@@ -25,46 +25,50 @@ console.log(buttons);
 //************************************************* */
 
 ekleBtn.onclick = function () {
-  if (!dilInput.value) {
-    alert("Lütfen bir dil giriniz");
-  } else {
-    ul.innerHTML += ` <li>${dilInput.value}</li>`;
-    dilInput.value = "";
-    javascriptKontrol();
-  }
+	if (!dilInput.value) {
+		alert("Lütfen bir dil giriniz");
+	} else {
+		ul.innerHTML += ` <li>${dilInput.value}</li>`;
+		dilInput.value = "";
+		javascriptKontrol();
+	}
 };
 
 const javascriptKontrol = () => {
-  document.querySelectorAll("ul li").forEach((dil) => {
-    const kucukHarf = dil.textContent.toLowerCase();
-    if (kucukHarf === "javascript") {
-      // dil.className = "purple";
-      //?Alternatif yöntem
-      dil.setAttribute("class", "red");
-    }
-  });
+	document.querySelectorAll("ul li").forEach((dil) => {
+		const kucukHarf = dil.textContent.toLowerCase();
+		if (kucukHarf === "javascript") {
+			// dil.className = "purple";
+			//? Alternatif yöntem
+			dil.setAttribute("class", "red");
+		} else if (dil.innerHTML.length > 10) {
+      dil.innerHTML = "metin uzun"
+		} else {
+			dil.setAttribute("style", "color:blue");
+		}
+	});
 };
 
 silBtn.onclick = function () {
-  ul.childElementCount > 0
-    ? ul.removeChild(ul.lastElementChild)
-    : alert("Silinecek dil kalmadi");
+	ul.childElementCount > 0
+		? ul.removeChild(ul.lastElementChild)
+		: alert("Silinecek dil kalmadi");
 };
 
 dilInput.addEventListener("keydown", (e) => {
-  console.log(e);
-  if (e.keyCode === 13) {
-    ekleBtn.onclick();
-  }
-  // if (e.code === "Enter") {
-  //   ekleBtn.onclick();
-  // }
-  if (e.code === "Delete") {
-    silBtn.onclick();
-  }
+	console.log(e);
+	if (e.keyCode === 13) {
+		ekleBtn.onclick();
+	}
+	// if (e.code === "Enter") {
+	//   ekleBtn.onclick();
+	// }
+	if (e.code === "Delete") {
+		silBtn.onclick();
+	}
 });
 
 window.onload = () => {
-  javascriptKontrol();
-  dilInput.focus();
+	javascriptKontrol();
+	dilInput.focus();
 };

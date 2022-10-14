@@ -1,48 +1,47 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 .container {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
 }
 
 img {
-  position: absolute;
-  height: 400px;
+	height: 400px;
+	cursor: pointer;
 }
 
 p {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 30rem;
+	text-align: center;
+	font-size: 2rem;
 }
 
 button {
-  text-align: center;
-  font-size: 2rem;
-  margin-top: 30rem;
+	text-align: center;
+	font-size: 2rem;
 }
 
 #on {
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;  
-  cursor: pointer;
+	background-color: #4caf50;
+	color: white;
+	border: none;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	cursor: pointer;
 }
 
 #off {
-  background-color:  #f44336;;
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;  
-  cursor: pointer;
-  margin-left: 0.5rem;
+	background-color: #f44336;
+	color: white;
+	border: none;
+	padding: 1rem 2rem;
+	font-size: 1.5rem;
+	cursor: pointer;
 }
