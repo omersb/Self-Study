@@ -6,7 +6,7 @@
 //! componentDidMount,componentDidUpdate,ve componentWillUnmount
 //! metotlarinin bir birlesimi gibi dusunulebilir.
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 //! useEffect(() => {
 //*   /* ComponentDidMount code */
@@ -31,50 +31,50 @@ import { useState, useEffect } from 'react';
 //! }, [var1, var2]);
 
 const UseEffectHook = () => {
-  const [count, setCount] = useState(0);
+	const [count, setCount] = useState(0);
 
-  //! ComponentDidMount
-  // useEffect(() => {
-  //   console.log('Mounted'); //! fetch, asyn-await ,localStorage, setTimeout
-  //   setTimeout(() => {
-  //     alert('Data Fetched');
-  //   }, 3000);
-  // },[]);
+	//! ComponentDidMount
+	// useEffect(() => {
+	// 	console.log("Mounted"); //! fetch, asyn-await ,localStorage, setTimeout
+	// 	setTimeout(() => {
+	// 		alert("Data Fetched");
+	// 	}, 3000);
+	// }, []);
 
-  //! ComponentDidMount + componentDidUpdate
-  // useEffect(() => {
-  //   console.log('Mounted + Updated');
-  //   setTimeout(() => {
-  //     alert('Data Fetched');
-  //   }, 1000);
-  // }, [count]);
+	//! ComponentDidMount + componentDidUpdate
+	// useEffect(() => {
+	// 	console.log("Mounted + Updated");
+	// 	setTimeout(() => {
+	// 		alert("Data Fetched");
+	// 	}, 1000);
+	// }, [count]);
 
-  //! ComponentDidMount + componentWillUnmount
-  const fetchData = () => {
-    console.log('Data Fetched');
-  };
+	//! ComponentDidMount + componentWillUnmount
+	const fetchData = () => {
+		console.log("Data Fetched");
+	};
 
-  useEffect(() => {
-    //! ComponentDidMount
-    const timerId = setInterval(fetchData, 1000);
-    console.log('Mounted');
-    return () => {
-      //! componentWillUnmount
-      clearInterval(timerId);
-      console.log('Unmounted');
-    };
-  }, []);
+	useEffect(() => {
+		//! ComponentDidMount
+		const timerId = setInterval(fetchData, 1000);
+		console.log("Mounted");
+		return () => {
+			//! componentWillUnmount
+			clearInterval(timerId);
+			console.log("Unmounted");
+		};
+	}, []);
 
-  console.log('rendered');
-  return (
-    <div className="container text-center mt-4">
-      <h1 className="text-danger">USEEFFECT</h1>
-      <h3>Count:{count}</h3>
-      <button className="btn btn-warning" onClick={() => setCount(count + 1)}>
-        INC
-      </button>
-    </div>
-  );
+	console.log("rendered");
+	return (
+		<div className="container text-center mt-4">
+			<h1 className="text-danger">USEEFFECT</h1>
+			<h3>Count:{count}</h3>
+			<button className="btn btn-warning" onClick={() => setCount(count + 1)}>
+				INC
+			</button>
+		</div>
+	);
 };
 
 export default UseEffectHook;
