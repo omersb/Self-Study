@@ -34,17 +34,17 @@
 //* ---------------------------------------------------------------
 //! macro task kuyrugu
 // setTimeout(() => {
-//   //! non-blocking code
-//   console.log('Selamin Aleyküm');
+// 	//! non-blocking code
+// 	console.log("Selamin Aleyküm");
 // }, 1000);
 
-// //! micro task kuyrugu
-// console.log('Aleyküm Selam');
-// console.log('Merhaba');
+//! micro task kuyrugu
+// console.log("Aleyküm Selam");
+// console.log("Merhaba");
 
 // setTimeout(() => {
-//   //! non-blocking code
-//   console.log('Dostum naber?');
+// 	//! non-blocking code
+// 	console.log("Dostum naber?");
 // }, 500);
 
 //* Asenkron (setInterval, clearInterval)
@@ -54,12 +54,12 @@
 // let counter = 0;
 
 // const sec1 = setInterval(() => {
-//   //!non-blocking
-//   console.log(++counter);
-//   if (counter > 9) {
-//     clearInterval(sec1);
-//     console.log("Counter Finished");
-//   }
+// 	//!non-blocking
+// 	console.log(++counter);
+// 	if (counter > 9) {
+// 		clearInterval(sec1);
+// 		console.log("Counter Finished");
+// 	}
 // }, 1000);
 
 //! Callback Hell (nested ve birbirine bagli callback'ler)
@@ -69,16 +69,16 @@
 // !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
 
 // setTimeout(() => {
-//   console.log("john:Hi");
-//   setTimeout(() => {
-//     console.log("Sarah: Hello");
-//     setTimeout(() => {
-//       console.log("John: How Are you?");
-//       setTimeout(() => {
-//         console.log("Sarah:Fine and you?");
-//       }, 1000);
-//     }, 1000);
-//   }, 1000);
+// 	console.log("john:Hi");
+// 	setTimeout(() => {
+// 		console.log("Sarah: Hello");
+// 		setTimeout(() => {
+// 			console.log("John: How Are you?");
+// 			setTimeout(() => {
+// 				console.log("Sarah:Fine and you?");
+// 			}, 1000);
+// 		}, 1000);
+// 	}, 1000);
 // }, 1000);
 
 //? COZUMLER:

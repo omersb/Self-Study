@@ -20,39 +20,39 @@
 
 let hata = false;
 const getUsers = async function () {
-  try {
-    const res = await fetch("https://api.github.com/users");
-    if (!res.ok) {
-      hata = true;
-      // throw new Error(`Something went wrong:${res.status}`);
-    }
-    const data = await res.json();
-    updateDom(data);
-  } catch (error) {
-    console.log(error);
-  } finally {
-    hata = false;
-  }
+	try {
+		const res = await fetch("https://api.github.com/users");
+		if (!res.ok) {
+			hata = true;
+			// throw new Error(`Something went wrong:${res.status}`);
+		}
+		const data = await res.json();
+		updateDom(data);
+	} catch (error) {
+		console.log(error);
+	} finally {
+		hata = false;
+	}
 };
 
 getUsers();
 
 const updateDom = (data) => {
-  const userDiv = document.querySelector(".users");
+	const userDiv = document.querySelector(".users");
 
-  if (hata) {
-    userDiv.innerHTML = `<h1 class="text-danger">Data can not be fetched</h1>
+	if (hata) {
+		userDiv.innerHTML = `<h1 class="text-danger">Data can not be fetched</h1>
     <img src="./img/404.png" alt="" />
     `;
-  } else {
-    data.forEach((user) => {
-      //!destr
-      const { login, avatar_url, html_url } = user;
-      userDiv.innerHTML += `
+	} else {
+		data.forEach((user) => {
+			//!destr
+			const { login, avatar_url, html_url } = user;
+			userDiv.innerHTML += `
     <h2 class="text-warning">NAME:${login}</h2>
     <img src=${avatar_url} width="50%" alt="" />
     <h3>HTML_URL:${html_url}</h3>
   `;
-    });
-  }
+		});
+	}
 };
