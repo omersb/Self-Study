@@ -24,9 +24,16 @@ class Student(models.Model):
     def student_year_status(self):
         "Returns the student's year status"
         import datetime
-        if self.register_date < datetime.date(2019, 1, 1):
+        if self.register < datetime.date(2019, 1, 1):
             return "Senior"
-        if self.register_date < datetime.date(2019, 1, 1):
+        if self.register < datetime.date(2019, 1, 1):
             return "Junior"
         else:
             return "Freshman"
+
+
+
+
+# Student.objects.all()
+# Student.objects.get()
+# Student.objects.filter()
