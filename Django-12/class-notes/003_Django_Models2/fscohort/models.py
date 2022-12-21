@@ -21,3 +21,20 @@ class Student(models.Model):
         verbose_name = 'Öğrenci'
         verbose_name_plural = 'Öğrenciler'
         # db_table = ''  tablo ismini değiştir
+
+# student = Student.objects.all()
+# print(student.query)
+# for s in student: print(s)
+# s1 = Student.objects.get(number=2)
+# s1.number=1
+# s1.save()
+# s1 = Student.objects.get(number=1) errorrr
+# s1 = Student.objects.filter(number=1)
+# s1 = Student.objects.exclude(number=1)
+# s1 = Student.objects.get(first_name__exact='Henry')
+# s1 = Student.objects.get(first_name__exact='Henry')
+# s1 = Student.objects.get(first_name__iexact='henry')
+# s1 = Student.objects.get(last_name__contains='v')
+# s1 = Student.objects.get(last_name__startswith='v')
+# s1 = Student.objects.filter(number__gt=1)
+
