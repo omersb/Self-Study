@@ -22,6 +22,12 @@ class Student(models.Model):
         verbose_name_plural = 'Öğrenciler'
         # db_table = ''  tablo ismini değiştir
 
+# https://docs.djangoproject.com/en/4.1/topics/db/queries/
+# s1 = Student(first_name='aaaa',last_name='a', number=4)
+# s1.save()
+# s1.first_name=bbbb
+# s1.save()
+# s2 = Student.objects.create(first_name='cccc', last_name='c', number=5)
 # student = Student.objects.all()
 # print(student.query)
 # for s in student: print(s)
@@ -37,4 +43,3 @@ class Student(models.Model):
 # s1 = Student.objects.get(last_name__contains='v')
 # s1 = Student.objects.get(last_name__startswith='v')
 # s1 = Student.objects.filter(number__gt=1)
-
