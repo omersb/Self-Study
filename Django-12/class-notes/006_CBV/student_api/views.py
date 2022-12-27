@@ -7,9 +7,12 @@ from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView, mixins, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.viewsets import ModelViewSet
 
+
 # my imports
 from .models import Student, Path
 from .serializers import StudentSerializer, PathSerializer
+
+
 
 
 #!#################### FUNCTION BASED VIEWS ########################################
