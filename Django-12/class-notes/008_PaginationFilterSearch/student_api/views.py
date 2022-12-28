@@ -1,4 +1,5 @@
 # rest framework imports
+from .pagination import *
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework import status
@@ -7,12 +8,9 @@ from rest_framework.views import APIView
 from rest_framework.generics import GenericAPIView, mixins, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.viewsets import ModelViewSet
 
-
 # my imports
 from .models import Student, Path
 from .serializers import StudentSerializer, PathSerializer
-
-
 
 
 #!#################### FUNCTION BASED VIEWS ########################################
@@ -132,18 +130,18 @@ def student_api_get_update_delete(request, pk):
             "message": f"Student {student.last_name} deleted successfully"
         }
         return Response(data)
-    
+
 
 #!#################### CLASS BASED VIEWS ########################################
 
 #! APIVIEW
 class StudentListCreate(APIView):
-    
+
     def get(self, request):
         students = Student.objects.all()
         serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
-    
+
     def post(self, request):
         serializer = StudentSerializer(data=request.data)
         if serializer.is_valid():
@@ -152,18 +150,18 @@ class StudentListCreate(APIView):
                 "message": f"Student {serializer.validated_data.get('first_name')} saved successfully!"}
             return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
 
 class StudentDetail(APIView):
-    
+
     def get_obj(self, pk):
         return get_object_or_404(Student, pk=pk)
-    
+
     def get(self, request, pk):
         student = self.get_obj(pk)
         serializer = StudentSerializer(student)
         return Response(serializer.data)
-    
+
     def put(self, request, pk):
         student = self.get_obj(pk)
         serializer = StudentSerializer(student, data=request.data)
@@ -174,7 +172,7 @@ class StudentDetail(APIView):
             }
             return Response(data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-    
+
     def delete(self, request, pk):
         student = self.get_obj(pk)
         student.delete()
@@ -182,7 +180,7 @@ class StudentDetail(APIView):
             "message": f"Student {student.last_name} deleted successfully"
         }
         return Response(data)
-    
+
 
 #! GENERICAPIView and Mixins
 """ #? GenericApıView
@@ -229,24 +227,25 @@ class StudentDetailGAV(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixin
     
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs) """
-    
-    
+
+
 #! Concrete Views
 
 class StudentCV(ListCreateAPIView):
-    
+
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    
+
+
 class StudentDetailCV(RetrieveUpdateDestroyAPIView):
-    
+
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    
+
 
 #! ViewSets
 
-# - Django REST framework allows you to combine the logic for a set of related views in a single class, called a ViewSet. 
+# - Django REST framework allows you to combine the logic for a set of related views in a single class, called a ViewSet.
 
 # - Typically, rather than explicitly registering the views in a viewset in the urlconf, you'll register the viewset with a router class, that automatically determines the urlconf for you.
 
@@ -259,23 +258,24 @@ class StudentDetailCV(RetrieveUpdateDestroyAPIView):
 
 
 class StudentMVS(ModelViewSet):
-    
+
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    
+    pagination_class = CustomPageNumberPagination
+
     @action(detail=False, methods=["GET"])
     def student_count(self, request):
         count = {
-            "student-count" : self.queryset.count()
+            "student-count": self.queryset.count()
         }
         return Response(count)
-    
-    
+
+
 class PathMVS(ModelViewSet):
 
     queryset = Path.objects.all()
     serializer_class = PathSerializer
-    
+
     @action(detail=True)
     def student_names(self, request, pk=None):
         path = self.get_object()
