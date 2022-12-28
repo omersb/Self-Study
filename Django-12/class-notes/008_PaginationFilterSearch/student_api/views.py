@@ -1,4 +1,6 @@
 # rest framework imports
+from rest_framework.filters import SearchFilter, OrderingFilter
+from django_filters.rest_framework import DjangoFilterBackend
 from .pagination import *
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
@@ -261,9 +263,12 @@ class StudentMVS(ModelViewSet):
 
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    # pagination_class = CustomPageNumberPagination
-    # pagination_class = CustomLimitOffsetPagination
-    pagination_class = CustomCursorPagination
+    pagination_class = CustomPageNumberPagination
+    # pagination_class=CustomLimitOffsetPagination
+    # pagination_class=CustomCursorPagination
+    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
+    filterset_fields = ['id', 'first_name', 'last_name']
+    search_fields = ['first_name', 'last_name']
 
     @action(detail=False, methods=["GET"])
     def student_count(self, request):
