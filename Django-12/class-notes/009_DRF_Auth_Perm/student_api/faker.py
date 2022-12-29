@@ -22,7 +22,7 @@ def run():
 
     for path in paths:
         new_path = Path.objects.create(path_name = path)
-        for _ in range(50):
+        for _ in range(10):
             Student.objects.create(path = new_path, first_name = fake.first_name(), last_name = fake.last_name(), number = fake.pyint())
     
     print('Finished')
