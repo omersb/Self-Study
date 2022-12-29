@@ -1,7 +1,4 @@
 # rest framework imports
-from rest_framework.filters import SearchFilter, OrderingFilter
-from django_filters.rest_framework import DjangoFilterBackend
-from .pagination import *
 from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework import status
@@ -14,6 +11,8 @@ from rest_framework.viewsets import ModelViewSet
 # my imports
 from .models import Student, Path
 from .serializers import StudentSerializer, PathSerializer
+
+
 
 
 #!#################### FUNCTION BASED VIEWS ########################################
@@ -133,18 +132,18 @@ def student_api_get_update_delete(request, pk):
             "message": f"Student {student.last_name} deleted successfully"
         }
         return Response(data)
-
+    
 
 #!#################### CLASS BASED VIEWS ########################################
 
 #! APIVIEW
 class StudentListCreate(APIView):
-
+    
     def get(self, request):
         students = Student.objects.all()
         serializer = StudentSerializer(students, many=True)
         return Response(serializer.data)
-
+    
     def post(self, request):
         serializer = StudentSerializer(data=request.data)
         if serializer.is_valid():
@@ -153,18 +152,18 @@ class StudentListCreate(APIView):
                 "message": f"Student {serializer.validated_data.get('first_name')} saved successfully!"}
             return Response(data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    
 
 class StudentDetail(APIView):
-
+    
     def get_obj(self, pk):
         return get_object_or_404(Student, pk=pk)
-
+    
     def get(self, request, pk):
         student = self.get_obj(pk)
         serializer = StudentSerializer(student)
         return Response(serializer.data)
-
+    
     def put(self, request, pk):
         student = self.get_obj(pk)
         serializer = StudentSerializer(student, data=request.data)
@@ -175,7 +174,7 @@ class StudentDetail(APIView):
             }
             return Response(data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    
     def delete(self, request, pk):
         student = self.get_obj(pk)
         student.delete()
@@ -183,7 +182,7 @@ class StudentDetail(APIView):
             "message": f"Student {student.last_name} deleted successfully"
         }
         return Response(data)
-
+    
 
 #! GENERICAPIView and Mixins
 """ #? GenericApıView
@@ -230,25 +229,24 @@ class StudentDetailGAV(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixin
     
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs) """
-
-
+    
+    
 #! Concrete Views
 
 class StudentCV(ListCreateAPIView):
-
+    
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-
-
+    
 class StudentDetailCV(RetrieveUpdateDestroyAPIView):
-
+    
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-
+    
 
 #! ViewSets
 
-# - Django REST framework allows you to combine the logic for a set of related views in a single class, called a ViewSet.
+# - Django REST framework allows you to combine the logic for a set of related views in a single class, called a ViewSet. 
 
 # - Typically, rather than explicitly registering the views in a viewset in the urlconf, you'll register the viewset with a router class, that automatically determines the urlconf for you.
 
@@ -259,31 +257,34 @@ class StudentDetailCV(RetrieveUpdateDestroyAPIView):
 
 # Both of these come with a trade-off. Using regular views and URL confs is more explicit and gives you more control. ViewSets are helpful if you want to get up and running quickly, or when you have a large API and you want to enforce a consistent URL configuration throughout.
 
+from .pagination import *
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import SearchFilter,OrderingFilter
 
 class StudentMVS(ModelViewSet):
-
+    
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    pagination_class = CustomPageNumberPagination
+    pagination_class=CustomPageNumberPagination
     # pagination_class=CustomLimitOffsetPagination
     # pagination_class=CustomCursorPagination
-    filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
-    filterset_fields = ['id', 'first_name', 'last_name']
-    search_fields = ['first_name', 'last_name']
+    filter_backends=[DjangoFilterBackend,SearchFilter,OrderingFilter]
+    filterset_fields=['id','first_name','last_name']
+    search_fields=['first_name','last_name']
 
     @action(detail=False, methods=["GET"])
     def student_count(self, request):
         count = {
-            "student-count": self.queryset.count()
+            "student-count" : self.queryset.count()
         }
         return Response(count)
-
-
+    
+    
 class PathMVS(ModelViewSet):
 
     queryset = Path.objects.all()
     serializer_class = PathSerializer
-
+    
     @action(detail=True)
     def student_names(self, request, pk=None):
         path = self.get_object()
