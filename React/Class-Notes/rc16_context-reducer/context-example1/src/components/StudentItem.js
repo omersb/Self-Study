@@ -18,6 +18,7 @@ const StudentItem = ({ student }) => {
     <div
       style={{
         background: student.color,
+        background: student.color,
         paddingBottom: '2rem',
         paddingTop: '1rem',
         marginBottom: '1rem',
