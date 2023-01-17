@@ -187,6 +187,7 @@ EXPOSE 3000
     
     # Run Image to Container: (allways, image_name must be on the end):
     $ docker run -d -p <ext_port_number>:<int_port_number> <image_name> # run with external/internal port
+    $ docker run -it <image_name><terminal> # run docker with interctive mode, default terminal bash
     $ docker run -d --name <container_name> <image_name> # run and set container name
     $ docker run -d -p <ext_port_number>:<int_port_number> --name <container_name> <image_name>
 
@@ -201,6 +202,7 @@ EXPOSE 3000
     $ docker ps -a # docker ps --all # List all containers.
     $ docker start|stop <container_name> # Start/Stop container.
     $ docker rm <container_name> # Delete stopped container.
+    $ docker container prune # delete all stopped container
 
     # DOCKERHUB:
     $ docker login # Login auto (get user-info from docker-desktop)
