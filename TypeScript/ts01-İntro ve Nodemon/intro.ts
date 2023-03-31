@@ -3,3 +3,5 @@ function selamVer(isim:string) {
 }
 
 let mesaj = selamVer("ahmet")
+
+console.log(mesaj);
