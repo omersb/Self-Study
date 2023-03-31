@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İsim Renklendirme</title>
+</head>
+<body>
+  
+</body>
+<script>
+			var renkler = [
+				{ harf: "A", renk: "#ff0000" },
+				{ harf: "B", renk: "#00ff00" },
+				{ harf: "C", renk: "#0000ff" },
+			];
+
+			var isimler = [];
+			for (var i = 0; i < 500000; i++) {
+				isimler.push("Ahmet");
+			}
+
+			// CSS
+			var css = renkler
+				.map(function (obj) {
+					return "." + obj.harf + "{ color: " + obj.renk + "; }";
+				})
+				.join("");
+
+			var style = document.createElement("style");
+			style.appendChild(document.createTextNode(css));
+			document.head.appendChild(style);
+
+			// DOM
+			var sayfa = 1000;
+			var i = 0;
+			var length = isimler.length;
+
+			var ul = document.createElement("ul");
+			document.body.appendChild(ul);
+
+			function render() {
+				var say = Math.min(i + sayfa, length);
+				var fragment = document.createDocumentFragment();
+
+				for (; i < say; i++) {
+					var isim = isimler[i];
+					var harf = isim.charAt(0).toUpperCase();
+					var li = document.createElement("li");
+					li.textContent = isim;
+					li.classList.add(harf);
+					fragment.appendChild(li);
+				}
+
+				ul.appendChild(fragment);
+
+				if (i < length) {
+					setTimeout(render, 0);
+				}
+			}
+
+			render();
+		</script>
+</html>
