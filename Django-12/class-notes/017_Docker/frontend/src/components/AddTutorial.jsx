@@ -26,7 +26,7 @@ const AddTutorial = ({ getTutorials }) => {
 
   return (
     <div className="container text-center mt-4">
-      <h1 className="display-6 text-danger">Add Your Tutorial</h1>
+      <h1 className="display-6 text-danger">Add Your Tutorialllll</h1>
       <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="title" className="form-label">

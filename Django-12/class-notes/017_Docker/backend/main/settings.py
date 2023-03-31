@@ -40,10 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #myApss
+    # myApss
     "tutorial",
 
-    #3rd party apps
+    # 3rd party apps
     'rest_framework',
     "corsheaders",
 ]
@@ -83,13 +83,24 @@ WSGI_APPLICATION = 'main.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("SQL_DATABASE"),
+        "USER": config("SQL_USER"),
+        "PASSWORD": config("SQL_PASSWORD"),
+        "HOST": config("SQL_HOST", "localhost"),
+        "PORT": config("SQL_PORT"),
+        "ATOMIC_REQUESTS": True,
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -132,8 +143,8 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#corsheaders
-CORS_ALLOW_ALL_ORIGINS=True
+# corsheaders
+CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_METHODS = [
     "DELETE",

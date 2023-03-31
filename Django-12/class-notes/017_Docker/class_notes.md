@@ -263,4 +263,6 @@ services:
     $ docker run -d -p 8600:8080 bharathshetty4/supermario
     # open http://localhost:8600
 
+  docker-compose exec backend python manage.py migrate --noinput   
+
 ```
