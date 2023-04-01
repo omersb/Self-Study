@@ -23,8 +23,10 @@ let sehir3 = deger3<string>("Adana");
 console.log(sayi3);
 console.log(sehir3);
 
+
+
 //**Generic Class **//
- 
+
 class GenericClass<T> {
   degisken: T;
 
