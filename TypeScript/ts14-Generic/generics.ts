@@ -22,3 +22,18 @@ let sayi3 = deger3<number>(2);
 let sehir3 = deger3<string>("Adana");
 console.log(sayi3);
 console.log(sehir3);
+
+//**Generic Class **//
+ 
+class GenericClass<T> {
+  degisken: T;
+
+  fonksiyon(parametre: T): T {
+    return parametre
+  }
+}
+
+let sinif = new GenericClass<string>();
+
+// sinif.degisken = 10;
+sinif.fonksiyon("Ankara");
