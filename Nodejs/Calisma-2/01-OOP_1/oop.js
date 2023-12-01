@@ -154,4 +154,35 @@
 // const arr3 = Object.keys(Car)
 // console.log(arr3)
 
+/* ------------------------------
+    Object Constructor
+--------------------------------*/
+
+const PascalCaseNamed = function () {
+    this.property = 'value'
+}
+
+/* ------------------------------ */
+//? "new" keyword
+
+const CarConstructor = function (brand, model, year = 2021) {
+    this.brand = brand
+    this.model = model
+    this.year = year
+    this.isRunning = false
+    this.startEngine = function () {
+        this.isRunning = true
+        return `Motor çalıştı`
+    }
+}
+
+const newCar = new CarConstructor('Ford', 'Mustang', 1967)
+console.log(newCar)
+const newCar2 = new CarConstructor('Toyota', 'Corolla')
+console.log(newCar2)
+
+console.log(newCar2.isRunning)
+console.log(newCar2.startEngine())
+console.log(newCar2.isRunning)
+
 /* ------------------------------ */
