@@ -161,6 +161,61 @@
 
 
 /* ----------------------------------------------- */
+//? JS PUBLIC: Genel erişiime açık
+//? JS Protected: Genel erişime açık ama lütfen dokunmayın. setter/getter kullanınız.
+//? JS Private: Sadece tanımlandığı sınıf içerisinde erişilebilir.setter/getter kullanınız.
+
+class Vehicle {
+
+    vehicleIsActive = false // public
+    _protectedProp = true // protected
+    #privateProp = true // private
+
+    constructor(vehicleType) {
+        this.vehicleType = vehicleType
+    }
+
+    _protectedMethod() {
+        console.log('Vehicle.protectedMethod')
+        return true
+    }
+
+    #privateMethod() {
+        console.log('Vehicle.privateMethod')
+        return true
+    }
+
+    getDetails() {
+        console.log('Vehicle.getDetails()')
+        console.log(this.#privateProp)
+        console.log(this.#privateMethod())
+        // return this.vehicleType + ' is ' + this.privateProp
+        // return this.vehicleType + ' is ' + this.#privateProp // undefined
+    }
+}
+
+class Car extends Vehicle {
+    isRunning = false
+
+    constructor(brand, model, year, vehicleType = 'Car') {
+        super(vehicleType)
+        this.brand = brand
+        this.model = model
+        this.year = year
+    }
+
+    runEngine() {
+        this.isRunning = true
+        console.log('Motor çalıştı')
+        return this.isRunning
+    }
+}
+
+const ford = new Car('Ford', 'Mustang', 1967, 'SUV')
+console.log(ford)
+console.log(ford.getDetails())
+
+/* ----------------------------------------------- */
 
 
 /* ----------------------------------------------- */
