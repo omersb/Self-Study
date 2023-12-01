@@ -275,3 +275,8 @@ Car.staticMethod()
 // console.log(ford.staticMethod())
 
 /* ----------------------------------------------- */
+
+//? ABSTRACTION : Soyutlama/Modelleme (Aynı amaç için kullanılan değişken ve methodları bir cllass içinde yazıyor olması)
+//? ENCAPSULATION: Kapsülleme/Ayrıştırma (Kodların gizliliği, private attre erişilemiyor olması ve birbirinden bağımsız çalışması)
+
+/* ----------------------------------------------- */
