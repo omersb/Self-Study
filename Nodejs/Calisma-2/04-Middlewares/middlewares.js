@@ -8,25 +8,54 @@ const PORT = process.env.PORT || 8000;
 //? Middlewares functions has must be had three parameters
 //? Last parameter is next()
 
-app.get('/', (req, res, next) => {
-    // Request/Response parametresi ile next() methıduna veri gönderebilirim.
+// app.get('/', (req, res, next) => {
+//     // Request/Response parametresi ile next() methıduna veri gönderebilirim.
+//     req.customData = 'Custom Data'
+//     res.customDataInResponse = 'Custom Data In Response'
+//
+//     next(); //? Go to next function
+//
+//     res.send({
+//         message: "Middleware running",
+//     });
+// });
+//
+// app.get('/', (req, res) => {
+//     res.send({
+//         customData: [
+//             req.customData,
+//             res.customDataInResponse
+//         ],
+//         message: "Home Page"
+//     });
+// });
+/* ------------------------------------------------------ */
+//! next() for next callBackFunction
+
+const middleFunction1 = (req, res, next) => {
     req.customData = 'Custom Data'
     res.customDataInResponse = 'Custom Data In Response'
+    next();
+};
 
-    next(); //? Go to next function
-
-    res.send({
-        message: "Middleware running",
-    });
-});
-
-app.get('/', (req, res) => {
+const middleFunction2 = (req, res, next) => {
+    next();
     res.send({
         customData: [
             req.customData,
             res.customDataInResponse
         ],
-        message: "Home Page"
+        message: "Here is func2, first next() function"
+    });
+};
+
+app.get('/', middleFunction1, middleFunction2, (req, res) => {
+    res.send({
+        customData: [
+            req.customData,
+            res.customDataInResponse
+        ],
+        message: "Welcome to Home"
     });
 });
 
