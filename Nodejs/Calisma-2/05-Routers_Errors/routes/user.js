@@ -9,7 +9,7 @@ const routeControl = (req, res, next) => {
 
     const {username} = req.query;
 
-    if (username == "admin") {
+    if (username === "admin") {
         next()
     } else {
         res.send({
