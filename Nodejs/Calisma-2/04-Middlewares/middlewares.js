@@ -1,3 +1,8 @@
+"use strict"
+/* ------------------------------------------------------
+    ExpressJS - Middlewares
+------------------------------------------------------ */
+
 const express = require('express');
 const app = express();
 
@@ -79,30 +84,49 @@ const PORT = process.env.PORT || 8000;
 
 /* ------------------------------------------------------ */
 // Middlewares & Use
-const middleFunction1 = (req, res, next) => {
+// const middleFunction1 = (req, res, next) => {
+//
+//     // console.log(req.query)
+//     const skip = req.query.skip ?? false;
+//
+//     req.customData = 'Custom Data'
+//     res.customDataInResponse = 'Custom Data In Response'
+//
+//     if (skip) {
+//         // bir sonraki bağımsız fonksiyona git
+//         console.log("next-route çalıştı")
+//         next('route');
+//     } else {
+//         // bir sonraki callback fonksiyonuna git
+//         console.log("next çalıştı")
+//         next();
+//     }
+// };
+//
+// // app.use(middleFunction1);  // defult-ulr = *
+// app.use('/path', middleFunction1)  //  /path == /path/*
+// app.get('/*', (req, res) => {
+//     res.send({
+//         message: "first Route"
+//     });
+// });
+/* ------------------------------------------------------ */
+//* Calling Middlewares from file
 
-    // console.log(req.query)
-    const skip = req.query.skip ?? false;
+// const [middleFunction1, middleFunction2] = require('./middlewares/index.js');
+// const [middleFunction1, middleFunction2] = require('./middlewares/index');
+// const [middleFunction1, middleFunction2] = require('./middlewares/');  // üç şekilde de çalışır.
+// app.use(middleFunction1, middleFunction2);
 
-    req.customData = 'Custom Data'
-    res.customDataInResponse = 'Custom Data In Response'
+// const middleFunction = require('./middlewares/index');
+// app.use(middleFunction);
 
-    if (skip) {
-        // bir sonraki bağımsız fonksiyona git
-        console.log("next-route çalıştı")
-        next('route');
-    } else {
-        // bir sonraki callback fonksiyonuna git
-        console.log("next çalıştı")
-        next();
-    }
-};
+app.use(require('./middlewares/index'));
 
-// app.use(middleFunction1);  // defult-ulr = *
-app.use('/path', middleFunction1 )  //  /path == /path/*
-app.get('*', (req, res) => {
+
+app.get('/*', (req, res) => {
     res.send({
-        message: "first Route"
+        message: "Welcome to Home"
     });
 });
 
