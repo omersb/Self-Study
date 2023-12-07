@@ -33,9 +33,20 @@ const PORT = process.env.PORT || 8000;
 //! next() for next callBackFunction
 
 const middleFunction1 = (req, res, next) => {
+
+    // console.log(req.query)
+    const skip = req.query.skip ?? false;
+
     req.customData = 'Custom Data'
     res.customDataInResponse = 'Custom Data In Response'
-    next();
+
+    if (skip) {
+        // bir sonraki bağımsız fonksiyona git
+        next('route');
+    } else {
+        // bir sonraki callback fonksiyonuna git
+        next();
+    }
 };
 
 const middleFunction2 = (req, res, next) => {
@@ -59,6 +70,12 @@ app.get('/', middleFunction1, middleFunction2, (req, res) => {
     });
 });
 
+// next('route') ile çalıştı.
+app.get('/', (req, res) => {
+    res.send({
+        message: "Next Route"
+    });
+});
 
 /* ------------------------------------------------------ */
 app.listen(PORT, () => console.log("Runnng: http://127.0.0.1:" + PORT));
