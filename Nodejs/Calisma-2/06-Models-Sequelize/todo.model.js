@@ -46,7 +46,8 @@ const Todo = sequelize.define('todo', {
 
 // Synchronization
 // sequelize.sync()  //Create table
-sequelize.sync({alter: true})
+// sequelize.sync({force: true})  // Database silip yeniden oluşturur
+// sequelize.sync({alter: true})  // Tabloyu günceller
 // console.log('Sequelize running...')
 
 sequelize.authenticate()
