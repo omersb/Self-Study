@@ -53,7 +53,7 @@ const Todo = sequelize.define('todo', {
     description: DataTypes.TEXT,
     priority: { // 1: High, 0: Medium, -1: Low
         type: DataTypes.TINYINT,
-        allowNull: false
+        allowNull: false,
         defaultValue: 0,
     },
     is_done: {
