@@ -3,6 +3,8 @@
 /* ------------------------------------------------------
     ExpressJS - TODOprofect with Sequelize
 ------------------------------------------------------ */
+// npm i express-async-errors
+require('express-async-errors');
 
 const Todo = require('../models/todo');
 
