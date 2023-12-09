@@ -37,7 +37,7 @@ const Todo = sequelize.define('todo', {
         allowNull: false,
         defaultValue: 0,
     },
-    is_done: {
+    isDone: {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false,
