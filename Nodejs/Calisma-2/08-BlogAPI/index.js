@@ -22,7 +22,7 @@ app.use(express.json());
 
 require('./src/dbConnection');
 
-
+app.use('/blog', require('./src/routes/blogRoute'));
 
 
 /* ------------------------------------------------------ */
