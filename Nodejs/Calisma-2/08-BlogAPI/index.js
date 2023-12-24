@@ -24,6 +24,7 @@ app.use(express.json());
 require('./src/dbConnection');
 
 // Routes
+app.use('/user', require('./src/routes/userRoute'));
 app.use('/blog', require('./src/routes/blogRoute'));
 
 
