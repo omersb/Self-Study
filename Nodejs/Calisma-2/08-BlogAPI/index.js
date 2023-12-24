@@ -17,6 +17,19 @@ require('dotenv').config();
 const PORT = process.env.PORT || 8000;
 
 /* ------------------------------------------------------ */
+// Session Cookies
+// https://www.npmjs.com/package/cookie-session
+// npm i cookie-session
+
+const session = require('cookie-session');
+
+app.use(session({
+    name: 'cookie',  // defult name is 'session'
+    secret: process.env.SECRET_KEY || 'secret_keys_for_cookies',
+    // maxAge: 1000 * 60 * 60 * 24  // 24 hours
+}));
+
+/* ------------------------------------------------------ */
 
 app.use(express.json());
 

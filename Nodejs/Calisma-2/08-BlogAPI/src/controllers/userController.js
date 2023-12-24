@@ -35,12 +35,22 @@ module.exports.User = {
         res.sendStatus((data.deletedCount >= 1 ? 204 : 404))
     }, login: async (req, res) => {
         const {email, password} = req.body;
-
         if (email && password) {
             const user = await User.findOne({email: email, password: password});
             if (user) {
+
+                req.session = {
+                    user: {
+                        email: user.email, password: user.password
+                    }
+                }
+
+                if (req.body?.rememberMe) {
+                    req.sessionOptions.maxAge = 1000 * 60 * 60 * 24 * 3  // 3 days
+                }
+
                 res.status(200).send({
-                    error: false, result: user
+                    error: false, result: user, session: req.session
                 });
             } else {
                 res.errorStatusCode = 401;
@@ -50,5 +60,10 @@ module.exports.User = {
             res.errorStatusCode = 400;
             throw new Error('Email and password is required!');
         }
+    }, logout: async (req, res) => {
+        req.session = null;
+        res.status(200).send({
+            error: false, result: 'Logout successfully!'
+        });
     }
 }
