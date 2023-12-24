@@ -45,7 +45,12 @@ module.exports.BlogCategory = {
 ------------------------------------------------------ */
 module.exports.BlogPost = {
     list: async (req, res) => {
-        const data = await BlogPost.find();
+        const data = await BlogPost.find().populate('blogCategoryId'); // populate() metodu ile blogCategoryId alanı BlogCategory modelinden gelen veriler ile doldurulur.
+        res.status(200).send({
+            error: false, result: data
+        });
+    }, listInCategory: async (req, res) => {
+        const data = await BlogPost.find({blogCategoryId: req.params.categoryId}).populate('blogCategoryId');
         res.status(200).send({
             error: false, result: data
         });
@@ -55,17 +60,14 @@ module.exports.BlogPost = {
             error: false, body: req.body, result: data
         });
     }, read: async (req, res) => {
-        const data = await BlogPost.findOne({_id: req.params.postId});
+        const data = await BlogPost.findOne({_id: req.params.postId}).populate('blogCategoryId');
         res.status(200).send({
             error: false, result: data
         });
     }, update: async (req, res) => {
         const data = await BlogPost.updateOne({_id: req.params.postId}, req.body);
         res.status(202).send({
-            error: false,
-            body: req.body,
-            result: data,
-            newData: await BlogPost.findOne({_id: req.params.postId})
+            error: false, body: req.body, result: data, newData: await BlogPost.findOne({_id: req.params.postId})
         });
     }, delete: async (req, res) => {
         const data = await BlogPost.deleteOne({_id: req.params.postId});
