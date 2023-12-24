@@ -1,6 +1,5 @@
 "use strict"
 
-const {User} = require('./models/user');
 const {BlogCategory, BlogPost} = require('./models/blogModel');
 
 module.exports = async () => {
@@ -8,12 +7,12 @@ module.exports = async () => {
 
     if (blogCategory) {
         BlogPost.updateMany({
-            "blogCategoryId": {$exists: false}
+            "blogCategoryId": {$exists: false} // blogCategoryId alanı olmayan tüm kayıtlar
         }, {
-            "blogCategoryId": blogCategory._id
+            "blogCategoryId": blogCategory._id // blogCategoryId alanı olmayan tüm kayıtlara blogCategory._id değerini ata
 
 
         }).catch(err => console.log(err))
     }
-    console.log('Synced')
+    console.log('Synchronizations')
 }
