@@ -50,7 +50,10 @@ module.exports.BlogPost = {
         // const data = await BlogPost.find().populate('blogCategoryId'); // populate() metodu ile blogCategoryId alanı BlogCategory modelinden gelen veriler ile doldurulur.
         const data = await req.getModelFind(BlogPost, 'blogCategoryId');
         res.status(200).send({
-            error: false, count: data.length, result: data
+            error: false,
+            count: data.length,
+            details: await req.getModelListDetails(BlogPost),
+            result: data
         });
     }, listInCategory: async (req, res) => {
         const data = await BlogPost.find({blogCategoryId: req.params.categoryId}).populate('blogCategoryId');
