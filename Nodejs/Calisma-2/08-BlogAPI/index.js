@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 8000;
 const session = require('cookie-session');
 
 app.use(session({
-    name: 'cookie',  // defult name is 'session'
+    // name: 'cookie',  // defult name is 'session'
     secret: process.env.SECRET_KEY || 'secret_keys_for_cookies',
     // maxAge: 1000 * 60 * 60 * 24  // 24 hours
 }));
@@ -43,7 +43,7 @@ app.use('/blog', require('./src/routes/blogRoute'));
 
 /* ------------------------------------------------------ */
 // Synchronizations
-// require('./src/sync')();
+require('./src/sync')();
 
 app.use(require('./src/errorHandler'));
 app.listen(PORT, () => console.log("Runnng: http://127.0.0.1:" + PORT));
