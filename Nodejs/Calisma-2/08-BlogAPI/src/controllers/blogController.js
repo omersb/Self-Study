@@ -14,7 +14,7 @@ module.exports.BlogCategory = {
     list: async (req, res) => {
         const data = await BlogCategory.find();
         res.status(200).send({
-            error: false, result: data
+            error: false, count: data.length, result: data,
         });
     }, create: async (req, res) => {
         const data = await BlogCategory.create(req.body);
@@ -45,9 +45,22 @@ module.exports.BlogCategory = {
 ------------------------------------------------------ */
 module.exports.BlogPost = {
     list: async (req, res) => {
-        const data = await BlogPost.find().populate('blogCategoryId'); // populate() metodu ile blogCategoryId alanı BlogCategory modelinden gelen veriler ile doldurulur.
+
+        // Searching & Sorting & Pagination
+        // SEARCHING: URL?search[key1]=value1&search[key2]=value2
+        const search = req.query?.search || {};
+        console.log(search)
+        for (let key in search) search[key] = {$regex: search[key], $options: 'i'};
+        console.log(search)
+
+        const data = await BlogPost.find(search).populate('blogCategoryId');
+
+        // https://www.mongodb.com/docs/manual/reference/operator/query/regex/
+
+
+        // const data = await BlogPost.find().populate('blogCategoryId'); // populate() metodu ile blogCategoryId alanı BlogCategory modelinden gelen veriler ile doldurulur.
         res.status(200).send({
-            error: false, result: data
+            error: false, count: data.length, result: data
         });
     }, listInCategory: async (req, res) => {
         const data = await BlogPost.find({blogCategoryId: req.params.categoryId}).populate('blogCategoryId');
