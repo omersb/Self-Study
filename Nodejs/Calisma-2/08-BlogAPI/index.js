@@ -36,6 +36,9 @@ app.use(express.json());
 // Database Connection
 require('./src/dbConnection');
 
+app.use(require('./src/middlewares/findSearchSortPage'));
+
+
 // Routes
 app.use('/user', require('./src/routes/userRoute'));
 app.use('/blog', require('./src/routes/blogRoute'));
