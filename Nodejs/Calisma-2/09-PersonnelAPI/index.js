@@ -40,6 +40,7 @@ app.all('/', (req, res) => {
 
 // Departments
 app.use('/departments', require('./src/routes/department.router'));
+app.use('/personnels', require('./src/routes/personnel.router'));
 
 
 

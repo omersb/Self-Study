@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
     //Searching & Sorting & Pagination
 
     // Searching
-    const search = req.query?.search || "";
+    const search = req.query?.search || {};
     for (let key in search) search[key] = { $regex: search[key], $options: "i" };
 
     // Sorting

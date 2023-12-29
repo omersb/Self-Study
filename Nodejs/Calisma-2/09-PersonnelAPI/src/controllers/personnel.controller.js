@@ -3,7 +3,7 @@
     Express - Personel API
 ------------------------------------------------------ */
 
-const Personel = require('../models/department.model');
+const Personel = require('../models/personnel.model');
 
 module.exports = {
     list: async (req, res) => {
