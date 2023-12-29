@@ -22,7 +22,8 @@ module.exports = {
         })
     }, delete: async (req, res) => {
         const data = await Department.deleteOne({_id: req.params.id});
-        const isDeleted = data.deletedCount >= 1 ? true : false;
-        res.status(isDeleted ? 204 : 404).send({error: isDeleted, data})
+        res.status(data.deletedCount ? 204 : 404).send({
+            error: !data.deletedCount, data
+        })
     },
 }
