@@ -2,8 +2,10 @@
 /* ------------------------------------------------------
     Express - Personel API
 ------------------------------------------------------ */
+
 const {mongoose} = require('../configs/dbConnection');
 const {model} = require("mongoose");
+
 /* ------------------------------------------------------ */
 
 const DepartmentSchema = new mongoose.Schema({
@@ -13,7 +15,6 @@ const DepartmentSchema = new mongoose.Schema({
 }, {
     collection: 'departments', timestamps: true,
 });
-
 
 /* ------------------------------------------------------ */
 module.exports = mongoose.model('Department', DepartmentSchema);
