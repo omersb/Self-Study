@@ -47,7 +47,7 @@ module.exports = (req, res, next) => {
             },
             totalRecords: data.length,
         };
-        details.pages.next = (details.pages.next <= details.pages.total ? false : details.pages.next);
+        details.pages.next = (details.pages.next > details.pages.total ? false : details.pages.next);
         if (details.totalRecords <= limit) details.pages = false;
         return details;
     }
