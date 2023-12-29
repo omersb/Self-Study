@@ -39,4 +39,36 @@ module.exports = {
             error: !data.deletedCount, data
         })
     },
+    // Login & Logout
+    login: async (req, res) => {
+        const {username, password} = req.body;
+        if (username && password) {
+            const user = await Personel.findOne({username, password});
+            if (user) {
+                // Set Session
+                req.session = {
+                    id: user._id, password: user.password,
+                }
+                // Set Cookie
+                if (req.body?.rememberMe) {
+                    req.sessionOptions.maxAge = 1000 * 60 * 60 * 24 * 3; // 3 days
+                }
+                res.status(200).send({
+                    error: false, data: user
+                });
+            } else {
+                res.errorStatusCode = 401;
+                throw new Error('Wrong username or password');
+            }
+        } else {
+            res.errorStatusCode = 401;
+            throw new Error('Please entry username and password');
+        }
+    }, logout: async (req, res) => {
+        // Set Session to null
+        req.session = null;
+        res.status(200).send({
+            error: false, message: 'Logout successfully'
+        });
+    },
 }
