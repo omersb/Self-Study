@@ -4,14 +4,13 @@
 ------------------------------------------------------ */
 
 const Department = require('../models/department.model');
+const Personnel = require("../models/personnel.model");
 
 module.exports = {
     list: async (req, res) => {
         const data = await res.getModelList(Department)
         res.status(200).send({
-            error: false,
-            detail: await res.getModelListDetails(Department),
-            data
+            error: false, detail: await res.getModelListDetails(Department), data
         })
     }, create: async (req, res) => {
         const data = await Department.create(req.body);
@@ -28,6 +27,12 @@ module.exports = {
         const data = await Department.deleteOne({_id: req.params.id});
         res.status(data.deletedCount ? 204 : 404).send({
             error: !data.deletedCount, data
+        })
+    }, personnels: async (req, res) => {
+        const Personnel = require('../models/personnel.model');
+        const data = await res.getModelList(Personnel, {departmentId: req.params.id}, 'departmentId')
+        res.status(200).send({
+            error: false, detail: await res.getModelListDetails(Personnel, {departmentId: req.params.id}, 'departmentId'), data
         })
     },
 }

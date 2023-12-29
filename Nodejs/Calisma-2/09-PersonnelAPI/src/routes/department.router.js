@@ -18,5 +18,7 @@ router.route('/:id')
     .put(department.update)
     .delete(department.delete);
 
+router.get('/:id/personnels', department.personnels);
+
 /* ------------------------------------------------------ */
 module.exports = router;
