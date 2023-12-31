@@ -14,11 +14,11 @@ module.exports = (req, res, next) => {
     jwt.verify(accessToken, process.env.ACCESS_KEY, (err, user) => {
         if (err) {
             req.user = null;
-            console.log('JWT Login: NO')
+            // console.log('JWT Login: NO')
         } else {
             req.isLogin = true;
             req.user = user
-            console.log('JWT Login: Yes')
+            // console.log('JWT Login: Yes')
         }
     })
     next()
