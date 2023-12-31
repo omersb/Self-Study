@@ -6,15 +6,16 @@
 const Personnel = require("../models/personnel.model");
 const jwt = require("jsonwebtoken");
 
-module.exports = async function (userData) {
+module.exports = async function (userData, withRefresh = true) {
 
     const {username, password} = userData;
 
     if (username && password) {
 
-        const user = await Personnel.findOne({username, password});
+        const user = await Personnel.findOne({username});
 
-        if (user) {
+        if (user && user.password === password) {
+
             if (user.isActive) {
                 // Login Success
                 const accessData = {
@@ -31,11 +32,11 @@ module.exports = async function (userData) {
                 const refreshData = {
                     username: user.username, password: user.password
                 }
-                const refreshToken = jwt.sign(refreshData, process.env.REFRESH_KEY, {expiresIn: '1d'});
+                const refreshToken = withRefresh ? jwt.sign(refreshData, process.env.REFRESH_KEY, {expiresIn: '1d'}) : null;
 
                 return {
                     error: false, token: {
-                        accessToken, refreshToken
+                        access: accessToken, refresh: refreshToken
                     }
                 }
             } else {
