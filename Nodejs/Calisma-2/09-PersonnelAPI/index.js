@@ -28,7 +28,7 @@ app.use(require('cookie-session')({secret: process.env.SECRET_KEY}))
 // res.getModelList():
 app.use(require('./src/middlewares/findSearchSortPage'));
 
-// Login/Logout Control Middleware
+// Cookie: Login/Logout Control Middleware
 app.use(async (req, res, next) => {
     const Personnel = require('./src/models/personnel.model');
 
