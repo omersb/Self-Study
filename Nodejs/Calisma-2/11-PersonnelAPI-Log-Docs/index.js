@@ -53,12 +53,39 @@ app.use(require('./src/middlewares/findSearchSortPage'));
 // Authenticated Control
 app.use(require('./src/middlewares/authenticated'));
 
-
-// Swagger-UI Middleware
+// Documentation Middleware
+// Swagger-UI
 // npm i swagger-ui-express
 const swaggerUi = require('swagger-ui-express');
 const swaggerJson = require('./swagger.json');
 app.use('/docs/swagger', swaggerUi.serve, swaggerUi.setup(swaggerJson, {swaggerOptions: {persistAuthorization: true}}));
+// Redoc
+// npm i redoc-express
+const redoc = require('redoc-express');
+app.use('/docs/json', (req, res) => {
+    res.sendFile('./swagger.json', {root: '.'})
+})
+app.use('/docs/redoc', redoc({
+    specUrl: '/docs/json', title: 'Personnel API',
+    redocOptions: {
+        theme: {
+            colors: {
+                primary: {
+                    main: '#6EC5AB',
+                }
+            }, typography: {
+                fontFamily: `"museo-sans", "Helvetica Neue", Helvetica, Arial, sans-serif`,
+                fontSize: '15px',
+                lineHeight: '1.5',
+                code: {
+                    code: '#87E8C7', backgroundColor: '#4D4D4E',
+                }
+            }, menu: {
+                backgroundColor: '#ffffff',
+            }
+        }
+    }
+}))
 
 /* ------------------------------------------------------ */
 // Routes
@@ -66,7 +93,11 @@ app.use('/docs/swagger', swaggerUi.serve, swaggerUi.setup(swaggerJson, {swaggerO
 // HomePath
 app.all('/', (req, res) => {
     res.send({
-        error: false, message: "Welcome to Personnel API", isLogin: req.isLogin, user: req.user,
+        error: false, message: "Welcome to Personnel API", api: {
+            document: {
+                json: "/docs/json", swagger: "/docs/swagger", redoc: "/docs/redoc",
+            }, contact: "https://www.osb.com",
+        }, isLogin: req.isLogin, user: req.user,
     });
 });
 
