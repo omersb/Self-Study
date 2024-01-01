@@ -142,7 +142,11 @@
     },
     "/departments/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Department"
+        ],
+        "summary": "List Departments",
+        "description": "  You can send query with endpoint for search[], sort[], page adn limit.  <ul> Example:   <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>   <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>   <li>URL/?<b>page=2&limit=1</b></li>  </ul>  ",
         "parameters": [
           {
             "name": "sort",
@@ -157,12 +161,33 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Department"
+        ],
+        "summary": "Create Departments",
+        "description": "Create Departments",
         "parameters": [
           {
             "name": "sort",
             "in": "query",
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Test Department"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
           }
         ],
         "responses": {
@@ -174,6 +199,10 @@
     },
     "/departments/{id}": {
       "get": {
+        "tags": [
+          "Department"
+        ],
+        "summary": "Get Single Department",
         "description": "",
         "parameters": [
           {
@@ -195,7 +224,11 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Department"
+        ],
+        "summary": "Update Departments",
+        "description": "Update Departments",
         "parameters": [
           {
             "name": "id",
@@ -207,6 +240,23 @@
             "name": "sort",
             "in": "query",
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "example": "Test Department"
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }
           }
         ],
         "responses": {
@@ -216,7 +266,11 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Department"
+        ],
+        "summary": "Delete Departments",
+        "description": "Delete Departments",
         "parameters": [
           {
             "name": "id",
@@ -242,7 +296,11 @@
     },
     "/departments/{id}/personnels": {
       "get": {
-        "description": "",
+        "tags": [
+          "Department"
+        ],
+        "summary": "Get Personnels of any Department",
+        "description": "Get Personnels of any Department",
         "parameters": [
           {
             "name": "id",
@@ -265,7 +323,11 @@
     },
     "/personnels/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Personals"
+        ],
+        "summary": "List Personals",
+        "description": "  You can send query with endpoint for search[], sort[], page adn limit.  <ul> Example:   <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>   <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>   <li>URL/?<b>page=2&limit=1</b></li>  </ul>  ",
         "parameters": [
           {
             "name": "sort",
@@ -280,10 +342,19 @@
         }
       },
       "post": {
-        "description": "",
+        "tags": [
+          "Personals"
+        ],
+        "summary": "Create Personals",
+        "description": "Create Personals",
         "parameters": [
           {
             "name": "sort",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "body",
             "in": "query",
             "type": "string"
           },
@@ -309,6 +380,10 @@
     },
     "/personnels/{id}": {
       "get": {
+        "tags": [
+          "Personals"
+        ],
+        "summary": "Get Single Personals",
         "description": "",
         "parameters": [
           {
@@ -330,7 +405,11 @@
         }
       },
       "put": {
-        "description": "",
+        "tags": [
+          "Personals"
+        ],
+        "summary": "Update Personals",
+        "description": "Update Personals",
         "parameters": [
           {
             "name": "id",
@@ -342,6 +421,11 @@
             "name": "sort",
             "in": "query",
             "type": "string"
+          },
+          {
+            "name": "body",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {
@@ -351,7 +435,11 @@
         }
       },
       "delete": {
-        "description": "",
+        "tags": [
+          "Personals"
+        ],
+        "summary": "Delete Personals",
+        "description": "Delete Personals",
         "parameters": [
           {
             "name": "id",

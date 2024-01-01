@@ -7,11 +7,30 @@ const Personel = require('../models/personnel.model');
 
 module.exports = {
     list: async (req, res) => {
+        /*
+            #swagger.tags = ['Personals']
+            #swagger.summary = 'List Personals'
+            #swagger.description = '
+                You can send query with endpoint for search[], sort[], page adn limit.
+                <ul> Example:
+                    <li>URL/?<b>search[field1]=value1&search[field2]=value2</b></li>
+                    <li>URL/?<b>sort[field1]=1&sort[field2]=-1</b></li>
+                    <li>URL/?<b>page=2&limit=1</b></li>
+                </ul>
+            '
+        */
         const data = await res.getModelList(Personel, {}, 'departmentId')
         res.status(200).send({
             error: false, detail: await res.getModelListDetails(Personel), data
         })
     }, create: async (req, res) => {
+        /*
+            #swagger.tags = ['Personals']
+            #swagger.summary = 'Create Personals'
+            #swagger.description = 'Create Personals'
+            #swagger.parameters['body'] = {
+            }
+        */
         // isLead kontrol
         const isLead = req.body?.isLead || false;
         if (isLead) {
@@ -20,9 +39,20 @@ module.exports = {
         const data = await Personel.create(req.body);
         res.status(201).send({error: false, data})
     }, read: async (req, res) => {
+        /*
+            #swagger.tags = ['Personals']
+            #swagger.summary = 'Get Single Personals'
+        */
         const data = await Personel.findOne({_id: req.params.id});
         res.status(200).send({error: false, data})
     }, update: async (req, res) => {
+        /*
+             #swagger.tags = ['Personals']
+             #swagger.summary = 'Update Personals'
+             #swagger.description = 'Update Personals'
+             #swagger.parameters['body'] = {
+             }
+        */
         // isLead kontrol
         const isLead = req.body?.isLead || false;
         if (isLead) {
@@ -34,12 +64,16 @@ module.exports = {
             error: false, data, new: Personel.findOne({_id: req.params.id})
         })
     }, delete: async (req, res) => {
+        /*
+             #swagger.tags = ['Personals']
+             #swagger.summary = 'Delete Personals'
+             #swagger.description = 'Delete Personals'
+        */
         const data = await Personel.deleteOne({_id: req.params.id});
         res.status(data.deletedCount ? 204 : 404).send({
             error: !data.deletedCount, data
         })
-    },
-    // Login & Logout
+    }, // Login & Logout
     login: async (req, res) => {
         const {username, password} = req.body;
         if (username && password) {
