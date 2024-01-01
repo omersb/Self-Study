@@ -27,8 +27,13 @@ module.exports = {
         /*
             #swagger.tags = ['Personals']
             #swagger.summary = 'Create Personals'
-            #swagger.description = 'Create Personals'
+            #swagger.description = 'Look to <b>"Models/Personnel</b> for parameters.'
             #swagger.parameters['body'] = {
+                in: 'body',
+                required: true,
+                schema: {
+                    $ref: '#/definitions/Personnel'
+                }
             }
         */
         // isLead kontrol
@@ -49,9 +54,14 @@ module.exports = {
         /*
              #swagger.tags = ['Personals']
              #swagger.summary = 'Update Personals'
-             #swagger.description = 'Update Personals'
+             #swagger.description = 'Look to <b>"Models/Personnel</b> for parameters.'
              #swagger.parameters['body'] = {
-             }
+                in: 'body',
+                required: true,
+                schema: {
+                    $ref: '#/definitions/Personnel'
+                }
+            }
         */
         // isLead kontrol
         const isLead = req.body?.isLead || false;
